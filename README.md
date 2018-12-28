@@ -30,6 +30,12 @@ Source code for the Lykke website. Built with [Next.js](https://github.com/zeit/
 1. `yarn dev` to run in development mode. You can also specify `PORT` env variable
 1. Open [http://localhost:3000](http://localhost:3000) to view it in the browser
 
+### Configuration
+
+This project uses [dotenv](https://github.com/motdotla/dotenv) for injecting configuration.
+You may find the list of configuration options in `config.js` file.
+To provide configuration to the Docker environment use conventional `-e NAME=VALUE` arguments.
+
 ### Create a branch
 
 1. `git checkout master` from any folder in your local `lykke-website` repository
