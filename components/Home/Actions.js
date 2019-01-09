@@ -3,7 +3,9 @@ import styled, {css} from 'styled-components';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import Button from '../Button';
 import {rem} from 'polished';
-import config from '../../config';
+import getConfig from 'next/config'
+const {publicRuntimeConfig} = getConfig()
+const { WALLET_URL } = publicRuntimeConfig
 
 import {social} from '../../utils/social';
 
@@ -156,7 +158,7 @@ export default () => (
               <CardTitle>Register</CardTitle>
               <CardText>Get your free account with Lykke</CardText>
               <CardFooter border>
-                <Button className="btn" flat small href={config.WALLET_URL}>
+                <Button className="btn" flat small href={WALLET_URL}>
                   Create free account
                 </Button>
               </CardFooter>

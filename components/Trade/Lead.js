@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import Button from '../Button';
 import {BlockLink} from '../Home/Lead';
-import config from '../../config';
+import getConfig from 'next/config'
+const {publicRuntimeConfig} = getConfig()
+const { WALLET_URL } = publicRuntimeConfig
 
 import {Lead, InputGroup, Input, FormSubscribe} from '../Home/Lead';
 
@@ -48,7 +50,7 @@ export default () => (
               </Col>
               <Col xs={12} sm={4} lg={3}>
                 <Button block>
-                  <BlockLink href={config.WALLET_URL}>Get Started</BlockLink>
+                  <BlockLink href={WALLET_URL}>Get Started</BlockLink>
                 </Button>
               </Col>
             </Row>

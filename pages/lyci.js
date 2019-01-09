@@ -6,7 +6,9 @@ import Lead from '../components/LyCI/Lead';
 import Invest from '../components/LyCI/Invest';
 import Documentation from '../components/LyCI/Documentation';
 
-import {SELF_URL} from '../config';
+import getConfig from 'next/config'
+const {publicRuntimeConfig} = getConfig()
+const { SELF_URL } = publicRuntimeConfig
 import {mapToProduct} from '../components/MarketList';
 
 class LyCI extends Component {
