@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "node server/app.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server/app.js"
+    "start": "NODE_ENV=production node server/app.js",
+    "export": "npm run build && next export"
   },
   "dependencies": {
     "dotenv": "^6.2.0",
