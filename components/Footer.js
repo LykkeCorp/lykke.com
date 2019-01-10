@@ -4,7 +4,9 @@ import Link from 'next/link';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import {rem} from 'polished';
 
-import {WALLET_URL, TERMINAL_URL} from '../config';
+import getConfig from 'next/config'
+const {publicRuntimeConfig} = getConfig()
+const { WALLET_URL, TERMINAL_URL } = publicRuntimeConfig
 import {social} from '../utils/social';
 
 import Apps from './Apps';

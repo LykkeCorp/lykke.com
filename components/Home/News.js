@@ -4,7 +4,9 @@ import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import Truncate from 'react-truncate';
 import Button from '../Button';
 import {rem} from 'polished';
-import {SELF_URL} from '../../config';
+import getConfig from 'next/config'
+const {publicRuntimeConfig} = getConfig()
+const { SELF_URL } = publicRuntimeConfig
 
 export const SectionLink = styled.div`
   text-align: center;

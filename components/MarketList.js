@@ -4,6 +4,9 @@ import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import {rem} from 'polished';
 import config from '../config';
 import fetch from 'isomorphic-unfetch';
+import getConfig from 'next/config'
+const {publicRuntimeConfig} = getConfig()
+const { SELF_URL, BASE_API_URL} = publicRuntimeConfig
 
 const MarketList = styled.div`
   background-color: ${p => p.theme.colors.greyPale};
@@ -119,8 +122,8 @@ export default class extends Component {
 
   componentDidMount() {
     Promise.all([
-      fetch(`${config.BASE_API_URL}/markets`),
-      fetch(`${config.SELF_URL}/api/products/lyci`)
+      fetch(`${BASE_API_URL}/markets`),
+      fetch(`${SELF_URL}/api/products/lyci`)
     ])
       .then(responses => Promise.all(responses.map(r => r.json())))
       .then(([rawQuotes, lyci]) => {
