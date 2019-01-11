@@ -5,6 +5,7 @@ export const List = styled.ul`
     padding-left: 20px;
     list-style: none;
     li {
+      margin-bottom: 20px;
       a {
         color: ${p => p.theme.colors.primary};
       }
@@ -21,10 +22,11 @@ export const List = styled.ul`
 
 export const TextLink = styled.a`
   color: ${p => p.theme.colors.primary};
-  text-decoration: underline;
+  text-decoration: ${p => p.noUnderline ? '' : 'underline'};
   cursor: pointer;
 `;
 
 export const PolicyWrapper = styled.section`
-  margin: 60px 0;
+  padding: 60px 0;
+  border-bottom: 1px solid ${p => p.theme.colors.greyLight};
 `;

@@ -1,5 +1,4 @@
 import React from "react";
-import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 
 import Head from "../components/Head";
 import {Policy} from "../components/PrivacyPolicy/Policy";

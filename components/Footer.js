@@ -327,7 +327,7 @@ export default () => (
               <a>Privacy Policy</a>
             </Link>
             <br className="d-md-none" />
-            <Link href="#">
+            <Link href="/terms-and-regulation">
               <a>Terms of Use</a>
             </Link>
           </Col>
