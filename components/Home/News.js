@@ -193,9 +193,7 @@ export default class extends Component {
                       <Item>
                         <Image
                           style={{
-                            backgroundImage: `url(${post.thumbnail})`,
-                            backgroundPosition: 'left top',
-                            backgroundSize: 'contain'
+                            backgroundImage: `url(${post.thumbnail})`
                           }}
                         >
                           <a href={post.link} />

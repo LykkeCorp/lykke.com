@@ -8,9 +8,9 @@ const {publicRuntimeConfig} = getConfig()
 const { WALLET_URL } = publicRuntimeConfig
 
 export const Lead = styled.section`
+  position: relative;
   padding-top: ${rem('80px')};
   padding-bottom: ${rem('40px')};
-  position: relative;
 
   h1 {
     margin-bottom: ${rem('18px')};
@@ -41,8 +41,8 @@ export const Lead = styled.section`
 `;
 
 export const Image = styled.div`
-  margin: -148px 0 -8px -80px;
   position: relative;
+  margin: -148px 0 -8px -80px;
   z-index: -1;
   pointer-events: none;
   user-select: none;
@@ -61,15 +61,15 @@ export const InputGroup = styled.div`
 `;
 
 export const Input = styled.input`
-  font-family: ${p => p.theme.fonts.headings};
-  font-size: ${rem('20px')};
-  font-weight: 600;
+  width: 100%;
+  height: ${rem('54px')};
+  padding: ${rem('13px')} ${rem('40px')} ${rem('15px')};
   background-color: ${p => p.theme.colors.white};
   border-radius: ${p => p.theme.corners.round};
   border: 1px solid ${p => p.theme.colors.primary};
-  padding: ${rem('13px')} ${rem('40px')} ${rem('15px')};
-  width: 100%;
-  height: ${rem('54px')};
+  font-family: ${p => p.theme.fonts.headings};
+  font-size: ${rem('20px')};
+  font-weight: 600;
   appearance: none;
 
   &:focus {
@@ -91,23 +91,23 @@ export const FormSubscribe = styled.form`
     padding: 0;
   }
 
-  button {
+  .form_button {
     width: 100%;
-    padding: ${rem('18px')} ${rem('25px')};
     height: ${rem('54px')};
+    padding: ${rem('18px')} ${rem('25px')};
   }
 
   @media all and (max-width: 767px) {
     position: absolute;
-    bottom: 0;
-    padding: 0 15px;
-    left: 0;
     right: 0;
-    margin: 0 auto;
+    bottom: 0;
+    left: 0;
     width: 360px;
     max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
 
-    button {
+    .form_button {
       box-shadow: 0 4px 15px 0 rgba(25, 112, 236, 0.5);
     }
 
@@ -121,26 +121,19 @@ export const FormSubscribe = styled.form`
   }
 
   @media all and (min-width: 768px) {
-    box-shadow: 0 4px 15px 0 rgba(25, 112, 236, 0.5);
     border-radius: ${p => p.theme.corners.round};
+    box-shadow: 0 4px 15px 0 rgba(25, 112, 236, 0.5);
 
     ${Input} {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
 
-    button {
+    .form_button {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
   }
-`;
-
-// TODO: move me to atoms
-export const BlockLink = styled.a`
-  display: inline-block;
-  height: 100%;
-  width: 100%;
 `;
 
 export default () => (
@@ -169,8 +162,8 @@ export default () => (
                 </InputGroup>
               </Col>
               <Col xs={12} sm={4} lg={3}>
-                <Button block>
-                  <BlockLink href={WALLET_URL}>Get Started</BlockLink>
+                <Button className="form_button" block href={WALLET_URL}>
+                  Get Started
                 </Button>
               </Col>
             </Row>

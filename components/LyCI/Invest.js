@@ -9,13 +9,13 @@ export const Invest = styled.section`
 `;
 
 export const Card = styled.div`
+  margin-bottom: ${'-100px'};
+  padding: ${rem('15px')};
   background-color: ${p => p.theme.colors.white}; 
   border-radius: 8px;
   box-shadow: ${p => p.theme.boxShadow.light}; 
-  padding: ${rem('15px')};
-  text-align: center;
   line-height: normal;
-  margin-bottom: ${'-100px'};
+  text-align: center;
     
   @media all and (min-width: 768px) {
     margin-bottom: ${'-123px'};
@@ -24,29 +24,29 @@ export const Card = styled.div`
 `;
 
 export const CardTitle = styled.div`
+  margin-bottom : ${rem('24px')};
+  padding: 0 ${rem('38px')};
   color: ${p => p.theme.colors.black};
   font-family: ${p => p.theme.fonts.headings};
   font-size: ${rem('24px')};
   font-weight: 600; 
-  margin-bottom : ${rem('24px')};
-  padding: 0 ${rem('38px')};
   
   @media all and (min-width: 768px) {
-    margin-bottom : ${rem('10px')};
+    margin-bottom: ${rem('10px')};
     padding: 0 ${rem('15px')};
   }
 `;
 
 export const CardText = styled.p`
-  line-height: 1.69;
-  color: ${p => p.theme.colors.grey};
   margin-bottom : ${rem('20px')};
+  color: ${p => p.theme.colors.grey};
+  line-height: 1.69;
 `;
 
 export const CardHint = styled.div`
+  margin-top: ${rem('30px')};
   font-size: ${rem('10px')};
   text-align: center;
-  margin-top: ${rem('30px')};
 
   a {
     color: ${p => p.theme.colors.primary};

@@ -10,12 +10,12 @@ const { WALLET_URL } = publicRuntimeConfig
 import {Section, SectionHeader, SectionLink} from './styled';
 
 export const AccordionTitle = styled.h4`
-  line-height: normal;
   margin-top: ${rem('6px')};
   margin-bottom: 0;
-  color: inherit;
-  transition: all ${p => p.theme.transition.primary};
   color: ${p => p.theme.colors.black};
+  line-height: normal;
+  user-select: none;
+  transition: all ${p => p.theme.transition.primary};
 
   @media all and (max-width: 767px) {
     margin-bottom: 10px;
@@ -32,14 +32,14 @@ export const Accordion = styled.div`
 `;
 
 export const AccordionContent = styled.div`
-  overflow: hidden;
   margin-top: ${rem('-5px')};
   padding-right: ${rem('20px')};
+  overflow: hidden;
 `;
 
 export const AccordionText = styled.div`
-  font-size: ${rem('14px')};
   color: ${p => p.theme.colors.grey};
+  font-size: ${rem('14px')};
   line-height: 1.36;
 
   @media all and (min-width: 768px) {
@@ -48,20 +48,23 @@ export const AccordionText = styled.div`
 `;
 
 export const AccordionItem = styled.div`
-  overflow: hidden;
   position: relative;
   margin-bottom: 83px;
+  overflow: hidden;
 
   &:last-child {
     margin-bottom: 30px;
   }
 
   @media all and (min-width: 768px) {
-    cursor: pointer;
     margin-bottom: -2px;
     padding: ${rem('24px')} ${rem('30px')};
-    border: 1px solid #e0e0e0;
     background-color: ${p => p.theme.colors.white};
+    border: 1px solid ${p => (p.active ? p.theme.colors.primary : p.theme.colors.cloud)};
+    border-radius: ${p => (p.active ? `${p => p.theme.corners.primary} !important` : 0)};
+    box-shadow: ${p => (p.active ? '0 0 17px 0 rgba(0, 0, 0, 0.2)' : '')};
+    cursor: ${p => (p.active ? 'default' : 'pointer')};
+    z-index: ${p => (p.active ? 2 : 'auto')};
     transition: all ${p => p.theme.transition.primary};
 
     &:first-child {
@@ -81,22 +84,13 @@ export const AccordionItem = styled.div`
     }
 
     ${p =>
-      p.active &&
-      css`
-        z-index: 2;
-        cursor: default;
-        padding-top: ${rem('25px')};
-        padding-bottom: ${rem('25px')};
-        box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.2);
-        border-color: ${p => p.theme.colors.primary};
-        border-radius: ${p => p.theme.corners.primary} !important;
-
+  p.active &&
+  css`
         ${AccordionText} {
           display: block;
         }
 
         ${AccordionTitle} {
-          margin-top: 0;
           margin-bottom: ${rem('15px')};
           color: ${p => p.theme.colors.primary} !important;
         }
@@ -111,12 +105,12 @@ export const AccordionItem = styled.div`
 `;
 
 export const AccordionIcon = styled.div`
+  float: left;
   width: ${rem('50px')};
   height: ${rem('35px')};
   margin-right: ${rem('24px')};
   font-size: 0;
   line-height: 0;
-  float: left;
 
   img {
     max-width: 100%;
@@ -127,9 +121,9 @@ export const AccordionIcon = styled.div`
   }
 
   @media all and (max-width: 767px) {
-    padding: 8px 20px;
     width: 92px;
     margin-right: 8px;
+    padding: 8px 20px;
   }
 
   @media all and (min-width: 768px) {
@@ -156,16 +150,16 @@ export const AccordionImage = styled.div`
 `;
 
 export const SliderImages = styled.div`
-  margin: -10px 0 73px 70px;
   position: relative;
+  margin: -10px 0 73px 70px;
 `;
 
 const SliderImage = styled.img`
+  display: ${p => (p.active ? '' : 'none')};
   animation: ${p =>
-    `slideUp 0.3s ease-in-out forwards ${
+  `slideUp 0.3s ease-in-out forwards ${
       p.active ? ', fadeIn 0.3s ease-in-out forwards' : ''
     }`};
-  display: ${p => (p.active ? '' : 'none')};
 
   @keyframes fadeIn {
     from {

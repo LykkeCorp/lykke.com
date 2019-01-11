@@ -45,11 +45,11 @@ export const SliderImages = styled.div`
 `;
 
 const SliderImage = styled.img`
+  display: ${p => (p.active ? '' : 'none')};
   animation: ${p =>
     `slideUp 0.3s ease-in-out forwards ${
       p.active ? ', fadeIn 0.3s ease-in-out forwards' : ''
     }`};
-  display: ${p => (p.active ? '' : 'none')};
 
   @keyframes fadeIn {
     from {
