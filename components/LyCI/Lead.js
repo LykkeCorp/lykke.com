@@ -17,18 +17,18 @@ export const Value = styled.div`
 `;
 
 export const ValueAccent = styled.div`
+  color: ${p => p.theme.colors.dark};
+  font-family: ${p => p.theme.fonts.headings};
   font-size: ${rem('30px')};
   font-weight: bold;
   line-height: 2;
-  color: ${p => p.theme.colors.dark};
-  font-family: ${p => p.theme.fonts.headings};
 `;
 
 export const ValueText = styled.div`
-  opacity: 0.8;
+  color: ${p => p.theme.colors.slate};
   font-size: ${rem('14px')};
   line-height: 1.2;
-  color: ${p => p.theme.colors.slate};
+  opacity: 0.8;
 
   @media all and (min-width: 768px) {
     span {
@@ -41,11 +41,11 @@ export const ValueText = styled.div`
 export const Graph = styled.div``;
 
 export const Info = styled.div`
+  margin-bottom: ${rem('40px')};
+  font-family: ${p => p.theme.fonts.headings};
+  font-size: ${rem('20px')};
   line-height: 1.75;
   font-weight: 600;
-  font-size: ${rem('20px')};
-  font-family: ${p => p.theme.fonts.headings};
-  margin-bottom: ${rem('40px')};
   text-align: left;
 
   @media all and (min-width: 768px) {
@@ -57,10 +57,10 @@ export const Info = styled.div`
 `;
 
 export const InfoTitle = styled.div`
+  margin-bottom: ${rem('25px')};
+  color: ${p => p.theme.colors.black};
   font-size: ${rem('30px')};
   line-height: normal;
-  color: ${p => p.theme.colors.black};
-  margin-bottom: ${rem('25px')};
 `;
 
 export const InfoTable = styled.table`

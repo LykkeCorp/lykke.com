@@ -9,16 +9,17 @@ const {publicRuntimeConfig} = getConfig()
 const { SELF_URL, BASE_API_URL} = publicRuntimeConfig
 
 const MarketList = styled.div`
-  background-color: ${p => p.theme.colors.greyPale};
+  min-height: ${rem('50px')};
   padding-top: ${rem('9px')};
   padding-bottom: ${rem('9px')};
+  background-color: ${p => p.theme.colors.greyPale};
 
   @media all and (max-width: 991px) {
-    background-color: transparent;
     position: fixed;
-    z-index: 201;
-    right: 0;
     top: ${rem('8px')};
+    right: 0;
+    background-color: transparent;
+    z-index: 201;
     transition: opacity ${p => p.theme.transition.primary},
       visibility ${p => p.theme.transition.primary};
 
@@ -34,8 +35,8 @@ const MarketList = styled.div`
 `;
 
 const Wrapper = styled.div`
-  padding-left: ${rem('12px')};
   padding-right: ${rem('12px')};
+  padding-left: ${rem('12px')};
 
   @media all and (max-width: 991px) {
     padding: 0;
@@ -43,24 +44,25 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
+  color: ${p => p.theme.colors.greyBluey};
   font-size: ${rem('15px')};
   font-weight: 600;
   line-height: 1;
-  color: ${p => p.theme.colors.greyBluey};
 `;
 
 const Value = styled.span`
-  font-weight: 600;
   margin-left: ${rem('8px')};
   color: ${p =>
     p.dir === 'up' ? p.theme.colors.green : p.theme.colors.orangeRed};
+  font-weight: 600;
 `;
 
 const Desc = styled.div`
+  margin-top: ${rem('2px')};
+  color: ${p => p.theme.colors.greyBluey};
   font-size: ${rem('14px')};
   line-height: 1;
-  color: ${p => p.theme.colors.greyBluey};
-  margin-top: ${rem('2px')};
+
 
   ${Value} {
     display: inline-block;
@@ -71,39 +73,35 @@ const Desc = styled.div`
 `;
 
 export const Label = styled.span`
-  font-weight: 600;
-  font-size: ${rem('12px')};
-  letter-spacing: 0.8px;
-  line-height: 1;
   display: inline-block;
   vertical-align: middle;
   padding: ${rem('5px')} ${rem('7px')} ${rem('4px')};
+  padding: ${p => 
+    (p.big ? `${rem('6px')} ${rem('12px')} ${rem('5px')}` :
+    `${rem('5px')} ${rem('7px')} ${rem('4px')}`)};
   color: ${p => p.theme.colors.white};
-  border-radius: ${p => p.theme.corners.primary};
   background-color: ${p =>
     p.dir === 'up' ? p.theme.colors.green : p.theme.colors.orangeRed};
-
-  ${p =>
-    p.big &&
-    css`
-      font-size: ${rem('24px')};
-      letter-spacing: 1.7px;
-      padding: ${rem('6px')} ${rem('12px')} ${rem('5px')};
-      border-radius: ${p => p.theme.corners.secondary};
-    `}
+  border-radius: ${p => 
+    (p.big ? p => p.theme.corners.secondary : p.theme.corners.primary)};
+  font-size: ${p => 
+    (p.big ? `${rem('24px')}` : `${rem('12px')}`)};
+  font-weight: 600;
+  letter-spacing: ${p => (p.big ? '1.7px' : '0.8px')};
+  line-height: 1;
 `;
 
 const AccentDesc = styled(Desc)`
-  font-size: ${rem('11px')};
-  color: ${p => p.theme.colors.slate};
-  opacity: 0.6;
-  line-height: 1;
   margin-top: ${rem('5px')};
+  color: ${p => p.theme.colors.slate};
+  font-size: ${rem('11px')};
+  line-height: 1;
+  opacity: 0.6;
 `;
 
 const AccentTitle = styled(Title)`
-  font-size: ${rem('16px')};
   color: ${p => p.theme.colors.dark};
+  font-size: ${rem('16px')};
 `;
 
 const ListItem = styled.div``;

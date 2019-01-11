@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import Head from "../components/Head";
-import {Policy} from "../components/PrivacyPolicy/Policy";
+import Head from '../components/Head';
+import {Policy} from '../components/PrivacyPolicy/Policy';
 
 
 const PrivacyPolicy = (props) => {

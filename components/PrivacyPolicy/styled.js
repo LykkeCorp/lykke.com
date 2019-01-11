@@ -1,23 +1,27 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
+import {rem} from 'polished';
 
 export const List = styled.ul`
-    padding-left: 20px;
-    list-style: none;
-    li {
-      margin-bottom: 20px;
-      a {
-        color: ${p => p.theme.colors.primary};
-      }
-      &::before {
-        content: "\\2022";
-        color: ${p => p.theme.colors.primary};
-        font-weight: bold;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-      }
+  padding-left: ${rem('20px')};
+  list-style: none;
+  
+  li {
+    margin-bottom: ${rem('20px')};
+    
+    a {
+      color: ${p => p.theme.colors.primary};
     }
+    
+    &::before {
+      content: '\\2022';
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      color: ${p => p.theme.colors.primary};
+      font-weight: bold;
+    }
+  }
 `;
 
 export const TextLink = styled.a`
@@ -27,6 +31,6 @@ export const TextLink = styled.a`
 `;
 
 export const PolicyWrapper = styled.section`
-  padding: 60px 0;
+  padding: ${rem('60px')} 0;
   border-bottom: 1px solid ${p => p.theme.colors.greyLight};
 `;

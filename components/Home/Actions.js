@@ -15,23 +15,23 @@ export const Wrapper = styled.section`
 `;
 
 export const Card = styled.div`
+  position: relative;
   padding: ${rem('35px')} ${rem('25px')} ${rem('60px')};
   background-color: ${p => p.theme.colors.white};
-  box-shadow: ${p => p.theme.boxShadow.card};
   border-radius: ${p => p.theme.corners.card};
-  position: relative;
+  box-shadow: ${p => p.theme.boxShadow.card};
 
   > .icon {
-    color: ${p => p.theme.colors.black};
-    font-size: ${rem('20px')};
     margin-bottom: ${rem('20px')};
     padding: ${rem('5px')} ${rem('3px')};
+    color: ${p => p.theme.colors.black};
+    font-size: ${rem('20px')};
   }
 
   @media all and (max-width: 767px) {
-    text-align: center;
     margin-bottom: 25px;
     padding: 15px 15px 70px;
+    text-align: center;
 
     > .icon {
       margin-bottom: ${rem('10px')};
@@ -54,39 +54,35 @@ export const Cards = styled.div`
     }
 
     > ${Row} {
-      margin-left: ${rem('-20px')};
       margin-right: ${rem('-20px')};
+      margin-left: ${rem('-20px')};
 
       > ${Col} {
-        padding-left: ${rem('20px')};
         padding-right: ${rem('20px')};
+        padding-left: ${rem('20px')};
       }
     }
   }
 `;
 
 export const CardTitle = styled.h4`
+  margin-bottom: ${rem('7px')};
   font-size: ${rem('26px')};
   font-weight: bold;
   line-height: 1.35;
-  margin-bottom: ${rem('7px')};
 `;
 
 export const CardText = styled.div`
-  font-size: ${p => rem(p.theme.fontSize.lead)};
-  font-stretch: normal;
-  line-height: 1.67;
-  color: ${p => p.theme.colors.grey};
   margin-bottom: ${rem('20px')};
-
-  @media all and (max-width: 767px) {
-  }
+  color: ${p => p.theme.colors.grey};
+  font-size: ${p => rem(p.theme.fontSize.lead)};
+  line-height: 1.67;
 `;
 
 export const CardFooter = styled.div`
   position: absolute;
-  bottom: 0;
   left: ${rem('25px')};
+  bottom: 0;
   right: ${rem('25px')};
   min-height: ${rem('60px')};
   padding: ${rem('9px')} 0;
@@ -98,8 +94,8 @@ export const CardFooter = styled.div`
     `}
 
   .btn {
-    padding-left: 0;
     padding-right: 0;
+    padding-left: 0;
   }
 
   form {
@@ -129,11 +125,11 @@ export const Social = styled.div`
   text-align: center;
 
   a {
-    font-size: ${rem('28px')};
     display: inline-block;
     vertical-align: middle;
     padding: ${rem('5px')};
     color: ${p => p.theme.colors.greyBluey};
+    font-size: ${rem('28px')};
 
     &:hover {
       color: ${p => p.theme.colors.dark};

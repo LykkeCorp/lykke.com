@@ -1,9 +1,9 @@
 import React from 'react'
-import {Col, Grid, Row} from "react-styled-flexboxgrid";
+import {Col, Grid, Row} from 'react-styled-flexboxgrid';
 import Link from 'next/link';
 
-import { PolicyWrapper, List, TextLink } from "../PrivacyPolicy/styled";
-import { ColumnList } from "./styled";
+import { PolicyWrapper, List, TextLink } from '../PrivacyPolicy/styled';
+import { ColumnList } from './styled';
 
 export const TermsAndRegulation = props => {
     return (
