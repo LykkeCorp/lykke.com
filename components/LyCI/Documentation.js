@@ -4,8 +4,8 @@ import {rem} from 'polished';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 
 export const Documentation = styled.section`
-  background-color: ${p => p.theme.colors.greyPale};
   padding: ${rem('200px')} 0 ${rem('180px')};
+  background-color: ${p => p.theme.colors.greyPale};
 
   @media all and (min-width: 768px) {
     padding: ${rem('180px')} 0 ${rem('160px')};
@@ -14,13 +14,13 @@ export const Documentation = styled.section`
 
 export const Text = styled.div`
   color: ${p => p.theme.colors.grey};
-  line-height: 1.69;
   font-size: ${rem('16px')};
+  line-height: 1.69;
 
   h4,
   h5 {
-    color: ${p => p.theme.colors.dark};
     margin-top: ${rem('45px')};
+    color: ${p => p.theme.colors.dark};
 
     &:first-child {
       margin-top: 0;
@@ -28,21 +28,21 @@ export const Text = styled.div`
   }
 
   h3 {
-    color: ${p => p.theme.colors.black};
     margin-bottom: ${rem('50px')};
+    color: ${p => p.theme.colors.black};
   }
 
   h4 {
-    font-size: ${rem('28px')};
     margin-bottom: ${rem('10px')};
+    font-size: ${rem('28px')};
   }
 
   h5 {
-    color: ${p => p.theme.colors.grey};
-    line-height: 1.69;
-    font-size: ${rem('16px')};
     margin-bottom: ${rem('30px')};
+    color: ${p => p.theme.colors.grey};
+    font-size: ${rem('16px')};
     font-weight: 600;
+    line-height: 1.69;
   }
 
   p,
@@ -61,16 +61,16 @@ export const Text = styled.div`
   }
 
   img {
-    object-fit: contain;
-    mix-blend-mode: multiply;
+    display: block;
     max-width: 100%;
     margin: ${rem('35px')} 0;
-    display: block;
+    object-fit: contain;
+    mix-blend-mode: multiply;
   }
 
   table {
-    font-weight: 600;
     width: 100%;
+    font-weight: 600;
 
     tr {
       td {
@@ -91,13 +91,13 @@ const CustomGutter = styled.div`
     max-width: 380px;
 
     ${Row} {
-      margin-left: ${rem('-20px')};
       margin-right: ${rem('-20px')};
+      margin-left: ${rem('-20px')};
     }
 
     ${Col} {
-      padding-left: ${rem('20px')};
       padding-right: ${rem('20px')};
+      padding-left: ${rem('20px')};
     }
   }
 `;

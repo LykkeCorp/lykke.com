@@ -1,5 +1,5 @@
-import React from "react";
-import {Col, Grid, Row} from "react-styled-flexboxgrid";
+import React from 'react';
+import {Col, Grid, Row} from 'react-styled-flexboxgrid';
 import Link from 'next/link';
 
 import { PolicyWrapper, List, TextLink } from './styled';

@@ -4,37 +4,37 @@ import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import {rem} from 'polished';
 
 export const Chips = styled.div`
-  padding-top: ${rem('35px')};
   margin-top: 50px;
+  padding-top: ${rem('35px')};
   
   @media all and (min-width: 768px) {
-    padding-top: 0;
     margin-top: 0;
+    padding-top: 0;
   }
 
   @media all and (min-width: 992px) {
     ${Row} {
-      margin-left: ${rem('-20px')};
       margin-right: ${rem('-20px')};
+      margin-left: ${rem('-20px')};
     }
     
     ${Col} {
-      padding-left: ${rem('20px')};
       padding-right: ${rem('20px')}
+      padding-left: ${rem('20px')};
     }
   }
 `;
 
 export const FeatureItem = styled.div`
-  text-align: center;
   position: relative;
+  margin-bottom: ${rem('60px')};
+  padding: ${rem('42px')} ${rem('20px')} ${rem('30px')};
   color: ${p => p.theme.colors.black};
-  box-shadow: ${p => p.theme.boxShadow.light};
   background-color: ${p => p.theme.colors.white};
   border-radius: ${p => p.theme.corners.secondary};
-  padding: ${rem('42px')} ${rem('20px')} ${rem('30px')};
-  margin-bottom: ${rem('60px')};
-  
+  box-shadow: ${p => p.theme.boxShadow.light};
+  text-align: center;
+
   @media all and (min-width: 768px) {
     margin-bottom: ${rem('20px')};
   }
@@ -42,11 +42,11 @@ export const FeatureItem = styled.div`
 
 export const FeatureItemIcon = styled.div`
   position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
   top: ${rem('-35px')};
+  right: 0;
+  left: 0;
   width: ${rem('70px')};
+  margin: 0 auto;
   pointer-events: none;
   user-select: none;
   
