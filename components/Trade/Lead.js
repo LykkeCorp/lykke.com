@@ -48,7 +48,7 @@ export default () => (
                 </InputGroup>
               </Col>
               <Col xs={12} sm={4} lg={3}>
-                <Button block href={WALLET_URL}>
+                <Button className="form_button" block href={WALLET_URL}>
                   Get Started
                 </Button>
               </Col>
