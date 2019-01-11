@@ -28,7 +28,7 @@ export const Accordion = styled.div`
     
     h4 {
       color: ${p => p.theme.colors.white};
-    s}
+    }
   }
 `;
 

@@ -60,11 +60,10 @@ export const AccordionItem = styled.div`
     margin-bottom: -2px;
     padding: ${rem('24px')} ${rem('30px')};
     background-color: ${p => p.theme.colors.white};
-    border: 1px solid ${p => (p.active ? p.theme.colors.primary : p.theme.colors.cloud)};
-    border-radius: ${p => (p.active ? `${p => p.theme.corners.primary} !important` : 0)};
-    box-shadow: ${p => (p.active ? '0 0 17px 0 rgba(0, 0, 0, 0.2)' : '')};
-    cursor: ${p => (p.active ? 'default' : 'pointer')};
-    z-index: ${p => (p.active ? 2 : 'auto')};
+    border: 1px solid ${p => p.active ? p.theme.colors.primary : p.theme.colors.cloud};
+    box-shadow: ${p => p.active ? '0 0 17px 0 rgba(0, 0, 0, 0.2)' : ''};
+    cursor: ${p => p.active ? 'default' : 'pointer'};
+    z-index: ${p => p.active ? '2' : 'auto'};
     transition: all ${p => p.theme.transition.primary};
 
     &:first-child {
@@ -84,8 +83,10 @@ export const AccordionItem = styled.div`
     }
 
     ${p =>
-  p.active &&
-  css`
+      p.active &&
+      css`
+        border-radius: ${p => p.theme.corners.primary} !important;
+        
         ${AccordionText} {
           display: block;
         }
