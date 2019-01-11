@@ -323,7 +323,7 @@ export default () => (
             © 2018 Lykke, Inc.
           </Col>
           <Col xs={12} sm={6} className="text-right">
-            <Link href="#">
+            <Link href="/privacy-policy">
               <a>Privacy Policy</a>
             </Link>
             <br className="d-md-none" />
