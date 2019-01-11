@@ -86,7 +86,12 @@ export const CardFooter = styled.div`
   right: ${rem('25px')};
   min-height: ${rem('60px')};
   padding: ${rem('9px')} 0;
-  border-top: ${p => (p.border ? '2px solid ${p => p.theme.colors.greyLight' : 0)};
+
+  ${p =>
+    p.border &&
+    css`
+      border-top: 2px solid ${p => p.theme.colors.greyLight};
+    `}
 
   .btn {
     padding-right: 0;
