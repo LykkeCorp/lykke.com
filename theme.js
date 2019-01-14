@@ -9,6 +9,7 @@ const colors = {
   greyBluey: '#8c94a0',
   greyLight: '#ebedef',
   greyPale: '#f7f8f9',
+  cloud: '#e0e0e0',
   slate: '#3f4d60',
   red: '#d64052',
   orangeRed: '#ff3e2e',

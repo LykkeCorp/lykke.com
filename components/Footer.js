@@ -12,8 +12,8 @@ import {social} from '../utils/social';
 import Apps from './Apps';
 
 const Footer = styled.footer`
-  flex-shrink: 0;
   padding-bottom: ${rem('25px')};
+  flex-shrink: 0;
 `;
 
 const Top = styled.section`
@@ -25,16 +25,16 @@ const Top = styled.section`
 `;
 
 const Bottom = styled.section`
-  color: ${p => p.theme.colors.dark};
   padding: ${rem('20px')} 0;
-  font-size: ${rem('14px')};
-  line-height: 1.43;
+  color: ${p => p.theme.colors.dark};
   border-top: 1px solid ${p => p.theme.colors.greyLight};
   border-bottom: 1px solid ${p => p.theme.colors.greyLight};
+  font-size: ${rem('14px')};
+  line-height: 1.43;
 
   a {
-    color: ${p => p.theme.colors.grey};
     display: inline-block;
+    color: ${p => p.theme.colors.grey};
 
     &:hover {
       color: ${p => p.theme.colors.slate};
@@ -46,10 +46,10 @@ const Bottom = styled.section`
   }
 
   @media all and (max-width: 767px) {
-    text-align: center;
-    border: 0;
     padding: 0;
+    border: 0;
     font-size: 13px;
+    text-align: center;
 
     a {
       margin: 8px 0 0 0 !important;
@@ -62,13 +62,13 @@ const Bottom = styled.section`
 `;
 
 const Logo = styled.div`
-  padding: 0 ${rem('2px')};
   margin-bottom: ${rem('30px')};
+  padding: 0 ${rem('2px')};
 `;
 
 const ListWrapper = styled.div`
-  padding: ${rem('10px')} 0;
   margin-bottom: ${rem('25px')};
+  padding: ${rem('10px')} 0;
 
   @media all and (max-width: 767px) {
     padding: 0;
@@ -79,25 +79,25 @@ const ListHeader = styled.h5`
   padding: 0 ${rem('10px')};
 
   @media all and (max-width: 767px) {
-    font-size: 14px;
-    line-height: 1.43;
     margin-bottom: 8px;
     padding-left: 0;
+    font-size: 14px;
+    line-height: 1.43;
   }
 `;
 
 const List = styled.ul`
   margin: 0;
   padding: 0;
-  list-style: none;
+  color: ${p => p.theme.colors.greyBluey};
   font-size: ${rem('16px')};
   font-weight: 600;
   line-height: 1.56;
-  color: ${p => p.theme.colors.greyBluey};
+  list-style: none;
 
   a {
-    color: ${p => p.theme.colors.greyBluey};
     padding: ${rem('5px')} ${rem('10px')};
+    color: ${p => p.theme.colors.greyBluey};
 
     &:hover {
       color: ${p => p.theme.colors.primary};
@@ -113,8 +113,8 @@ const List = styled.ul`
     font-weight: normal;
 
     a {
-      color: ${p => p.theme.colors.grey};
       padding: 3px 0;
+      color: ${p => p.theme.colors.grey};
     }
 
     li + li {
@@ -323,11 +323,11 @@ export default () => (
             © 2018 Lykke, Inc.
           </Col>
           <Col xs={12} sm={6} className="text-right">
-            <Link href="#">
+            <Link href="/privacy-policy">
               <a>Privacy Policy</a>
             </Link>
             <br className="d-md-none" />
-            <Link href="#">
+            <Link href="/terms-and-regulation">
               <a>Terms of Use</a>
             </Link>
           </Col>

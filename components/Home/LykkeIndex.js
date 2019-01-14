@@ -8,17 +8,17 @@ import Link from 'next/link';
 import {Section} from './styled';
 
 export const AccentText = styled.div`
-  font-family: ${p => p.theme.fonts.headings};
-  font-size: ${rem('20px')};
   margin-top: ${rem('10px')};
   margin-bottom: ${rem('25px')};
-  line-height: normal;
+  font-family: ${p => p.theme.fonts.headings};
+  font-size: ${rem('20px')};
   font-weight: 600;
+  line-height: normal;
 
   @media all and (max-width: 767px) {
     margin-top: 0;
-    font-size: 16px;
     margin-bottom: 10px;
+    font-size: 16px;
   }
 `;
 
@@ -42,34 +42,34 @@ export const Image = styled.div`
 `;
 
 export const Hint = styled.div`
-  font-size: ${rem('9px')};
-  line-height: 1.78;
   max-width: 365px;
   margin-left: auto;
   margin-right: auto;
-  color: ${p => p.theme.colors.grey};
   margin-bottom: ${rem('-30px')};
+  color: ${p => p.theme.colors.grey};
+  font-size: ${rem('9px')};
+  line-height: 1.78;
 `;
 
 export const Text = styled.p`
-  line-height: 1.69;
-  color: ${p => p.theme.colors.grey};
   margin-bottom: ${rem('40px')};
+  color: ${p => p.theme.colors.grey};
+  line-height: 1.69;
 `;
 
 export const Title = styled.h2`
+  margin-bottom: ${rem('10px')};
   color: ${p => p.theme.colors.black};
   font-family: ${p => p.theme.fonts.headings};
   font-size: ${rem('60px')};
+  font-weight: 900;
   line-height: ${rem('72px')};
   letter-spacing: -0.02em;
-  font-weight: 900;
-  margin-bottom: ${rem('10px')};
 
   @media all and (max-width: 767px) {
+    margin-bottom: 20px;
     font-size: 46px;
     line-height: 58px;
-    margin-bottom: 20px;
   }
 `;
 

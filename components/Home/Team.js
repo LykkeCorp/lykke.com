@@ -1,14 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import {Grid, Row, Col} from 'react-styled-flexboxgrid';
+import {Grid} from 'react-styled-flexboxgrid';
 import Button from '../Button';
 import getConfig from 'next/config'
 const {publicRuntimeConfig} = getConfig()
 const { WALLET_URL } = publicRuntimeConfig
 
 import {Section, SectionHeader, SectionLink} from './styled';
-
-export const AccentText = styled.div``;
 
 export default () => (
   <Section grey>
