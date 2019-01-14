@@ -43,13 +43,13 @@ export const TermsAndRegulation = props => {
                                 <Link href="#uk"><a>Rules for engaging with Lykke Corp UK</a></Link>
                             </li>
                             <li>
-                                <Link href="#"><a>Rules for trading with Lykke Netherlands</a></Link>
+                                <Link href="#nl"><a>Rules for trading with Lykke Netherlands</a></Link>
                             </li>
                             <li>
-                                <Link href="#"><a>Rules for trading with Lykke Corp AG</a></Link>
+                                <Link href="#ag"><a>Rules for trading with Lykke Corp AG</a></Link>
                             </li>
                             <li>
-                                <Link href="#"><a>Rules for trading with Lykke Vanuatu</a></Link>
+                                <Link href="#vanuatu"><a>Rules for trading with Lykke Vanuatu</a></Link>
                             </li>
                         </List>
                         <h3 id="uk">Rules for engaging with Lykke Corp UK</h3>
@@ -57,7 +57,7 @@ export const TermsAndRegulation = props => {
                         <p>Lykke's general <Link href="/terms-of-use"><TextLink>Terms of Use</TextLink></Link> .</p>
                         <p><Link href="/uk-rulebook"><TextLink noUnderline>The Rulebook</TextLink></Link>, which describes the functionality of trading on the trading venue maintained by Lykke Corp UK.</p>
                         <p><Link href="/privacy-policy"><TextLink noUnderline>The Privacy Policy</TextLink></Link>, which applies for trading on the trading venue maintained by Lykke Corp UK.</p>
-                        <h3>Rules for trading with Lykke Netherlands</h3>
+                        <h3 id="nl">Rules for trading with Lykke Netherlands</h3>
                         <p>The following rules apply to trading with Lykke Netherlands.</p>
                         <List>
                             <ul>
@@ -75,12 +75,12 @@ export const TermsAndRegulation = props => {
                                 </li>
                             </ul>
                         </List>
-                        <h3>Rules for trading with Lykke Corp AG</h3>
+                        <h3 id="ag">Rules for trading with Lykke Corp AG</h3>
                         <p>The following rules apply to trading with Lykke Corp AG.</p>
                         <p>Lykke's general <Link href="/terms-of-use"><TextLink noUnderline>Terms of Use</TextLink></Link>.</p>
                         <p><Link href="/uk-rulebook"><TextLink noUnderline>The Rulebook</TextLink></Link>, which describes the functionality of trading on the trading venue maintained by Lykke Corp UK, applies mutatis mutandis to the functionality and trading by Lykke Corp AG. </p>
                         <p>The privacy policy applicable to trading with Lykke Corp AG is included in Lykke’s general <Link href="/privacy-policy"><TextLink noUnderline>Privacy Policy</TextLink></Link>.</p>
-                        <h3>Rules for trading with Lykke Vanuatu</h3>
+                        <h3 id="vanuatu">Rules for trading with Lykke Vanuatu</h3>
                         <p>The following rules apply to trading with Lykke Vanuatu.</p>
                         <ColumnList>
                             <li>
