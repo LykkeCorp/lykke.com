@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import {Col, Grid, Row} from "react-styled-flexboxgrid";
-import Link from 'next/link';
 
 import { PolicyWrapper, List, TextLink } from "../PrivacyPolicy/styled";
 
