@@ -15,8 +15,8 @@ import Features from '../components/Trade/Features';
 import {SectionHeader} from '../components/Home/styled';
 
 export const Dark = styled.div`
-  background-color: ${p => p.theme.colors.inverse};
   color: ${p => p.theme.colors.white};
+  background-color: ${p => p.theme.colors.inverse};
 
   ${SectionHeader} p,
   .lead {

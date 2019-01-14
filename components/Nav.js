@@ -19,32 +19,25 @@ const Nav = styled.nav`
     left: 0;
     top: 59px;
     right: 0;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
-    z-index: 220;
+    height: ${p => (p.show ? 'calc(100% - 58px)' : 0)};
     background-color: ${p => p.theme.colors.white};
+    overflow: hidden;
+    visibility: ${p => (p.show ? 'visible' : 'hidden')};
+    z-index: 220;
     transition: height ${p => p.theme.transition.primary},
       visibility ${p => p.theme.transition.primary};
 
     .align-items-center {
       margin: 0;
     }
-
-    ${p =>
-      p.show &&
-      css`
-        visibility: visible;
-        height: calc(100% - 58px);
-      `}
   }
 `;
 
 const NavInner = styled.nav`
   @media all and (max-width: 991px) {
+    height: 100%;
     padding: 30px 16px;
     overflow: auto;
-    height: 100%;
   }
 `;
 
@@ -63,8 +56,8 @@ const Logo = styled.div`
     transition: width ${p => p.theme.transition.primary};
 
     img {
-      margin-top: 0;
       width: 94px;
+      margin-top: 0;
     }
 
     .menu-opened & {
@@ -76,12 +69,12 @@ const Logo = styled.div`
 const AccountContainer = styled.div`
   width: 320px;
   max-width: 100%;
-  text-align: center;
   margin-top: 40px;
+  text-align: center;
 
   .justify-content-end {
-    justify-content: flex-start !important;
     flex-direction: column-reverse;
+    justify-content: flex-start !important;
 
     > div {
       flex: 0 0 100%;
@@ -89,8 +82,8 @@ const AccountContainer = styled.div`
 
     a[role='button'] {
       width: 100%;
-      padding: 19px;
       margin-bottom: 20px;
+      padding: 19px;
     }
   }
 
@@ -102,8 +95,8 @@ const AccountContainer = styled.div`
 `;
 
 const NavItemInner = styled.div`
-  font-weight: 600;
   font-size: ${rem('14px')};
+  font-weight: 600;
   text-transform: uppercase;
 `;
 
@@ -111,9 +104,9 @@ const DropdownMenu = styled.div`
   position: absolute;
   right: ${rem('20px')};
   min-width: ${rem('205px')};
+  background-color: ${p => p.theme.colors.white};
   border-radius: ${rem('8px')};
   box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.11);
-  background-color: ${p => p.theme.colors.white};
   opacity: 0;
   visibility: hidden;
   transform: translate3d(0, -10px, 0);
@@ -125,17 +118,17 @@ const DropdownMenu = styled.div`
 `;
 
 const NavItem = styled.div`
-  padding-left: ${rem('4px')};
-  padding-right: ${rem('4px')};
   position: relative;
+  padding-right: ${rem('4px')};
+  padding-left: ${rem('4px')};
 
   a {
     display: block;
-    color: inherit;
-    text-decoration: none;
     padding: ${rem('20px 20px 18px 14px')};
     border: 1px solid transparent;
     border-radius: ${p => p.theme.corners.primary};
+    color: inherit;
+    text-decoration: none;
     transition: all ${p => p.theme.transition.primary};
 
     img {
@@ -188,11 +181,11 @@ const DropdownMenuInner = styled.div`
 
 const DropdownItem = styled.div`
   a {
-    font-size: ${rem('16px')};
+    display: block;
     padding: ${rem('12px 22px')};
+    font-size: ${rem('16px')};
     letter-spacing: -0.2px;
     line-height: normal;
-    display: block;
 
     &:hover {
       color: ${p => p.theme.colors.grey};
@@ -201,16 +194,16 @@ const DropdownItem = styled.div`
 `;
 
 const ButtonMenu = styled(Button)`
-  padding: 4px;
   width: 24px;
   height: 24px;
+  padding: 4px;
 
   span {
+    display: block;
+    top: 50%;
+    margin-top: -1px;
     transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition-duration: 75ms;
-    top: 50%;
-    display: block;
-    margin-top: -1px;
 
     &,
     &:after,
@@ -218,8 +211,8 @@ const ButtonMenu = styled(Button)`
       position: absolute;
       width: 18px;
       height: 2px;
-      border-radius: 4px;
       background-color: ${p => p.theme.colors.primary};
+      border-radius: 4px;
       transition-timing-function: ease;
       transition-duration: 0.15s;
       transition-property: transform;
@@ -247,21 +240,21 @@ const ButtonMenu = styled(Button)`
     p.active &&
     css`
       span {
+        transform: rotate(45deg);
         transition-delay: 0.12s;
         transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-        transform: rotate(45deg);
 
         &:before {
           top: 0;
-          transition: top 75ms ease, opacity 75ms ease 0.12s;
           opacity: 0;
+          transition: top 75ms ease, opacity 75ms ease 0.12s;
         }
 
         &:after {
           bottom: 0;
+          transform: rotate(-90deg);
           transition: bottom 75ms ease,
             transform 75ms cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
-          transform: rotate(-90deg);
         }
       }
     `}
@@ -269,12 +262,12 @@ const ButtonMenu = styled(Button)`
 
 const Caret = styled.span`
   &:after {
-    display: inline-block;
-    margin-left: ${rem('10px')};
-    vertical-align: middle;
+    content: '';
     position: relative;
     top: -1px;
-    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: ${rem('10px')};
     border-top: 0.4em solid;
     border-right: 0.3em solid transparent;
     border-bottom: 0;

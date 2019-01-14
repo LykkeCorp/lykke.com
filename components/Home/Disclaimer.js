@@ -5,9 +5,9 @@ import Link from 'next/link';
 import {rem} from 'polished';
 
 export const Disclaimer = styled.div`
+  color: ${p => p.theme.colors.grey};
   font-size: ${rem('14px')};
   line-height: 1.43;
-  color: ${p => p.theme.colors.grey};
   
   p {
     margin-bottom: .63rem;
@@ -35,13 +35,13 @@ export const Disclaimer = styled.div`
   
   @media all and (min-width: 992px) {
     ${Row} {
-      margin-left: ${rem('-20px')};
       margin-right: ${rem('-20px')};
+      margin-left: ${rem('-20px')};
     }
     
     ${Col} {
-      padding-left: ${rem('20px')};
       padding-right: ${rem('20px')}
+      padding-left: ${rem('20px')};
     }
   }
 `;

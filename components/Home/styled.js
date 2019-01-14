@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import {Col, Row} from 'react-styled-flexboxgrid';
 import {rem, placeholder} from 'polished';
 
 export const Section = styled.section`
@@ -33,18 +32,18 @@ export const Section = styled.section`
 `;
 
 export const SectionHeader = styled.div`
-  text-align: center;
   width: ${rem('800px')};
   max-width: 100%;
-  margin-left: auto;
   margin-right: auto;
   margin-bottom: ${rem('42px')};
-  
+  margin-left: auto;
+  text-align: center;
+
   p {
     width: ${rem('590px')};
     max-width: 100%;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
     color: ${p => p.theme.colors.grey};
   }
 `;

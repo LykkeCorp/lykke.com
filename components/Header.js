@@ -6,20 +6,20 @@ import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import {rem} from 'polished';
 
 const Header = styled.header`
-  flex-shrink: 0;
   padding-top: ${rem('22px')};
   padding-bottom: ${rem('22px')};
+  flex-shrink: 0;
   z-index: 200;
   
   @media all and (max-width: 991px) {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid ${p => p.theme.colors.greyLight};
-    background-color: ${p => p.theme.colors.white};
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: ${p => p.theme.colors.white};
+    border-bottom: 1px solid ${p => p.theme.colors.greyLight};
   }
 `;
 
