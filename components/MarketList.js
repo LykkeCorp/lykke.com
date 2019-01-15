@@ -8,6 +8,8 @@ import getConfig from 'next/config'
 const {publicRuntimeConfig} = getConfig()
 const { SELF_URL, BASE_API_URL} = publicRuntimeConfig
 
+import axios from '../axios'
+
 const MarketList = styled.div`
   min-height: ${rem('50px')};
   padding-top: ${rem('9px')};
@@ -119,6 +121,24 @@ export default class extends Component {
   };
 
   componentDidMount() {
+    axios.get('/markets')
+        .then(res => {
+            let lyci = res.data.findIndex(x => x.AssetPair === 'LyCI');
+            let quotes = [];
+            for (let i = 0; i < config.PRODUCTS.length; i++) {
+                const {ticker, name} = config.PRODUCTS[i];
+                const idx = res.data.findIndex(x => x.AssetPair === ticker);
+                if (idx > -1) {
+                    quotes.push({
+                        ...mapToProduct(res.data[idx]),
+                        name
+                    });
+                }
+            }
+            this.setState({
+                quotes
+            });
+        });
     Promise.all([
       fetch(`${BASE_API_URL}/markets`),
       fetch(`${SELF_URL}/api/products/lyci`)
@@ -126,19 +146,6 @@ export default class extends Component {
       .then(responses => Promise.all(responses.map(r => r.json())))
       .then(([rawQuotes, lyci]) => {
         let quotes = [mapToProduct(lyci)];
-        for (let i = 0; i < config.PRODUCTS.length; i++) {
-          const {ticker, name} = config.PRODUCTS[i];
-          const idx = rawQuotes.findIndex(x => x.AssetPair === ticker);
-          if (idx > -1) {
-            quotes.push({
-              ...mapToProduct(rawQuotes[idx]),
-              name
-            });
-          }
-        }
-        this.setState({
-          quotes
-        });
       });
   }
 
