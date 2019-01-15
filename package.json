@@ -8,6 +8,7 @@
     "export": "npm run build && next export"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "isomorphic-unfetch": "^3.0.0",
