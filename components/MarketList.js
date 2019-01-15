@@ -3,10 +3,9 @@ import styled, {css} from 'styled-components';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import {rem} from 'polished';
 import config from '../config';
-import fetch from 'isomorphic-unfetch';
 import getConfig from 'next/config'
 const {publicRuntimeConfig} = getConfig()
-const { SELF_URL, BASE_API_URL} = publicRuntimeConfig
+const { LYCI_ASSET_INDEX } = publicRuntimeConfig
 
 import axios from '../axios'
 
@@ -117,41 +116,48 @@ export const mapToProduct = x => ({
 
 export default class extends Component {
   state = {
-    quotes: []
+    quotes: [],
+    lyci: {
+        ticker: 'LCI',
+        price: 0,
+        change: 0
+    }
   };
 
   componentDidMount() {
-    axios.get('/markets')
-        .then(res => {
-            let lyci = res.data.findIndex(x => x.AssetPair === 'LyCI');
-            let quotes = [];
-            for (let i = 0; i < config.PRODUCTS.length; i++) {
-                const {ticker, name} = config.PRODUCTS[i];
-                const idx = res.data.findIndex(x => x.AssetPair === ticker);
-                if (idx > -1) {
-                    quotes.push({
-                        ...mapToProduct(res.data[idx]),
-                        name
-                    });
-                }
-            }
-            this.setState({
-                quotes
-            });
-        });
-    Promise.all([
-      fetch(`${BASE_API_URL}/markets`),
-      fetch(`${SELF_URL}/api/products/lyci`)
-    ])
-      .then(responses => Promise.all(responses.map(r => r.json())))
-      .then(([rawQuotes, lyci]) => {
-        let quotes = [mapToProduct(lyci)];
-      });
+      Promise.all([
+        axios.get(`/indices/${LYCI_ASSET_INDEX}`),
+        axios.get('/markets')
+      ])
+          .then(([lyci, markets]) => {
+              this.setState({
+                  lyci: {
+                      ...this.state.lyci,
+                      price: lyci.data.Value,
+                      change: lyci.data.Return5D
+                  }
+              });
+              let quotes = [];
+              for (let i = 0; i < config.PRODUCTS.length; i++) {
+                  const {ticker, name} = config.PRODUCTS[i];
+                  const idx = markets.data.findIndex(x => x.AssetPair === ticker);
+                  if (idx > -1) {
+                      quotes.push({
+                          ...mapToProduct(markets.data[idx]),
+                          name
+                      });
+                  }
+              }
+              this.setState({
+                  quotes
+              });
+          });
   }
 
   render() {
     const {
-      quotes: [lyci, ...rest]
+      quotes: [...rest],
+      lyci
     } = this.state;
     return (
       <MarketList>

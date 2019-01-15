@@ -193,19 +193,21 @@ export default ({lyci: {weights}}) => (
               <Row>
                 <Col xs={12} sm={6}>
                   <table>
+                    <tbody>
                     {weights &&
-                      Object.keys(weights)
+                    Object.keys(weights)
                         .slice(0, 12)
                         .map(k => (
-                          <tr>
-                            <td>{k}</td>
-                            <td>
-                              {weights[k].toLocaleString(undefined, {
-                                style: 'percent'
-                              })}
-                            </td>
-                          </tr>
+                            <tr key={k}>
+                                <td>{k}</td>
+                                <td>
+                                    {weights[k].toLocaleString(undefined, {
+                                        style: 'percent'
+                                    })}
+                                </td>
+                            </tr>
                         ))}
+                    </tbody>
                   </table>
                 </Col>
                 <Col xs={12} sm={6}>
