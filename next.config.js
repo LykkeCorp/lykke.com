@@ -9,8 +9,9 @@ module.exports = {
   },
   publicRuntimeConfig: {
       SELF_URL: process.env.SELF_URL || 'http://localhost:3000',
-      BASE_API_URL: process.env.BASE_API_URL || 'https://apiv2.lykke.com/api',
+      BASE_API_URL: process.env.BASE_API_URL || 'https://apiv2-dev.lykkex.net/api',
       WALLET_URL: process.env.WALLET_URL || 'https://wallet.lykke.com',
-      TERMINAL_URL: process.env.TERMINAL_URL || 'https://trade.lykke.com'
+      TERMINAL_URL: process.env.TERMINAL_URL || 'https://trade.lykke.com',
+      LYCI_ASSET_INDEX: process.env.LYCI_ASSET_INDEX || 1
   }
 }

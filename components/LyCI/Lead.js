@@ -130,42 +130,48 @@ export default ({lyci}) => (
           <Info>
             <InfoTitle className="d-none d-md-block">Key Numbers</InfoTitle>
             <InfoTable>
+              <tbody>
               <tr>
-                <td>Current Value</td>
-                <td>{lyci.price}</td>
+                  <td>Current Value</td>
+                  <td>{lyci.price}</td>
               </tr>
               <tr>
-                <td>Return</td>
-                <td className="text-green">+2.30%</td>
+                  <td>Return</td>
+                  <td className="text-green">+2.30%</td>
               </tr>
               <tr>
-                <td>5 day return</td>
-                <td className="text-green">+2.30%</td>
+                  <td>5 day return</td>
+                  <td className="text-green">+2.30%</td>
               </tr>
               <tr>
-                <td>1 month return</td>
-                <td className="text-red">-2.30%</td>
+                  <td>1 month return</td>
+                  <td className="text-red">-2.30%</td>
               </tr>
+              </tbody>
             </InfoTable>
             <InfoTable>
-              <tr>
-                <td>24h Max</td>
-                <td>1112.34</td>
-              </tr>
-              <tr>
-                <td>24h Min</td>
-                <td>1112.34</td>
-              </tr>
+              <tbody>
+                <tr>
+                    <td>24h Max</td>
+                    <td>1112.34</td>
+                </tr>
+                <tr>
+                    <td>24h Min</td>
+                    <td>1112.34</td>
+                </tr>
+              </tbody>
             </InfoTable>
             <InfoTable>
-              <tr>
-                <td>24h Vol</td>
-                <td>22.12%</td>
-              </tr>
-              <tr>
-                <td>30d Vol</td>
-                <td>31.34%</td>
-              </tr>
+              <tbody>
+                <tr>
+                    <td>24h Vol</td>
+                    <td>22.12%</td>
+                </tr>
+                <tr>
+                    <td>30d Vol</td>
+                    <td>31.34%</td>
+                </tr>
+              </tbody>
             </InfoTable>
           </Info>
         </Col>
