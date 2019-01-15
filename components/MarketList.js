@@ -179,10 +179,11 @@ export default class extends Component {
                       </Col>
                       <Col className="clear-height">
                         <Label dir={lyci.change > 0 ? 'up' : 'down'}>
-                          {lyci.change.toLocaleString(undefined, {
-                            style: 'percent',
-                            minimumFractionDigits: 2
-                          })}
+                            {lyci.change} %
+                          {/*{lyci.change.toLocaleString(undefined, {*/}
+                            {/*style: 'percent',*/}
+                            {/*minimumFractionDigits: 2*/}
+                          {/*})}*/}
                         </Label>
                       </Col>
                     </Row>

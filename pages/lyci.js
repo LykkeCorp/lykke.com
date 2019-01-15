@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import fetch from 'isomorphic-unfetch';
+import axios from '../axios'
 
 import Head from '../components/Head';
 import Lead from '../components/LyCI/Lead';
@@ -8,24 +8,22 @@ import Documentation from '../components/LyCI/Documentation';
 
 import getConfig from 'next/config'
 const {publicRuntimeConfig} = getConfig()
-const { SELF_URL } = publicRuntimeConfig
+const { LYCI_ASSET_INDEX } = publicRuntimeConfig
 import {mapToProduct} from '../components/MarketList';
 
 class LyCI extends Component {
   state = {
-    lyci: {}
+    lyci: {
+
+    }
   };
 
   componentDidMount() {
-    fetch(`${SELF_URL}/api/products/lyci`)
-      .then(r => r.json())
-      .then(json => {
+    axios.get(`/indices/${LYCI_ASSET_INDEX}`)
+      .then(res => {
         this.setState({
-          lyci: {
-            ...mapToProduct(json),
-            weights: json.Weights
-          }
-        });
+            lyci: res.data
+        })
       });
   }
 
