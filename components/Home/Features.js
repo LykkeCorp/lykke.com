@@ -229,7 +229,7 @@ export default class extends Component {
                     </AccordionIcon>
                     <AccordionContent>
                       <AccordionTitle>
-                        Easily buy the world's top trending crypto
+                        Easily buy the world&rsquo;s top trending crypto
                       </AccordionTitle>
                       <AccordionText>
                         Become a part of the future of finance. Buy your first
