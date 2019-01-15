@@ -1,6 +1,7 @@
 import App, {Container} from 'next/app';
 import React from 'react';
 import {ThemeProvider} from 'styled-components';
+import TagManager from 'react-gtm-module';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import MarketList from '../components/MarketList';
@@ -46,6 +47,15 @@ export default class LykkeApp extends App {
     return {
       pageProps
     };
+  }
+
+  componentDidMount() {
+    if (process.env.NODE_ENV === 'production') {
+      const tagManagerArgs = {
+        gtmId: 'GTM-5ZXBJWR'
+      };
+      TagManager.initialize(tagManagerArgs);
+    }
   }
 
   render() {
