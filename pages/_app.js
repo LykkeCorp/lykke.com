@@ -28,7 +28,7 @@ const Main = styled.main`
 
 const Layout = ({quotes, children}) => (
   <Wrapper>
-    <MarketList />
+    <MarketList quotes={quotes} />
     <Header />
     <Main>{children}</Main>
     <Footer />
