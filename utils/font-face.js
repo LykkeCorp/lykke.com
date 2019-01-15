@@ -7,7 +7,7 @@ const GlobalFontFace = createGlobalStyle`
   ${fontFace({
       'fontFamily': 'Proxima Nova',
       'fontWeight': '200',
-      'fontFilePath': 'static/fonts/ProximaNovaThin',
+      'fontFilePath': '/static/fonts/ProximaNovaThin',
       'fileFormats': ['eot','woff','ttf','svg']
     }
   )}
@@ -15,7 +15,7 @@ const GlobalFontFace = createGlobalStyle`
   ${fontFace({
       'fontFamily': 'Proxima Nova',
       'fontWeight': '300',
-      'fontFilePath': 'static/fonts/ProximaNova-Light',
+      'fontFilePath': '/static/fonts/ProximaNova-Light',
       'fileFormats': ['eot','woff','ttf','svg']
     }
   )}
@@ -23,7 +23,7 @@ const GlobalFontFace = createGlobalStyle`
   ${fontFace({
       'fontFamily': 'Proxima Nova',
       'fontWeight': '400',
-      'fontFilePath': 'static/fonts/ProximaNova-Regular',
+      'fontFilePath': '/static/fonts/ProximaNova-Regular',
       'fileFormats': ['eot','woff','ttf','svg']
     }
   )}
@@ -31,7 +31,7 @@ const GlobalFontFace = createGlobalStyle`
   ${fontFace({
       'fontFamily': 'Proxima Nova',
       'fontWeight': '600',
-      'fontFilePath': 'static/fonts/ProximaNova-Semibold',
+      'fontFilePath': '/static/fonts/ProximaNova-Semibold',
       'fileFormats': ['eot','woff','ttf','svg']
     }
   )}
@@ -39,7 +39,7 @@ const GlobalFontFace = createGlobalStyle`
   ${fontFace({
       'fontFamily': 'Proxima Nova',
       'fontWeight': '700',
-      'fontFilePath': 'static/fonts/ProximaNova-Bold',
+      'fontFilePath': '/static/fonts/ProximaNova-Bold',
       'fileFormats': ['eot','woff','ttf','svg']
     }
   )}
@@ -47,7 +47,7 @@ const GlobalFontFace = createGlobalStyle`
   ${fontFace({
       'fontFamily': 'Proxima Nova',
       'fontWeight': '900',
-      'fontFilePath': 'static/fonts/ProximaNova-Black',
+      'fontFilePath': '/static/fonts/ProximaNova-Black',
       'fileFormats': ['eot','woff','ttf','svg']
     }
   )}
@@ -57,7 +57,7 @@ const GlobalFontFace = createGlobalStyle`
   ${fontFace({
       'fontFamily': 'Akrobat',
       'fontWeight': '400',
-      'fontFilePath': 'static/fonts/Akrobat-Regular',
+      'fontFilePath': '/static/fonts/Akrobat-Regular',
       'fileFormats': ['eot','woff','ttf','svg']
     }
   )}
@@ -65,7 +65,7 @@ const GlobalFontFace = createGlobalStyle`
   ${fontFace({
       'fontFamily': 'Akrobat',
       'fontWeight': '600',
-      'fontFilePath': 'static/fonts/Akrobat-SemiBold',
+      'fontFilePath': '/static/fonts/Akrobat-SemiBold',
       'fileFormats': ['eot','woff','ttf','svg']
     }
   )}
@@ -73,7 +73,7 @@ const GlobalFontFace = createGlobalStyle`
   ${fontFace({
       'fontFamily': 'Akrobat',
       'fontWeight': '700',
-      'fontFilePath': 'static/fonts/Akrobat-Bold',
+      'fontFilePath': '/static/fonts/Akrobat-Bold',
       'fileFormats': ['eot','woff','ttf','svg']
     }
   )}
@@ -81,7 +81,7 @@ const GlobalFontFace = createGlobalStyle`
   ${fontFace({
       'fontFamily': 'Akrobat',
       'fontWeight': '900',
-      'fontFilePath': 'static/fonts/akrobat-black',
+      'fontFilePath': '/static/fonts/akrobat-black',
       'fileFormats': ['eot','woff','ttf','svg']
     }
   )}
