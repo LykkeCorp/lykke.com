@@ -86,6 +86,39 @@ export const Gradient = styled.div`
   margin-top: ${rem('-10px')};
 `;
 
+export const List = styled.div``;
+
+export const ListItem = styled.div`
+  margin-bottom: 30px;
+  overflow: hidden;
+`;
+
+export const ListColor = styled.div`
+  float: left;
+  width: 13px;
+  height: 48px;
+  margin-right: 10px;
+  background-color: ${p => p.theme.colors.greyLight};
+  border-radius: 10px;
+`;
+
+export const ListContent = styled.div`
+  overflow: hidden;
+  padding-top: 5px;
+`;
+
+export const ListTitle = styled.div`
+ color: ${p => p.theme.colors.black};
+ font-size: 23px;
+ line-height: normal;
+`;
+
+export const ListDesc = styled.div`
+  color: ${p => p.theme.colors.grey};
+  font-size: 16px;
+  line-height: normal;
+`;
+
 export default () => (
   <Wrapper grey>
     <Grid className="container">
@@ -97,6 +130,72 @@ export default () => (
             <span>Buy them all with</span>
             <Gradient>Lykke Index</Gradient>
           </Title>
+
+          <List as={Row} className="d-md-none">
+            <ListItem as={Col} xs={4}>
+              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #3023ae, #c86dd7)'}}/>
+              <ListContent>
+                <ListTitle>57.8%</ListTitle>
+                <ListDesc>BTC</ListDesc>
+              </ListContent>
+            </ListItem>
+            <ListItem as={Col} xs={4}>
+              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #ae23a1, #d76d6d)'}}/>
+              <ListContent>
+                <ListTitle>11.3%</ListTitle>
+                <ListDesc>ETH</ListDesc>
+              </ListContent>
+            </ListItem>
+            <ListItem as={Col} xs={4}>
+              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #2399ae, #6dd0d7)'}}/>
+              <ListContent>
+                <ListTitle>11.1%</ListTitle>
+                <ListDesc>XRP</ListDesc>
+              </ListContent>
+            </ListItem>
+            <ListItem as={Col} xs={4}>
+              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #ff4121, #e4b086)'}}/>
+              <ListContent>
+                <ListTitle>5.1%</ListTitle>
+                <ListDesc>BCH</ListDesc>
+              </ListContent>
+            </ListItem>
+            <ListItem as={Col} xs={4}>
+              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #2a70c0, #00bb80)'}}/>
+              <ListContent>
+                <ListTitle>2.6%</ListTitle>
+                <ListDesc>EOS</ListDesc>
+              </ListContent>
+            </ListItem>
+            <ListItem as={Col} xs={4}>
+              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #c03f2a, #bb008a)'}}/>
+              <ListContent>
+                <ListTitle>2.5%</ListTitle>
+                <ListDesc>XLM</ListDesc>
+              </ListContent>
+            </ListItem>
+            <ListItem as={Col} xs={4}>
+              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #2aa3c0, #bb008a)'}}/>
+              <ListContent>
+                <ListTitle>1.7%</ListTitle>
+                <ListDesc>LTC</ListDesc>
+              </ListContent>
+            </ListItem>
+            <ListItem as={Col} xs={4}>
+              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #ffb300, #bb7500)'}}/>
+              <ListContent>
+                <ListTitle>1.1%</ListTitle>
+                <ListDesc>ADA</ListDesc>
+              </ListContent>
+            </ListItem>
+            <ListItem as={Col} xs={4}>
+              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #23ae77, #6d7bd7)'}}/>
+              <ListContent>
+                <ListTitle>6.8%</ListTitle>
+                <ListDesc>Other</ListDesc>
+              </ListContent>
+            </ListItem>
+          </List>
 
           <Text>
             LyCI&nbsp;is a&nbsp;weighted index that consolidates and tracks

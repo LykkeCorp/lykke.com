@@ -317,19 +317,20 @@ export default class extends Component {
                   <SliderImage
                     src="/static/images/phone-01.png"
                     alt=""
-                    width="467px"
+                    height="571px"
+                    style={{marginLeft: '-20px'}}
                     active={this.state.selectedIndex === 0}
                   />
                   <SliderImage
                     src="/static/images/phone-02.png"
                     alt=""
-                    width="467px"
+                    height="571px"
                     active={this.state.selectedIndex === 1}
                   />
                   <SliderImage
                     src="/static/images/phone-03.png"
                     alt=""
-                    width="467px"
+                    height="571px"
                     active={this.state.selectedIndex === 2}
                   />
                 </SliderImages>
