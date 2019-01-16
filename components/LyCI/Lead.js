@@ -85,97 +85,105 @@ export const LeadText = styled.p`
   font-size: ${rem('16px')} !important;
 `;
 
-export default ({lyci}) => (
-  <Section>
-    <Grid className="container">
-      <Row className="justify-content-between">
-        <Col xs={12} sm={7} md={6}>
-          <h1>Lykke Crypto Index (LyCI)</h1>
-          <LeadText className="lead">
-            An index tracking the financial performance of the top 25
-            cryptocurrencies.
-          </LeadText>
+export const TableData = styled.td`
+  color: ${p => p.green ? p.theme.colors.green : p.theme.colors.red}
+`
 
-          <Value>
-            <Row className="align-items-center">
-              <Col className="d-md-none">
-                <ValueAccent>LyCI</ValueAccent>
-              </Col>
-              <Col>
-                <ValueAccent>{lyci.price}</ValueAccent>
-              </Col>
-              {lyci.change && (
-                <Col>
-                  <Label dir={lyci.change > 0 ? 'up' : 'down'} big>
-                    {lyci.change.toLocaleString(undefined, {
-                      style: 'percent',
-                      minimumFractionDigits: 2
-                    })}
-                  </Label>
-                </Col>
-              )}
-              {lyci.change && (
-                <Col>
-                  <ValueText>
-                    <span>24 hour change</span> {new Date().toLocaleString()}
-                  </ValueText>
-                </Col>
-              )}
-            </Row>
-          </Value>
+export default ({lyci}) => {
+    return (
+        <Section>
+            <Grid className="container">
+                <Row className="justify-content-between">
+                    <Col xs={12} sm={7} md={6}>
+                        <h1>Lykke Crypto Index (LyCI)</h1>
+                        <LeadText className="lead">
+                            An index tracking the financial performance of the top 25
+                            cryptocurrencies.
+                        </LeadText>
 
-          <Graph />
-        </Col>
-        <Col xs={12} sm={5} md={4}>
-          <Info>
-            <InfoTitle className="d-none d-md-block">Key Numbers</InfoTitle>
-            <InfoTable>
-              <tbody>
-              <tr>
-                  <td>Current Value</td>
-                  <td>{lyci.price}</td>
-              </tr>
-              <tr>
-                  <td>Return</td>
-                  <td className="text-green">+2.30%</td>
-              </tr>
-              <tr>
-                  <td>5 day return</td>
-                  <td className="text-green">+2.30%</td>
-              </tr>
-              <tr>
-                  <td>1 month return</td>
-                  <td className="text-red">-2.30%</td>
-              </tr>
-              </tbody>
-            </InfoTable>
-            <InfoTable>
-              <tbody>
-                <tr>
-                    <td>24h Max</td>
-                    <td>1112.34</td>
-                </tr>
-                <tr>
-                    <td>24h Min</td>
-                    <td>1112.34</td>
-                </tr>
-              </tbody>
-            </InfoTable>
-            <InfoTable>
-              <tbody>
-                <tr>
-                    <td>24h Vol</td>
-                    <td>22.12%</td>
-                </tr>
-                <tr>
-                    <td>30d Vol</td>
-                    <td>31.34%</td>
-                </tr>
-              </tbody>
-            </InfoTable>
-          </Info>
-        </Col>
-      </Row>
-    </Grid>
-  </Section>
-);
+                        <Value>
+                            <Row className="align-items-center">
+                                <Col className="d-md-none">
+                                    <ValueAccent>LyCI</ValueAccent>
+                                </Col>
+                                <Col>
+                                    <ValueAccent>{lyci.Value}</ValueAccent>
+                                </Col>
+                                {lyci.Return5D && (
+                                    <Col>
+                                        <Label dir={lyci.Return5D > 0 ? 'up' : 'down'} big>
+                                            {lyci.Return5D} %
+                                        </Label>
+                                    </Col>
+                                )}
+                                {lyci.Return5D && (
+                                    <Col>
+                                        <ValueText>
+                                            <span>24 hour change</span> {new Date().toLocaleString()}
+                                        </ValueText>
+                                    </Col>
+                                )}
+                            </Row>
+                        </Value>
+
+                        <Graph/>
+                    </Col>
+                    <Col xs={12} sm={5} md={4}>
+                        <Info>
+                            <InfoTitle className="d-none d-md-block">Key Numbers</InfoTitle>
+                            <InfoTable>
+                                <tbody>
+                                <tr>
+                                    <td>Current Value</td>
+                                    <td>{lyci.Value}</td>
+                                </tr>
+                                <tr>
+                                    <td>Return</td>
+                                    <TableData green={lyci.Return24H > 0}
+                                               className="text-green">{lyci.Return24H} %</TableData>
+                                </tr>
+                                <tr>
+                                    <td>5 day return</td>
+                                    <TableData green={lyci.Return5D > 0}>{lyci.Return5D} %</TableData>
+                                </tr>
+                                <tr>
+                                    <td>1 month return</td>
+                                    <TableData green={lyci.Return30D > 0}>{lyci.Return30D} %</TableData>
+                                </tr>
+                                </tbody>
+                            </InfoTable>
+                            <InfoTable>
+                                <tbody>
+                                <tr>
+                                    <td>24h Max</td>
+                                    <td>{lyci.Max24H}</td>
+                                </tr>
+                                <tr>
+                                    <td>24h Min</td>
+                                    <td>{lyci.Min24H}</td>
+                                </tr>
+                                </tbody>
+                            </InfoTable>
+                            <InfoTable>
+                                <tbody>
+                                <tr>
+                                    <td>24h Vol</td>
+                                    <td>
+                                        {(lyci.Volatility24H * 100).toFixed(2)} %
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>30d Vol</td>
+                                    <td>
+                                        {(lyci.Volatility30D * 100).toFixed(2)} %
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </InfoTable>
+                        </Info>
+                    </Col>
+                </Row>
+            </Grid>
+        </Section>
+    );
+}

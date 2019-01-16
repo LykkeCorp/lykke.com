@@ -107,7 +107,7 @@ export default () => (
 
           <ButtonContainer>
             <Link href="/lyci">
-              <Button bordered>Learn more about Lykke Index</Button>
+              <Button href="/lyci" bordered>Learn more about Lykke Index</Button>
             </Link>
           </ButtonContainer>
         </Col>
@@ -117,7 +117,7 @@ export default () => (
           </Image>
           <Hint>
             At the time of writing the cryptocurrencies with the highest market
-            cap and corresponding weights are (data from coinmarketcap):
+            cap and corresponding weights are data from coinmarketcap
           </Hint>
         </Col>
       </Row>
