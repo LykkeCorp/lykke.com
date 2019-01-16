@@ -2,13 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import {rem} from 'polished';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
-import {Line} from 'react-chartjs-2'
-import moment from 'moment'
-
-import { CHART_DATA, CHART_OPTIONS } from '../../config'
 
 import {Lead} from '../Home/Lead';
 import {Label} from '../MarketList';
+
+import Chart from './Chart'
+
 
 const Section = styled(Lead)`
   @media all and (max-width: 767px) {
@@ -94,10 +93,7 @@ export const TableData = styled.td`
 `
 
 export default ({lyci, lyciChart}) => {
-    const dates = lyciChart.map(i => i.dt);
-    const data = lyciChart.map(i => i.v);
-    const chartData = CHART_DATA(dates, data, 'rgb(19,183,42)');
-    const chartOptions = CHART_OPTIONS;
+
     return (
         <Section>
             <Grid className="container">
@@ -134,7 +130,7 @@ export default ({lyci, lyciChart}) => {
                             </Row>
                         </Value>
                         <Graph>
-                            <Line data={chartData} options={chartOptions}/>
+                            <Chart lyciChart={lyciChart}/>
                         </Graph>
                     </Col>
                     <Col xs={12} sm={5} md={4}>

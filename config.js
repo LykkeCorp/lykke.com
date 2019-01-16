@@ -29,13 +29,12 @@ const CHART_OPTIONS = {
     bezierCurve : false,
     scales: {
         xAxes: [{
-            type: 'time',
             gridLines: {
                 display:false
             },
             ticks: {
                 autoSkip: true,
-                maxTicksLimit: 4
+                maxTicksLimit: 5
             }
         }],
         yAxes: [{
