@@ -29,7 +29,6 @@ const StyledTab = styled(Tab).attrs({
 `;
 
 export default ({ lyciChart }) => {
-    console.log("Chart: ", lyciChart);
     const dates24h = lyciChart.hours24.map(i => moment(i.dt).format('LT'));
     const data24h = lyciChart.hours24.map(i => i.v);
     const chartData24h = CHART_DATA(dates24h, data24h, 'rgb(19,183,42)');
