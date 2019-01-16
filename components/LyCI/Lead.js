@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import {rem} from 'polished';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
+import {Line} from 'react-chartjs-2'
+import moment from 'moment'
+
+import { CHART_DATA, CHART_OPTIONS } from '../../config'
 
 import {Lead} from '../Home/Lead';
 import {Label} from '../MarketList';
@@ -89,7 +93,11 @@ export const TableData = styled.td`
   color: ${p => p.green ? p.theme.colors.green : p.theme.colors.red}
 `
 
-export default ({lyci}) => {
+export default ({lyci, lyciChart}) => {
+    const dates = lyciChart.map(i => i.dt);
+    const data = lyciChart.map(i => i.v);
+    const chartData = CHART_DATA(dates, data, 'rgb(19,183,42)');
+    const chartOptions = CHART_OPTIONS;
     return (
         <Section>
             <Grid className="container">
@@ -125,8 +133,9 @@ export default ({lyci}) => {
                                 )}
                             </Row>
                         </Value>
-
-                        <Graph/>
+                        <Graph>
+                            <Line data={chartData} options={chartOptions}/>
+                        </Graph>
                     </Col>
                     <Col xs={12} sm={5} md={4}>
                         <Info>

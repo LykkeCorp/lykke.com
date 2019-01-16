@@ -13,9 +13,8 @@ import {mapToProduct} from '../components/MarketList';
 
 class LyCI extends Component {
   state = {
-    lyci: {
-
-    }
+    lyci: {},
+    lyciChart: []
   };
 
   componentDidMount() {
@@ -25,17 +24,23 @@ class LyCI extends Component {
             lyci: res.data
         })
       });
+    axios.get(`/indices/${LYCI_ASSET_INDEX}/history/Hour24`)
+        .then(res => {
+            this.setState({
+                lyciChart: res.data
+            })
+        })
   }
 
   render() {
-    const {lyci} = this.state;
+    const {lyci, lyciChart} = this.state;
     return (
       <>
         <Head
           title="Lykke – Buy and sell cryptocurrency and digital assets"
           description="Global marketplace for any kind of assets built on the top of blockchain technology"
         />
-        <Lead lyci={lyci} />
+        <Lead lyci={lyci} lyciChart={lyciChart}/>
         <Invest />
         {lyci && <Documentation lyci={lyci} />}
       </>
