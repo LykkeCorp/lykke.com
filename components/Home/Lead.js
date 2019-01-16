@@ -48,7 +48,7 @@ export const Image = styled.div`
   user-select: none;
 
   @media all and (max-width: 767px) {
-    margin: 0 0 0 -265px;
+    margin: -15px 0 5px -185px;
 
     img {
       max-width: 100%;
@@ -173,12 +173,12 @@ export default () => (
           <Image>
             <img
               src="/static/images/hero-mobile.jpg"
-              width={411}
+              width="502px"
               className="d-md-none"
             />
             <img
               src="/static/images/hero.jpg"
-              width={778}
+              width="778px"
               className="d-none d-md-block"
             />
           </Image>
