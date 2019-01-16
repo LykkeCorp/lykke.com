@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import Button from '../Button'
 import {rem} from 'polished';
@@ -71,10 +72,15 @@ export default () => (
       <Row className="justify-content-center">
         <Col xs={12} sm={8} md={6}>
           <Card>
-            <CardTitle>Invest in the Lykke Crypto Index</CardTitle>
-            <CardText className="d-none d-md-block">Lorem ipsum dolor sit maet conpqcccqut maris dis nass.</CardText>
-            <CardAction><Button href="#">Invest now</Button></CardAction>
-            <CardHint>Please read full <a href="#">Risk Disclosure</a>.</CardHint>
+            <CardTitle>25&nbsp;Cryptos&nbsp;&mdash; One click</CardTitle>
+            <CardText className="d-none d-md-block">Don&rsquo;t put all your eggs in&nbsp;one basket.</CardText>
+            <CardAction><Button href="#">Start now</Button></CardAction>
+            <CardHint>
+              Please read full&nbsp;
+              <Link href="/privacy-policy">
+                <a>Risk Disclosure</a>
+              </Link>.
+            </CardHint>
           </Card>
         </Col>
       </Row>
