@@ -38,7 +38,6 @@ export const Text = styled.div`
   }
 
   h5 {
-    margin-bottom: ${rem('30px')};
     color: ${p => p.theme.colors.grey};
     font-size: ${rem('16px')};
     font-weight: 600;
@@ -85,6 +84,7 @@ export const Text = styled.div`
 const CustomGutter = styled.div`
   table {
     max-width: 170px;
+    margin-top: ${rem('15px')};
   }
 
   @media all and (min-width: 992px) {
@@ -189,18 +189,15 @@ export default ({lyci}) => {
                                 market cap and corresponding weights are (data from
                                 coinmarketcap):
                             </p>
-                            <img
+                            {/*<img
                                 src="/static/images/luci-diagram.png"
                                 width={512}
                                 alt="diagram"
-                            />
+                            />*/}
                             <h4>Specification</h4>
                             <p>
-                                If you want to know more details about LyCI, you can download the
-                                index specification document:
-                            </p>
-                            <p>
-                                <a href="">LyCI - Specification-3.pdf</a>
+                                If you want to know more details about LyCI, you can download
+                                the <a href="#">index specification document</a>.
                             </p>
 
                             <h5>Constituents:</h5>
@@ -216,6 +213,9 @@ export default ({lyci}) => {
                                     </Col>
                                 </Row>
                             </CustomGutter>
+
+                            <h5>Service Fee</h5>
+                            <p>1.45% p.a. deducted from the basket value on a minute-by-minute basis.</p>
                         </Col>
                     </Row>
                 </Grid>

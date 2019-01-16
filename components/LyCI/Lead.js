@@ -6,6 +6,9 @@ import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import {Lead} from '../Home/Lead';
 import {Label} from '../MarketList';
 
+import Chart from './Chart'
+
+
 const Section = styled(Lead)`
   @media all and (max-width: 767px) {
     padding-bottom: 20px;
@@ -89,7 +92,8 @@ export const TableData = styled.td`
   color: ${p => p.green ? p.theme.colors.green : p.theme.colors.red}
 `
 
-export default ({lyci}) => {
+export default ({lyci, lyciChart}) => {
+
     return (
         <Section>
             <Grid className="container">
@@ -125,8 +129,9 @@ export default ({lyci}) => {
                                 )}
                             </Row>
                         </Value>
-
-                        <Graph/>
+                        <Graph>
+                            <Chart lyciChart={lyciChart}/>
+                        </Graph>
                     </Col>
                     <Col xs={12} sm={5} md={4}>
                         <Info>

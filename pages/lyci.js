@@ -13,29 +13,42 @@ import {mapToProduct} from '../components/MarketList';
 
 class LyCI extends Component {
   state = {
-    lyci: {
-
+    lyci: {},
+    lyciChart: {
+        hours24: [],
+        days5: [],
+        days30: []
     }
   };
 
   componentDidMount() {
-    axios.get(`/indices/${LYCI_ASSET_INDEX}`)
-      .then(res => {
+    Promise.all([
+        axios.get(`/indices/${LYCI_ASSET_INDEX}`),
+        axios.get(`/indices/${LYCI_ASSET_INDEX}/history/Hour24`),
+        axios.get(`/indices/${LYCI_ASSET_INDEX}/history/Day5`),
+        axios.get(`/indices/${LYCI_ASSET_INDEX}/history/Day30`),
+    ]).then(([lyciData, chart24h, chart5d, chart30d]) => {
         this.setState({
-            lyci: res.data
+            lyci: lyciData.data,
+            lyciChart: {
+                ...this.state.lyciChart,
+                hours24: chart24h.data,
+                days5: chart5d.data,
+                days30: chart30d.data
+            }
         })
-      });
+    })
   }
 
   render() {
-    const {lyci} = this.state;
+    const {lyci, lyciChart} = this.state;
     return (
       <>
         <Head
           title="Lykke – Buy and sell cryptocurrency and digital assets"
           description="Global marketplace for any kind of assets built on the top of blockchain technology"
         />
-        <Lead lyci={lyci} />
+        <Lead lyci={lyci} lyciChart={lyciChart}/>
         <Invest />
         {lyci && <Documentation lyci={lyci} />}
       </>

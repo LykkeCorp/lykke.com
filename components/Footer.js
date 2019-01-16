@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
@@ -142,197 +142,205 @@ function SocialList(props) {
   return <List>{listItems}</List>;
 }
 
-export default () => (
-  <Footer>
-    <Grid className="container">
-      <Top>
-        <Row>
-          <Col xs={12} md={4}>
-            <Logo className="d-none d-md-block">
-              <Link href="/">
-                <a>
-                  <img src="/static/logo-main.svg" alt="Lykke" width="108px" />
-                </a>
-              </Link>
-            </Logo>
-            <Apps />
-          </Col>
+export default class extends Component {
+  showCurrentYear() {
+    return new Date().getFullYear();
+  }
 
-          <Col xs={12} md={8}>
+  render() {
+    return (
+      <Footer>
+        <Grid className="container">
+          <Top>
             <Row>
-              <Col xs={6} sm={3} md={3}>
-                <ListWrapper>
-                  <ListHeader>Products</ListHeader>
-                  <List>
-                    <li>
-                      <Link href={WALLET_URL}>
-                        <a>Lykke Wallet</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href={TERMINAL_URL}>
-                        <a>Lykke Trade</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/lyci">
-                        <a>Lykke Index</a>
-                      </Link>
-                    </li>
-                  </List>
-                </ListWrapper>
-                <ListWrapper>
-                  <ListHeader>For clients</ListHeader>
-                  <List>
-                    <li>
-                      <Link href="#">
-                        <a>Tokens and coins</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>Fees and limits</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>Trading indicators</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>Margin trading</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>Blockchain explorer</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>Public tradelog</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>Apply for listing</a>
-                      </Link>
-                    </li>
-                  </List>
-                </ListWrapper>
+              <Col xs={12} md={4}>
+                <Logo className="d-none d-md-block">
+                  <Link href="/">
+                    <a>
+                      <img src="/static/logo-main.svg" alt="Lykke" width="108px" />
+                    </a>
+                  </Link>
+                </Logo>
+                <Apps />
               </Col>
-              <Col xs={6} sm={3} md={3}>
-                <ListWrapper>
-                  <ListHeader>About</ListHeader>
-                  <List>
-                    <li>
-                      <Link href="#">
-                        <a>Lykke team</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>News</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>Invest</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>Carreers</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>FAQ</a>
-                      </Link>
-                    </li>
-                  </List>
-                </ListWrapper>
-                <ListWrapper>
-                  <ListHeader>API</ListHeader>
-                  <List>
-                    <li>
-                      <Link href="#">
-                        <a>API Fees and limits</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>API Deposits</a>
-                      </Link>
-                    </li>
-                  </List>
-                </ListWrapper>
-              </Col>
-              <Col xs={6} sm={3} md={3}>
-                <ListWrapper>
-                  <ListHeader>Get in touch</ListHeader>
-                  <List>
-                    <li>
-                      <Link href="#">
-                        <a>Contacts</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>Help Center</a>
-                      </Link>
-                    </li>
-                  </List>
-                </ListWrapper>
-                <ListWrapper>
-                  <ListHeader>Contribute</ListHeader>
-                  <List>
-                    <li>
-                      <Link href="#">
-                        <a>Github</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>Streams</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>Careers</a>
-                      </Link>
-                    </li>
-                  </List>
-                </ListWrapper>
-              </Col>
-              <Col xs={6} sm={3} md={3}>
-                <ListWrapper>
-                  <ListHeader>Social</ListHeader>
-                  <SocialList social={social} />
-                </ListWrapper>
+
+              <Col xs={12} md={8}>
+                <Row>
+                  <Col xs={6} sm={3} md={3}>
+                    <ListWrapper>
+                      <ListHeader>Products</ListHeader>
+                      <List>
+                        <li>
+                          <Link href={WALLET_URL}>
+                            <a>Lykke Wallet</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href={TERMINAL_URL}>
+                            <a>Lykke Trade</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/lyci">
+                            <a>Lykke Index</a>
+                          </Link>
+                        </li>
+                      </List>
+                    </ListWrapper>
+                    <ListWrapper>
+                      <ListHeader>For clients</ListHeader>
+                      <List>
+                        <li>
+                          <Link href="#">
+                            <a>Tokens and coins</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Fees and limits</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Trading indicators</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Margin trading</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Blockchain explorer</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Public tradelog</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Apply for listing</a>
+                          </Link>
+                        </li>
+                      </List>
+                    </ListWrapper>
+                  </Col>
+                  <Col xs={6} sm={3} md={3}>
+                    <ListWrapper>
+                      <ListHeader>About</ListHeader>
+                      <List>
+                        <li>
+                          <Link href="#">
+                            <a>Lykke team</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>News</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Invest</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Carreers</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>FAQ</a>
+                          </Link>
+                        </li>
+                      </List>
+                    </ListWrapper>
+                    <ListWrapper>
+                      <ListHeader>API</ListHeader>
+                      <List>
+                        <li>
+                          <Link href="#">
+                            <a>API Fees and limits</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>API Deposits</a>
+                          </Link>
+                        </li>
+                      </List>
+                    </ListWrapper>
+                  </Col>
+                  <Col xs={6} sm={3} md={3}>
+                    <ListWrapper>
+                      <ListHeader>Get in touch</ListHeader>
+                      <List>
+                        <li>
+                          <Link href="#">
+                            <a>Contacts</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Help Center</a>
+                          </Link>
+                        </li>
+                      </List>
+                    </ListWrapper>
+                    <ListWrapper>
+                      <ListHeader>Contribute</ListHeader>
+                      <List>
+                        <li>
+                          <Link href="#">
+                            <a>Github</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Streams</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#">
+                            <a>Careers</a>
+                          </Link>
+                        </li>
+                      </List>
+                    </ListWrapper>
+                  </Col>
+                  <Col xs={6} sm={3} md={3}>
+                    <ListWrapper>
+                      <ListHeader>Social</ListHeader>
+                      <SocialList social={social} />
+                    </ListWrapper>
+                  </Col>
+                </Row>
               </Col>
             </Row>
-          </Col>
-        </Row>
-      </Top>
+          </Top>
 
-      <Bottom>
-        <Row className="justify-content-between">
-          <Col xs={12} sm={6}>
-            © 2018 Lykke, Inc.
-          </Col>
-          <Col xs={12} sm={6} className="text-right">
-            <Link href="/privacy-policy">
-              <a>Privacy Policy</a>
-            </Link>
-            <br className="d-md-none" />
-            <Link href="/terms-and-regulation">
-              <a>Terms of Use</a>
-            </Link>
-          </Col>
-        </Row>
-      </Bottom>
-    </Grid>
-  </Footer>
-);
+          <Bottom>
+            <Row className="justify-content-between">
+              <Col xs={12} sm={6}>
+                © {this.showCurrentYear()} Lykke, Inc.
+              </Col>
+              <Col xs={12} sm={6} className="text-right">
+                <Link href="/privacy-policy">
+                  <a>Privacy Policy</a>
+                </Link>
+                <br className="d-md-none" />
+                <Link href="/terms-and-regulation">
+                  <a>Terms of Use</a>
+                </Link>
+              </Col>
+            </Row>
+          </Bottom>
+        </Grid>
+      </Footer>
+    );
+  }
+};
