@@ -213,9 +213,6 @@ export default ({lyci}) => {
                                     </Col>
                                 </Row>
                             </CustomGutter>
-
-                            <h5>Service Fee</h5>
-                            <p>1.45% p.a. deducted from the basket value on a minute-by-minute basis.</p>
                         </Col>
                     </Row>
                     <Row>
