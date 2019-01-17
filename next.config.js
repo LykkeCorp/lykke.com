@@ -12,6 +12,6 @@ module.exports = {
       BASE_API_URL: process.env.BASE_API_URL || 'https://apiv2-dev.lykkex.net/api',
       WALLET_URL: process.env.WALLET_URL || 'https://wallet.lykke.com',
       TERMINAL_URL: process.env.TERMINAL_URL || 'https://trade.lykke.com',
-      LYCI_ASSET_INDEX: process.env.LYCI_ASSET_INDEX || 1
+      LYCI_ASSET_INDEX: process.env.LYCI_ASSET_INDEX || 'TLYCI'
   }
 }
