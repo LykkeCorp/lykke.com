@@ -218,6 +218,12 @@ export default ({lyci}) => {
                             <p>1.45% p.a. deducted from the basket value on a minute-by-minute basis.</p>
                         </Col>
                     </Row>
+                    <Row>
+                        <Col xs={12} sm={12} md={6}>
+                            <h4>Service Fee</h4>
+                            <p>1.45% p.a. deducted from the basket value on a minute-by-minute basis.</p>
+                        </Col>
+                    </Row>
                 </Grid>
             </Text>
         </Documentation>
