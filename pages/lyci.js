@@ -9,7 +9,6 @@ import Documentation from '../components/LyCI/Documentation';
 import getConfig from 'next/config'
 const {publicRuntimeConfig} = getConfig()
 const { LYCI_ASSET_INDEX } = publicRuntimeConfig
-import {mapToProduct} from '../components/MarketList';
 
 class LyCI extends Component {
   state = {

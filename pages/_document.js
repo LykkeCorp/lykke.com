@@ -1,5 +1,6 @@
 import Document from 'next/document';
 import {ServerStyleSheet} from 'styled-components';
+import { resetIdCounter } from 'react-tabs'
 
 export default class LykkeDocument extends Document {
   static async getInitialProps(ctx) {
@@ -10,6 +11,8 @@ export default class LykkeDocument extends Document {
       originalRenderPage({
         enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
       });
+
+    resetIdCounter();
 
     const initialProps = await Document.getInitialProps(ctx);
     return {
