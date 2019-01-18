@@ -2,6 +2,7 @@ import App, {Container} from 'next/app';
 import React from 'react';
 import {ThemeProvider} from 'styled-components';
 import TagManager from 'react-gtm-module';
+import CookieBanner from '../components/Banner/CookieBanner';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import MarketList from '../components/MarketList';
@@ -10,6 +11,7 @@ import styled from 'styled-components';
 
 import GlobalFontFace from '../utils/font-face';
 import GlobalIcons from '../utils/icons';
+import Icomoon from '../utils/icomoon';
 import GlobalStyle from '../utils/global';
 
 const Wrapper = styled.div`
@@ -32,6 +34,7 @@ const Layout = ({quotes, children}) => (
     <MarketList quotes={quotes} />
     <Header />
     <Main>{children}</Main>
+    <CookieBanner />
     <Footer />
   </Wrapper>
 );
@@ -66,6 +69,7 @@ export default class LykkeApp extends App {
           <GlobalFontFace />
           <GlobalStyle />
           <GlobalIcons />
+          <Icomoon />
           <Layout>
             <Component {...pageProps} />
           </Layout>
