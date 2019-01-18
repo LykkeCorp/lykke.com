@@ -31,7 +31,7 @@ const StyledTab = styled(Tab).attrs({
 
 const mapChartData = (arr, ticks) => {
     return {
-        dates: arr.map(el => moment(el.dt).format('LT')).filter((e, i) => i===0 || i%ticks === 0 || i === e.length),
+        dates: arr.map(el => moment(el.dt).format('Do MMM, HH:MM')).filter((e, i) => i===0 || i%ticks === 0 || i === e.length),
         data: arr.map(el => el.v).filter((e, i) => i===0 || i%ticks === 0 || i === e.length)
     }
 };
