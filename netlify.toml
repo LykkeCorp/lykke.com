@@ -4,4 +4,4 @@
     Referrer-Policy = "no-referrer"
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
-    Content-Security-Policy = "default-src 'self'; style-src 'self'; 'unsafe-inline'; connect-src 'https://*.rss.json' 'https://*.lykkex.net' 'https://*.lykke.com'"
+    Content-Security-Policy = "script-src 'strict-dynamic' 'nonce-rAnd0m123' 'unsafe-inline' http: https:; object-src 'none'; base-uri 'none'"
