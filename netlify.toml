@@ -3,4 +3,5 @@
   [headers.values]
     Referrer-Policy = "no-referrer"
     X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
+    X-XSS-Protection = "1; mode=block;"
+    Access-Control-Allow-Origin =  "*"
