@@ -153,7 +153,7 @@ export default class extends Component {
   };
 
   async componentDidMount() {
-    fetch(`${SELF_URL}/api/posts`)
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/scbc-magazine`)
       .then(resp => resp.json())
       .then(data => {
         this.setState({

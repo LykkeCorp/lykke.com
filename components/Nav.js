@@ -381,7 +381,7 @@ export default class Header extends Component {
                             </NextLink>
                           </DropdownItem>
                           <DropdownItem>
-                            <Link href="/city/invest">
+                            <Link href="/about/invest">
                               <a>Invest</a>
                             </Link>
                           </DropdownItem>

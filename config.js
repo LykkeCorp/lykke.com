@@ -39,7 +39,7 @@ const CHART_OPTIONS = {
         }],
         yAxes: [{
             ticks: {
-              stepSize: 30
+              stepSize: 20
             },
             gridLines: {
                 display:false,

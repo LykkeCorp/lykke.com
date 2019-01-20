@@ -28,19 +28,23 @@ const StyledTab = styled(Tab).attrs({
   }
 `;
 
+
+const mapChartData = (arr, ticks) => {
+    return {
+        dates: arr.map(el => moment(el.dt).format('Do MMM, HH:MM')).filter((e, i) => i===0 || i%ticks === 0 || i === e.length),
+        data: arr.map(el => el.v).filter((e, i) => i===0 || i%ticks === 0 || i === e.length)
+    }
+};
+
 export default ({ lyciChart }) => {
-    console.log("Chart: ", lyciChart);
-    const dates24h = lyciChart.hours24.map(i => moment(i.dt).format('LT'));
-    const data24h = lyciChart.hours24.map(i => i.v);
-    const chartData24h = CHART_DATA(dates24h, data24h, 'rgb(19,183,42)');
+    const chart24H = mapChartData(lyciChart.hours24, 50);
+    const chartData24h = CHART_DATA(chart24H.dates, chart24H.data, 'rgb(19,183,42)');
 
-    const dates5d = lyciChart.days5.map(i => moment(i.dt).format('MMM DD'));
-    const data5d = lyciChart.days5.map(i => i.v);
-    const chartData5d = CHART_DATA(dates5d, data5d, 'rgb(19,183,42)');
+    const chart5D = mapChartData(lyciChart.days5, 50);
+    const chartData5d = CHART_DATA(chart5D.dates, chart5D.data, 'rgb(19,183,42)');
 
-    const dates30d = lyciChart.days30.map(i => moment(i.dt).format('MMM DD'));
-    const data30d = lyciChart.days30.map(i => i.v);
-    const chartData30d = CHART_DATA(dates30d, data30d, 'rgb(19,183,42)');
+    const chart30D = mapChartData(lyciChart.days30, 50);
+    const chartData30d = CHART_DATA(chart30D.dates, chart30D.data, 'rgb(19,183,42)');
 
     const chartOptions = CHART_OPTIONS;
     return (
