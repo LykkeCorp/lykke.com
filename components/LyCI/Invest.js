@@ -5,13 +5,11 @@ import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import Button from '../Button'
 import {rem} from 'polished';
 
-export const Invest = styled.section`
-
-`;
+export const Invest = styled.section``;
 
 export const Card = styled.div`
-  margin-bottom: ${'-100px'};
-  padding: ${rem('15px')};
+  margin-bottom: ${rem('-80px')};
+  padding: ${rem('20px')};
   background-color: ${p => p.theme.colors.white}; 
   border-radius: 8px;
   box-shadow: ${p => p.theme.boxShadow.light}; 
@@ -19,7 +17,7 @@ export const Card = styled.div`
   text-align: center;
     
   @media all and (min-width: 768px) {
-    margin-bottom: ${'-123px'};
+    margin-bottom: ${rem('-123px')};
     padding: ${rem('40px')} ${rem('70px')};
   }
 `;
@@ -51,6 +49,7 @@ export const CardHint = styled.div`
 
   a {
     color: ${p => p.theme.colors.primary};
+    font-weight: 600;
   }
   
   @media all and (min-width: 768px) {

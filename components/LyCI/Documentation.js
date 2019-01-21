@@ -4,7 +4,7 @@ import {rem} from 'polished';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 
 export const Documentation = styled.section`
-  padding: ${rem('200px')} 0 ${rem('180px')};
+  padding: ${rem('160px')} 0 ${rem('180px')};
   background-color: ${p => p.theme.colors.greyPale};
 
   @media all and (min-width: 768px) {
@@ -174,6 +174,8 @@ export default ({lyci}) => {
                                     Exchange)
                                 </li>
                             </ul>
+                            <h4>Service Fee</h4>
+                            <p>1.45% p.a. deducted from the basket value on a minute-by-minute basis.</p>
                         </Col>
                         <Col xs={12} md={5}>
                             <h4>What assets are included in LyCI?</h4>
@@ -213,12 +215,6 @@ export default ({lyci}) => {
                                     </Col>
                                 </Row>
                             </CustomGutter>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={12} sm={12} md={6}>
-                            <h4>Service Fee</h4>
-                            <p>1.45% p.a. deducted from the basket value on a minute-by-minute basis.</p>
                         </Col>
                     </Row>
                 </Grid>
