@@ -295,7 +295,7 @@ export default class Header extends Component {
       isOpen: !this.state.isOpen
     });
 
-    document.body.classList.toggle('menu-opened');
+    // document.body.classList.toggle('menu-opened');
   }
 
   render() {
