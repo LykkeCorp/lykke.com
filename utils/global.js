@@ -23,10 +23,10 @@ const GlobalStyle = createGlobalStyle`
     * {
       box-sizing: border-box;
     }
-    
-    &.menu-opened {
-      overflow: hidden;
-    }
+  }
+  
+  .menu-opened {
+    overflow: hidden;
   }
   
   p, ul, ol {

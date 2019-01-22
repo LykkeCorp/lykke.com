@@ -1,5 +1,5 @@
 import App, {Container} from 'next/app';
-import React from 'react';
+import React, {Component} from 'react';
 import {ThemeProvider} from 'styled-components';
 import TagManager from 'react-gtm-module';
 import CookieBanner from '../components/Banner/CookieBanner';
@@ -29,10 +29,10 @@ const Main = styled.main`
   }
 `;
 
-const Layout = ({quotes, children}) => (
+const Layout = ({quotes, children, menuHandler, isMenuOpen}) => (
   <Wrapper>
     <MarketList quotes={quotes} />
-    <Header />
+    <Header isMenuOpen={isMenuOpen} menuHandler={menuHandler}/>
     <Main>{children}</Main>
     <CookieBanner />
     <Footer />
@@ -40,6 +40,14 @@ const Layout = ({quotes, children}) => (
 );
 
 export default class LykkeApp extends App {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isMenuOpen: false
+    };
+  }
+
   static async getInitialProps({Component, router, ctx}) {
     let pageProps = {};
 
@@ -61,20 +69,29 @@ export default class LykkeApp extends App {
     }
   }
 
+  openMenu = () => {
+    this.setState({isMenuOpen: !this.state.isMenuOpen});
+  };
+
   render() {
     const {Component, pageProps} = this.props;
     return (
-      <ThemeProvider theme={theme}>
-        <Container>
-          <GlobalFontFace />
-          <GlobalStyle />
-          <GlobalIcons />
-          <Icomoon />
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </Container>
-      </ThemeProvider>
+      <div className={this.state.isMenuOpen ? 'menu-opened' : ''}>
+        <ThemeProvider theme={theme}>
+          <Container>
+            <GlobalFontFace />
+            <GlobalStyle />
+            <GlobalIcons />
+            <Icomoon />
+            <Layout
+              menuHandler={this.openMenu}
+              isMenuOpen={this.state.isMenuOpen}
+            >
+              <Component {...pageProps} />
+            </Layout>
+          </Container>
+        </ThemeProvider>
+      </div>
     );
   }
 }

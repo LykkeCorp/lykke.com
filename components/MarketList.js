@@ -26,7 +26,7 @@ const MarketList = styled.div`
 
     .menu-opened & {
       opacity: 0;
-      visibility: 0;
+      visibility: hidden;
     }
   }
 
