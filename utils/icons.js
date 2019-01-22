@@ -50,6 +50,9 @@ const GlobalIcons = createGlobalStyle`
   .icon--follow:before {
     content: "\\e907";
   }
+  .icon--dropdown:before {
+    content: "\\e908";
+  }
 `;
 
 export default GlobalIcons;
