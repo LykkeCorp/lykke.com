@@ -1,15 +1,4 @@
-FROM node:lts-slim
-
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-
-RUN npm install --only=production
-
-COPY . .
-
-RUN npm run build
-
-EXPOSE 3000
-
-CMD [ "npm", "start" ]
+FROM nginx
+ARG build=./out
+WORKDIR /usr/share/nginx/html
+COPY $build .
