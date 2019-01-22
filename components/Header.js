@@ -27,12 +27,12 @@ const Wrapper = styled.div`
   flex-shrink: 0;
 `;
 
-export default () => (
+export default ({menuHandler, isMenuOpen}) => (
   <Header>
     <Wrapper as={Grid}>
       <Row className="justify-content-between align-items-center">
         <Col className="col-sm-auto">
-          <Nav/>
+          <Nav menuHandler={menuHandler} isMenuOpen={isMenuOpen}/>
         </Col>
         <Col className="col-sm-auto text-right d-none d-lg-block">
           <HeaderAccount />

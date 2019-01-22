@@ -2,10 +2,8 @@ import React, {Component} from 'react';
 import Link from './Link';
 import {Row, Col} from 'react-styled-flexboxgrid';
 import styled, {css} from 'styled-components';
-import {isBrowser} from 'react-device-detect';
 import Button from './Button';
 import HeaderAccount from './HeaderAccount';
-import NextLink from 'next/link';
 
 import {rem} from 'polished/lib/index';
 
@@ -13,7 +11,7 @@ const Wrapper = styled.div`
   background-color: ${p => p.theme.colors.transparent};
 `;
 
-const Nav = styled.nav`
+const Menu = styled.nav`
   @media all and (max-width: 991px) {
     position: fixed;
     left: 0;
@@ -33,7 +31,7 @@ const Nav = styled.nav`
   }
 `;
 
-const NavInner = styled.nav`
+const MenuInner = styled.div`
   @media all and (max-width: 991px) {
     height: 100%;
     padding: 30px 16px;
@@ -51,17 +49,42 @@ const Logo = styled.div`
   }
 
   @media all and (max-width: 991px) {
-    width: 30px;
-    overflow: hidden;
-    transition: width ${p => p.theme.transition.primary};
-
     img {
       width: 94px;
       margin-top: 0;
     }
+  }
+`;
 
-    .menu-opened & {
-      width: 94px;
+const Caret = styled.span`
+  &:after {
+    content: '';
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: ${rem('10px')};
+    border-top: 0.4em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+  }
+  
+  @media all and (max-width: 991px) {
+    
+    &:after {
+      display: none;
+    }
+    
+    &:before {
+      position: absolute;
+      right: 24px;
+      top: 18px;
+      color: ${p => p.theme.colors.greyBluey};
+      font-family: icons !important;
+      font-size: 18px;
+      font-weight: normal;
+      content: "\\e908";
     }
   }
 `;
@@ -94,34 +117,11 @@ const AccountContainer = styled.div`
   }
 `;
 
-const NavItemInner = styled.div`
+const MenuItemInner = styled.div`
   font-size: ${rem('14px')};
   font-weight: 600;
   text-transform: uppercase;
-`;
-
-const DropdownMenu = styled.div`
-  position: absolute;
-  right: ${rem('20px')};
-  min-width: ${rem('205px')};
-  background-color: ${p => p.theme.colors.white};
-  border-radius: ${rem('8px')};
-  box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.11);
-  opacity: 0;
-  visibility: hidden;
-  transform: translate3d(0, -10px, 0);
-  transition: all ${p => p.theme.transition.primary};
-
-  @media all and (max-width: 991px) {
-    display: none;
-  }
-`;
-
-const NavItem = styled.div`
-  position: relative;
-  padding-right: ${rem('4px')};
-  padding-left: ${rem('4px')};
-
+  
   a {
     display: block;
     padding: ${rem('20px 20px 18px 14px')};
@@ -152,8 +152,56 @@ const NavItem = styled.div`
 
     @media all and (max-width: 991px) {
       display: inline-block;
+      padding: 20px;
+
+      &:active {
+        color: ${p => p.theme.colors.primary};
+      }
+
+      &.with_border:active {
+        border-color: ${p => p.theme.colors.primary};
+      }
+      
+      &.active {
+        border-color: transparent;
+      }
+    }
+    
+    @media all and (max-width: 580px) {
+      display: block;
+      width: 100%;
     }
   }
+`;
+
+const DropdownMenu = styled.div`
+  min-width: ${rem('205px')};
+
+  @media all and (max-width: 991px) {
+    display: none;
+    
+    ${p => p.isOpen && css`
+      display:block;
+    `};
+  }
+
+  @media all and (min-width: 992px) {
+    position: absolute;
+    right: ${rem('20px')};
+    border-radius: ${rem('8px')};
+    background-color: ${p => p.theme.colors.white};
+    box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.11);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, -10px, 0);
+    transition: all ${p => p.theme.transition.primary};
+  }
+`;
+
+const MenuItem = styled.div`
+  position: relative;
+  padding-right: ${rem('4px')};
+  padding-left: ${rem('4px')};
 
   ${p =>
     p.dropdown &&
@@ -166,17 +214,33 @@ const NavItem = styled.div`
           transform: translate3d(0, 0, 0);
         }
       }
-    `}
+    `};
 
   @media all and (max-width: 991px) {
     flex: none;
     width: 100%;
     padding: 0;
+    
+    ${p => p.dropdown && p.active && css`
+      ${MenuItemInner} a {
+        color: ${p => p.theme.colors.primary};
+      }
+      
+      ${Caret}:before {
+        color: ${p => p.theme.colors.primary};
+        transform: rotate(180deg);
+      }
+    `};
   }
 `;
 
 const DropdownMenuInner = styled.div`
   padding: ${rem('12px 0px')};
+  
+  
+  @media all and (max-width: 991px) {
+    padding: 0 0 0 24px;
+  }
 `;
 
 const DropdownItem = styled.div`
@@ -189,6 +253,21 @@ const DropdownItem = styled.div`
 
     &:hover {
       color: ${p => p.theme.colors.grey};
+    }
+  }
+  
+  @media all and (max-width: 991px) {
+    a {
+      padding: 12px 10px;
+      color: #585c6e;
+      font-size: 14px;
+      font-weight: 600;
+      
+      &:active,
+      &.active,
+     .active & {
+        color: ${p => p.theme.colors.primary};
+      }
     }
   }
 `;
@@ -260,43 +339,20 @@ const ButtonMenu = styled(Button)`
     `}
 `;
 
-const Caret = styled.span`
-  &:after {
-    content: '';
-    position: relative;
-    top: -1px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: ${rem('10px')};
-    border-top: 0.4em solid;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0;
-    border-left: 0.3em solid transparent;
-
-    @media all and (max-width: 991px) {
-      display: none;
-    }
-  }
-`;
-
-export default class Header extends Component {
+export default class Nav extends Component {
   constructor(props) {
     super(props);
 
-    this.openMenu = this.openMenu.bind(this);
-
     this.state = {
-      isOpen: false
+      isDropdownOpen: false,
     };
   }
 
-  openMenu() {
+  openDropdownMenu = () => {
     this.setState({
-      isOpen: !this.state.isOpen
+      isDropdownOpen: !this.state.isDropdownOpen
     });
-
-    // document.body.classList.toggle('menu-opened');
-  }
+  };
 
   render() {
     return (
@@ -305,8 +361,8 @@ export default class Header extends Component {
           <Col className="col-xs-auto d-lg-none">
             <ButtonMenu
               flat
-              onClick={this.openMenu}
-              active={this.state.isOpen}
+              onClick={this.props.menuHandler}
+              active={this.props.isMenuOpen}
             />
           </Col>
           <Col className="col-xs-auto">
@@ -319,13 +375,13 @@ export default class Header extends Component {
             </Logo>
           </Col>
           <Col>
-            <Nav show={this.state.isOpen}>
-              <NavInner>
+            <Menu show={this.props.isMenuOpen}>
+              <MenuInner>
                 <Row className="align-items-center">
-                  <NavItem as={Col}>
-                    <NavItemInner>
+                  <MenuItem as={Col}>
+                    <MenuItemInner>
                       <Link prefetch activeClassName="active" href="/">
-                        <a>
+                        <a className="with_border">
                           <img
                             src="/static/lykke_wallet_logo.svg"
                             alt="Lykke"
@@ -334,12 +390,12 @@ export default class Header extends Component {
                           Lykke Wallet
                         </a>
                       </Link>
-                    </NavItemInner>
-                  </NavItem>
-                  <NavItem as={Col}>
-                    <NavItemInner>
+                    </MenuItemInner>
+                  </MenuItem>
+                  <MenuItem as={Col}>
+                    <MenuItemInner>
                       <Link prefetch activeClassName="active" href="/trade">
-                        <a>
+                        <a className="with_border">
                           <img
                             src="/static/lykke_exchange_logo.svg"
                             alt="Lykke"
@@ -348,69 +404,60 @@ export default class Header extends Component {
                           Lykke Trade
                         </a>
                       </Link>
-                    </NavItemInner>
-                  </NavItem>
-                  <NavItem as={Col}>
-                    <NavItemInner>
-                      <Link href="https://medium.com/scbc-magazine">
-                        <a target="_blank">CBCS Magazine</a>
+                    </MenuItemInner>
+                  </MenuItem>
+                  <MenuItem as={Col}>
+                    <MenuItemInner>
+                      <Link  prefetch activeClassName="active"  href="/lyci">
+                        <a className="with_border">Lykke Index</a>
                       </Link>
-                    </NavItemInner>
-                  </NavItem>
-                  <NavItem as={Col} dropdown>
-                    <NavItemInner>
-                      <Link href="#">
-                        <a>
-                          About
-                          {isBrowser && <Caret />}
-                        </a>
-                      </Link>
-                    </NavItemInner>
+                    </MenuItemInner>
+                  </MenuItem>
+                  <MenuItem
+                    as={Col}
+                    dropdown
+                    active={this.state.isDropdownOpen}
+                    onClick={this.openDropdownMenu}
+                  >
+                    <MenuItemInner>
+                      <a>
+                        About
+                        <Caret />
+                      </a>
+                    </MenuItemInner>
 
-                    {isBrowser && (
-                      <DropdownMenu>
-                        <DropdownMenuInner>
-                          <DropdownItem>
-                            <Link href="/leadership">
-                              <a>Lykke Team</a>
-                            </Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                            <NextLink href="/lyci">
-                              <a>About Lykke Index</a>
-                            </NextLink>
-                          </DropdownItem>
-                          <DropdownItem>
-                            <Link href="/about/invest">
-                              <a>Invest</a>
-                            </Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                            <Link href="/company/news">
-                              <a>News</a>
-                            </Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                            <Link href="/career_in_lykke">
-                              <a>Careers</a>
-                            </Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                            <Link href="/city/faq">
-                              <a>FAQ</a>
-                            </Link>
-                          </DropdownItem>
-                        </DropdownMenuInner>
-                      </DropdownMenu>
-                    )}
-                  </NavItem>
+                    <DropdownMenu isOpen={this.state.isDropdownOpen}>
+                      <DropdownMenuInner>
+                        <DropdownItem>
+                          <Link href="https://medium.com/scbc-magazine">
+                            <a target="_blank">CBCS Magazine</a>
+                          </Link>
+                        </DropdownItem>
+                        <DropdownItem>
+                          <Link href="/about/invest">
+                            <a>Invest</a>
+                          </Link>
+                        </DropdownItem>
+                        <DropdownItem>
+                          <Link href="/about/news">
+                            <a>News</a>
+                          </Link>
+                        </DropdownItem>
+                        <DropdownItem>
+                          <Link href="https://lykkex.zendesk.com/hc/en-us">
+                            <a target="_blank">Help center</a>
+                          </Link>
+                        </DropdownItem>
+                      </DropdownMenuInner>
+                    </DropdownMenu>
+                  </MenuItem>
                 </Row>
 
                 <AccountContainer className="d-md-none">
                   <HeaderAccount />
                 </AccountContainer>
-              </NavInner>
-            </Nav>
+              </MenuInner>
+            </Menu>
           </Col>
         </Row>
       </Wrapper>
