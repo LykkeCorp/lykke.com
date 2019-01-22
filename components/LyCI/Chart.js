@@ -11,6 +11,7 @@ const StyledTabList = styled(TabList)`
   display: flex;
   align-items: center;
   list-style: none;
+  border-bottom: 2px solid ${p => p.theme.colors.greyPale};
   color: ${p => p.theme.colors.lightGrey}
 `;
 
