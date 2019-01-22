@@ -196,11 +196,11 @@ export default class extends Component {
                             backgroundImage: `url(${post.thumbnail})`
                           }}
                         >
-                          <a href={post.link} />
+                          <a href={post.link} target="_blank"/>
                         </Image>
                         <Content>
                           <Title>
-                            <a href={post.link}>{post.title}</a>
+                            <a href={post.link} target="_blank">{post.title}</a>
                           </Title>
                           {/* <Desc>
                         <Truncate lines={2}>
@@ -212,7 +212,7 @@ export default class extends Component {
                         </Truncate>
                       </Desc> */}
                           <ReadMore>
-                            <a href={post.link}>Continue reading</a>
+                            <a href={post.link} target="_blank">Continue reading</a>
                           </ReadMore>
                         </Content>
                       </Item>

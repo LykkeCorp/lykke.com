@@ -62,7 +62,7 @@ class Chart extends React.Component {
                 <StyledTabList>
                     <StyledTab>24h</StyledTab>
                     <StyledTab>5d</StyledTab>
-                    <StyledTab>30d</StyledTab>
+                    <StyledTab>1m</StyledTab>
                 </StyledTabList>
 
                 <TabPanel>
