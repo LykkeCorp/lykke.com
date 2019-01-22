@@ -2,10 +2,8 @@ import React, {Component} from 'react';
 import Link from './Link';
 import {Row, Col} from 'react-styled-flexboxgrid';
 import styled, {css} from 'styled-components';
-import {isBrowser} from 'react-device-detect';
 import Button from './Button';
 import HeaderAccount from './HeaderAccount';
-import NextLink from 'next/link';
 
 import {rem} from 'polished/lib/index';
 
@@ -13,7 +11,7 @@ const Wrapper = styled.div`
   background-color: ${p => p.theme.colors.transparent};
 `;
 
-const Nav = styled.nav`
+const Menu = styled.nav`
   @media all and (max-width: 991px) {
     position: fixed;
     left: 0;
@@ -33,10 +31,10 @@ const Nav = styled.nav`
   }
 `;
 
-const NavInner = styled.nav`
+const MenuInner = styled.div`
   @media all and (max-width: 991px) {
     height: 100%;
-    padding: 20px 16px;
+    padding: 30px 16px;
     overflow: auto;
   }
 `;
@@ -57,7 +55,6 @@ const Logo = styled.div`
     }
   }
 `;
-
 
 const Caret = styled.span`
   &:after {
@@ -120,41 +117,11 @@ const AccountContainer = styled.div`
   }
 `;
 
-const NavItemInner = styled.div`
+const MenuItemInner = styled.div`
   font-size: ${rem('14px')};
   font-weight: 600;
   text-transform: uppercase;
-`;
-
-const DropdownMenu = styled.div`
-  min-width: ${rem('205px')};
-
-  @media all and (max-width: 991px) {
-    display: none;
-    
-    ${p => p.isOpen && css`
-      display:block;
-    `};
-  }
-
-  @media all and (min-width: 992px) {
-    position: absolute;
-    right: ${rem('20px')};
-    border-radius: ${rem('8px')};
-    background-color: ${p => p.theme.colors.white};
-    box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.11);
-    opacity: 0;
-    visibility: hidden;
-    transform: translate3d(0, -10px, 0);
-    transition: all ${p => p.theme.transition.primary};
-  }
-`;
-
-const NavItem = styled.div`
-  position: relative;
-  padding-right: ${rem('4px')};
-  padding-left: ${rem('4px')};
-
+  
   a {
     display: block;
     padding: ${rem('20px 20px 18px 14px')};
@@ -191,7 +158,7 @@ const NavItem = styled.div`
         color: ${p => p.theme.colors.primary};
       }
 
-      &.mobile_border:active {
+      &.with_border:active {
         border-color: ${p => p.theme.colors.primary};
       }
       
@@ -205,6 +172,36 @@ const NavItem = styled.div`
       width: 100%;
     }
   }
+`;
+
+const DropdownMenu = styled.div`
+  min-width: ${rem('205px')};
+
+  @media all and (max-width: 991px) {
+    display: none;
+    
+    ${p => p.isOpen && css`
+      display:block;
+    `};
+  }
+
+  @media all and (min-width: 992px) {
+    position: absolute;
+    right: ${rem('20px')};
+    border-radius: ${rem('8px')};
+    background-color: ${p => p.theme.colors.white};
+    box-shadow: 0 0 17px 0 rgba(0, 0, 0, 0.11);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, -10px, 0);
+    transition: all ${p => p.theme.transition.primary};
+  }
+`;
+
+const MenuItem = styled.div`
+  position: relative;
+  padding-right: ${rem('4px')};
+  padding-left: ${rem('4px')};
 
   ${p =>
     p.dropdown &&
@@ -225,7 +222,7 @@ const NavItem = styled.div`
     padding: 0;
     
     ${p => p.dropdown && p.active && css`
-      a {
+      ${MenuItemInner} a {
         color: ${p => p.theme.colors.primary};
       }
       
@@ -342,32 +339,20 @@ const ButtonMenu = styled(Button)`
     `}
 `;
 
-export default class Header extends Component {
+export default class Nav extends Component {
   constructor(props) {
     super(props);
 
-    this.openMenu = this.openMenu.bind(this);
-    this.openDropdownMenu = this.openDropdownMenu.bind(this);
-
     this.state = {
-      isOpen: false,
       isDropdownOpen: false,
     };
   }
 
-  openMenu() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-
-    document.body.classList.toggle('menu-opened');
-  }
-
-  openDropdownMenu() {
+  openDropdownMenu = () => {
     this.setState({
       isDropdownOpen: !this.state.isDropdownOpen
     });
-  }
+  };
 
   render() {
     return (
@@ -376,8 +361,8 @@ export default class Header extends Component {
           <Col className="col-xs-auto d-lg-none">
             <ButtonMenu
               flat
-              onClick={this.openMenu}
-              active={this.state.isOpen}
+              onClick={this.props.menuHandler}
+              active={this.props.isMenuOpen}
             />
           </Col>
           <Col className="col-xs-auto">
@@ -390,13 +375,13 @@ export default class Header extends Component {
             </Logo>
           </Col>
           <Col>
-            <Nav show={this.state.isOpen}>
-              <NavInner>
+            <Menu show={this.props.isMenuOpen}>
+              <MenuInner>
                 <Row className="align-items-center">
-                  <NavItem as={Col}>
-                    <NavItemInner>
+                  <MenuItem as={Col}>
+                    <MenuItemInner>
                       <Link prefetch activeClassName="active" href="/">
-                        <a className="mobile_border">
+                        <a className="with_border">
                           <img
                             src="/static/lykke_wallet_logo.svg"
                             alt="Lykke"
@@ -405,12 +390,12 @@ export default class Header extends Component {
                           Lykke Wallet
                         </a>
                       </Link>
-                    </NavItemInner>
-                  </NavItem>
-                  <NavItem as={Col}>
-                    <NavItemInner>
+                    </MenuItemInner>
+                  </MenuItem>
+                  <MenuItem as={Col}>
+                    <MenuItemInner>
                       <Link prefetch activeClassName="active" href="/trade">
-                        <a className="mobile_border">
+                        <a className="with_border">
                           <img
                             src="/static/lykke_exchange_logo.svg"
                             alt="Lykke"
@@ -419,72 +404,60 @@ export default class Header extends Component {
                           Lykke Trade
                         </a>
                       </Link>
-                    </NavItemInner>
-                  </NavItem>
-                  <NavItem as={Col}>
-                    <NavItemInner>
-                      <Link href="https://medium.com/scbc-magazine">
-                        <a target="_blank">CBCS Magazine</a>
+                    </MenuItemInner>
+                  </MenuItem>
+                  <MenuItem as={Col}>
+                    <MenuItemInner>
+                      <Link  prefetch activeClassName="active"  href="/lyci">
+                        <a className="with_border">Lykke Index</a>
                       </Link>
-                    </NavItemInner>
-                  </NavItem>
-                  <NavItem
+                    </MenuItemInner>
+                  </MenuItem>
+                  <MenuItem
                     as={Col}
                     dropdown
                     active={this.state.isDropdownOpen}
                     onClick={this.openDropdownMenu}
                   >
-                    <NavItemInner>
-                      <Link>
-                        <a>
-                          About
-                          <Caret />
-                        </a>
-                      </Link>
-                    </NavItemInner>
+                    <MenuItemInner>
+                      <a>
+                        About
+                        <Caret />
+                      </a>
+                    </MenuItemInner>
 
                     <DropdownMenu isOpen={this.state.isDropdownOpen}>
                       <DropdownMenuInner>
                         <DropdownItem>
-                          <Link href="https://www.lykke.com/leadership">
-                            <a>Core Team</a>
+                          <Link href="https://medium.com/scbc-magazine">
+                            <a target="_blank">CBCS Magazine</a>
                           </Link>
                         </DropdownItem>
                         <DropdownItem>
-                          <NextLink href="/lyci">
-                            <a>About Lykke Index</a>
-                          </NextLink>
+                          <Link href="/about/invest">
+                            <a>Invest</a>
+                          </Link>
                         </DropdownItem>
                         <DropdownItem>
-                          <Link href="https://www.lykke.com/company/news">
+                          <Link href="/about/news">
                             <a>News</a>
                           </Link>
                         </DropdownItem>
                         <DropdownItem>
-                          <Link href="https://www.lykke.com/career_in_lykke">
-                            <a>Careers</a>
-                          </Link>
-                        </DropdownItem>
-                        <DropdownItem>
-                          <Link href="https://www.lykke.com/contacts">
-                            <a>Contacts</a>
-                          </Link>
-                        </DropdownItem>
-                        <DropdownItem>
-                          <Link href="https://lykkex.zendesk.com/hc/en-us" target="_blank">
-                            <a>Help center</a>
+                          <Link href="https://lykkex.zendesk.com/hc/en-us">
+                            <a target="_blank">Help center</a>
                           </Link>
                         </DropdownItem>
                       </DropdownMenuInner>
                     </DropdownMenu>
-                  </NavItem>
+                  </MenuItem>
                 </Row>
 
                 <AccountContainer className="d-md-none">
                   <HeaderAccount />
                 </AccountContainer>
-              </NavInner>
-            </Nav>
+              </MenuInner>
+            </Menu>
           </Col>
         </Row>
       </Wrapper>
