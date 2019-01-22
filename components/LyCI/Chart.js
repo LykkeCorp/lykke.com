@@ -11,6 +11,7 @@ const StyledTabList = styled(TabList)`
   display: flex;
   align-items: center;
   list-style: none;
+  border-bottom: 2px solid ${p => p.theme.colors.greyPale};
   color: ${p => p.theme.colors.lightGrey}
 `;
 
@@ -29,47 +30,59 @@ const StyledTab = styled(Tab).attrs({
 `;
 
 
-const mapChartData = (arr, ticks) => {
+const mapChartData = (arr, ticks, type) => {
     return {
-        dates: arr.map(el => moment(el.dt).format('Do MMM, HH:MM')).filter((e, i) => i===0 || i%ticks === 0 || i === e.length),
-        data: arr.map(el => el.v).filter((e, i) => i===0 || i%ticks === 0 || i === e.length)
+        dates: arr.map(el => el.dt).filter((e, i) => i===0 || i%ticks === 0 || i === arr.length-1),
+        data: arr.map(el => el.v).filter((e, i) => i===0 || i%ticks === 0 || i === arr.length-1)
     }
 };
 
-export default ({ lyciChart }) => {
-    const chart24H = mapChartData(lyciChart.hours24, 50);
-    const chartData24h = CHART_DATA(chart24H.dates, chart24H.data, 'rgb(19,183,42)');
+class Chart extends React.Component {
+    state = {
+        tabIndex: 0
+    };
+    handleTabSelect = (index) => {
+        this.props.tabSelect(index);
+        this.setState({ tabIndex: index })
+    };
+    render() {
+        const { lyciChart } = this.props;
+        const chart24H = mapChartData(lyciChart.hours24, 50, '24h');
+        const chartData24h = CHART_DATA(chart24H.dates, chart24H.data, 'rgb(19,183,42)');
 
-    const chart5D = mapChartData(lyciChart.days5, 50);
-    const chartData5d = CHART_DATA(chart5D.dates, chart5D.data, 'rgb(19,183,42)');
+        const chart5D = mapChartData(lyciChart.days5, 50, '5d');
+        const chartData5d = CHART_DATA(chart5D.dates, chart5D.data, 'rgb(19,183,42)');
 
-    const chart30D = mapChartData(lyciChart.days30, 50);
-    const chartData30d = CHART_DATA(chart30D.dates, chart30D.data, 'rgb(19,183,42)');
+        const chart30D = mapChartData(lyciChart.days30, 50, '30d');
+        const chartData30d = CHART_DATA(chart30D.dates, chart30D.data, 'rgb(19,183,42)');
 
-    const chartOptions = CHART_OPTIONS;
-    return (
-        <Tabs>
-            <StyledTabList>
-                <StyledTab>24h</StyledTab>
-                <StyledTab>5d</StyledTab>
-                <StyledTab>30d</StyledTab>
-            </StyledTabList>
+        const chartOptions = CHART_OPTIONS;
+        return (
+            <Tabs selectedIndex={this.state.tabIndex} onSelect={tabIndex => this.handleTabSelect(tabIndex)}>
+                <StyledTabList>
+                    <StyledTab>24h</StyledTab>
+                    <StyledTab>5d</StyledTab>
+                    <StyledTab>30d</StyledTab>
+                </StyledTabList>
 
-            <TabPanel>
-                <div>
-                    <Line data={chartData24h} options={chartOptions}/>
-                </div>
-            </TabPanel>
-            <TabPanel>
-                <div>
-                    <Line data={chartData5d} options={chartOptions}/>
-                </div>
-            </TabPanel>
-            <TabPanel>
-                <div>
-                    <Line data={chartData30d} options={chartOptions}/>
-                </div>
-            </TabPanel>
-        </Tabs>
-    )
+                <TabPanel>
+                    <div>
+                        <Line data={chartData24h} options={chartOptions('24h')}/>
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div>
+                        <Line data={chartData5d} options={chartOptions('5d')}/>
+                    </div>
+                </TabPanel>
+                <TabPanel>
+                    <div>
+                        <Line data={chartData30d} options={chartOptions('30d')}/>
+                    </div>
+                </TabPanel>
+            </Tabs>
+        )
+    }
 }
+
+export default Chart;
