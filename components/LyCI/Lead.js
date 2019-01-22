@@ -174,13 +174,13 @@ export default ({lyci, lyciChart}) => {
                                 <tr>
                                     <td>24h Vol</td>
                                     <td>
-                                        {(lyci.Volatility24H * 100).toFixed(2)} %
+                                        {(lyci.Volatility24H * 1).toFixed(2)} %
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>30d Vol</td>
                                     <td>
-                                        {(lyci.Volatility30D * 100).toFixed(2)} %
+                                        {(lyci.Volatility30D * 1).toFixed(2)} %
                                     </td>
                                 </tr>
                                 </tbody>
