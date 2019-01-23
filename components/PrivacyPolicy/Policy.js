@@ -8,7 +8,7 @@ export const Policy = () => {
     return (
         <Grid className="container">
             <Row>
-                <Col md={12}>
+                <Col xs={12} md={12}>
                     <PolicyWrapper>
                         <h1>
                             Privacy Policy
@@ -53,7 +53,7 @@ export const Policy = () => {
                         <p>You have various rights in your information such as the right to ask us what information we hold about you, ask us to correct or delete information about you or to restrict our use of it. You also have the right to request us to export or transfer data to other companies. And you have the right to complain about our use of your data and submit a complaint to the relevant data protection authority.</p>
                         <h3>Who do I contact to find our more or make a complaint</h3>
                         <p>If you have any questions, comments or complaints regarding how we collect, use and store information about you, Lykke Corp. has Data Protection Officer to help you. If you need assistance, please send an e-mail to <TextLink href="mailto:dpo@lykke.com">dpo@lykke.com</TextLink>.</p>
-                        <h2>Full form privacy policy</h2>
+                        <h2 id="fullFormPolicy">Full form privacy policy</h2>
                         <h3>Information that we collect, and how we use it</h3>
                         <p>Lykke collects information from our users when they create their account for the Sites or the Apps, when they request copies of publications, seek additional information regarding our services, or register for conferences and other Lykke events. Some of the forms for Lykke registration, enrollment, account setup, and other purposes may ask users to give us contact information, unique personal identifiers, financial information, subject areas of interest, and/or demographic information. We may use these data to tailor the visitor’s experience at our Sites and Apps or, if applicable, to assess the candidacy of an individual and qualifications for employment with Lykke.</p>
                         <p>You agree that Lykke may use any personal information that you provide, such as your name, address, email address, phone number, subject areas of interest, etc., to inform you about updates to the service and to notify you about other products and services offered by Lykke that may be of interest to you. We will not sell, share, or rent or otherwise make available any of that information to other parties, except that we may disclose the information to third parties who perform services on our behalf and have a need to access the information in connection with the performance of those services. In addition, you agree that Lykke may disclose your contact information in response to inquiries by bona-fide rights owners in connection with allegations of infringement of copyright or other proprietary rights arising from information that you have posted on the Sites or otherwise provided to Lykke. Individuals that subscribe to email newsletters are given the opportunity to opt out of promotions, news, and information at the time of signup. Lykke also provides users the opportunity to opt out of receiving communications from us at the points where we request information. You may also feel free to contact us as indicated below if you wish to opt out of communications received from Lykke at a later point.</p>

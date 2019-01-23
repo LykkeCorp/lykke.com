@@ -26,7 +26,7 @@ const MarketList = styled.div`
 
     .menu-opened & {
       opacity: 0;
-      visibility: 0;
+      visibility: hidden;
     }
   }
 
@@ -134,7 +134,7 @@ export default class extends Component {
                   lyci: {
                       ...this.state.lyci,
                       price: lyci.data.Value,
-                      change: lyci.data.Return5D
+                      change: lyci.data.Return24H
                   }
               });
               let quotes = [];
