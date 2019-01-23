@@ -4,7 +4,7 @@ import {rem} from 'polished';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 
 import {Lead} from '../Home/Lead';
-import {Label} from '../MarketList/MarketList';
+import {Label} from '../MarketList/styled';
 
 import Chart from './Chart'
 
