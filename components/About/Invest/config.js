@@ -18,3 +18,11 @@ export const disclosureItems = [
     {url: '/static/images/about/invest/equity_icn.svg', title: 'Lykke Corp Equity Register on Blockchain', href: 'https://blockchainexplorer.lykke.com/asset/AXkedGbAH1XGDpAypVzA5eyjegX4FaCnvM', linkText: 'View in BlockChainExplorer'},
     {url: '/static/images/about/invest/memorandum_icn.svg', title: 'LKK2Y Whitepaper', href: 'https://www.lykke.com/LKK2Y%20whitepaper.pdf', linkText: 'Download'},
 ];
+
+export const investorItems = [
+    {text: 'Lykke is based on a great idea and it starts to be a giant movement that will trigger a lot of very important changes in the financial industry.', author: '', authorInfo: ''},
+    {text: 'Lykke is based on a great idea and it starts to be a giant movement that will trigger a lot of very important changes in the financial industry.', author: '', authorInfo: ''},
+    {text: 'Lykke is based on a great idea and it starts to be a giant movement that will trigger a lot of very important changes in the financial industry.', author: '', authorInfo: ''},
+    {text: 'Lykke is based on a great idea and it starts to be a giant movement that will trigger a lot of very important changes in the financial industry.', author: '', authorInfo: ''},
+    {text: 'Lykke is based on a great idea and it starts to be a giant movement that will trigger a lot of very important changes in the financial industry.', author: '', authorInfo: ''}
+];
