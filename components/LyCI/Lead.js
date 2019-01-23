@@ -17,6 +17,11 @@ const Section = styled(Lead)`
 
 export const Value = styled.div`
   margin-bottom: ${rem('15px')};
+  
+  @media all and (max-width: 767px) {
+    padding: 15px 0;
+    margin-bottom: 4px;
+  }
 `;
 
 export const ValueAccent = styled.div`
@@ -25,15 +30,25 @@ export const ValueAccent = styled.div`
   font-size: ${rem('30px')};
   font-weight: bold;
   line-height: 2;
+  
+  @media all and (max-width: 767px) {
+    font-family: ${p => p.theme.fonts.primary};
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.67;
+  }
 `;
 
 export const ValueText = styled.div`
+  margin-top: 6px;
   color: ${p => p.theme.colors.slate};
   font-size: ${rem('14px')};
   line-height: 1.2;
   opacity: 0.8;
 
   @media all and (min-width: 768px) {
+    margin-top: 0;
+    
     span {
       display: block;
       font-size: ${rem('16px')};
@@ -41,7 +56,13 @@ export const ValueText = styled.div`
   }
 `;
 
-export const Graph = styled.div``;
+export const Graph = styled.div`
+  margin-bottom: 10px;
+  
+  @media all and (min-width: 768px) {
+    margin-bottom: ${rem('25px')};
+  }
+`;
 
 export const Info = styled.div`
   margin-bottom: ${rem('40px')};
@@ -81,11 +102,27 @@ export const InfoTable = styled.table`
   & + & {
     margin-top: ${rem('25px')};
   }
+  
+  @media all and (max-width: 767px) {
+    tr {
+      td {
+        padding: 0;
+      }
+    }
+    
+    & + & {
+      margin-top: 12px;
+    }
+  }
 `;
 
 export const LeadText = styled.p`
   margin-bottom: ${rem('15px')} !important;
   font-size: ${rem('16px')} !important;
+  
+  @media all and (max-width: 767px) {
+    margin-bottom: 30px !important;
+  }
 `;
 
 export const TableData = styled.td`

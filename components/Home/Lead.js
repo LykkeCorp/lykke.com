@@ -27,7 +27,7 @@ export const Lead = styled.section`
 
     h1 {
       margin-top: 0;
-      margin-bottom: 7px;
+      margin-bottom: 12px;
     }
 
     .lead {
@@ -42,7 +42,7 @@ export const Lead = styled.section`
 
 export const Image = styled.div`
   position: relative;
-  margin: -148px 0 -8px -80px;
+  margin: -130px 0 -8px -80px;
   z-index: -1;
   pointer-events: none;
   user-select: none;
