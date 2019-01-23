@@ -37,35 +37,17 @@ export default class extends Component {
         price: 0,
         change: 0
     },
-    showCount: 0,
-    lyciShow: true,
-    pLyciShow: false,
-    scLyciShow: false
+    showCount: 0
   };
 
   startLyciSlider = () => {
       return setInterval(() => {
           if(this.state.showCount === 0) {
-              this.setState((prevState) => ({
-                  showCount: ++prevState.showCount,
-                  lyciShow: true,
-                  pLyciShow: false,
-                  scLyciShow: false
-              }))
+              this.setState((prevState) => ({showCount: ++prevState.showCount}))
           } else if (this.state.showCount === 1) {
-              this.setState((prevState) => ({
-                  showCount: ++prevState.showCount,
-                  lyciShow: false,
-                  pLyciShow: true,
-                  scLyciShow: false
-              }))
+              this.setState((prevState) => ({showCount: ++prevState.showCount}))
           } else {
-              this.setState({
-                  showCount: 0,
-                  lyciShow: false,
-                  pLyciShow: false,
-                  scLyciShow: true
-              })
+              this.setState({showCount: 0})
           }
       }, 3000);
   };
@@ -136,9 +118,9 @@ export default class extends Component {
                 <Col>
                   <ListItem>
                     <Row className="align-items-center">
-                        <LyciMarketList lyci={lyci} show={this.state.lyciShow} desc="Lykke Crypto Index"/>
-                        <LyciMarketList lyci={pLyci} show={this.state.pLyciShow} desc="Top-10 Payment Coins"/>
-                        <LyciMarketList lyci={scLyci} show={this.state.scLyciShow} desc="Top-10 Smart Contract Coins"/>
+                        <LyciMarketList lyci={lyci} show={this.state.showCount === 0} desc="Lykke Crypto Index"/>
+                        <LyciMarketList lyci={pLyci} show={this.state.showCount === 1} desc="Top-10 Payment Coins"/>
+                        <LyciMarketList lyci={scLyci} show={this.state.showCount === 2} desc="Top-10 Smart Contract Coins"/>
                     </Row>
                   </ListItem>
                 </Col>
