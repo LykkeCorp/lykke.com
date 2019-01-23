@@ -1,9 +1,24 @@
 import React from 'react'
+import styled from 'styled-components'
+import { rem } from 'polished'
 import {Col, Grid, Row} from 'react-styled-flexboxgrid';
 import Link from 'next/link';
 
 import { PolicyWrapper, List, TextLink } from '../PrivacyPolicy/styled';
 import { ColumnList } from './styled';
+
+const AnchorTitle = styled.h2`
+  @media all and (max-width: 991px) {
+    padding-top: ${rem('60px')};
+    margin-top: ${rem('-60px')};
+  }
+`;
+
+const StyledColumnList = styled(ColumnList)`
+  @media all and (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+`;
 
 export const TermsAndRegulation = props => {
     return (
@@ -21,7 +36,7 @@ export const TermsAndRegulation = props => {
                                 <Link href="#b2bServices"><a>Terms and conditions for Lykke’s B2B services</a></Link>
                             </li>
                         </List>
-                        <h2 id="walletAndExchange">Terms of use for the Lykke Wallet and Lykke Exchange</h2>
+                        <AnchorTitle id="walletAndExchange">Terms of use for the Lykke Wallet and Lykke Exchange</AnchorTitle>
                         <p>The Lykke Wallet mobile app, which is available for iOS and Android, has two functions. First, it enables a user to store various types of digital coins and tokens, including Lykke fiat money, cryptocurrencies, utility tokens, security tokens, and other instruments. Second, it provides an access point to the Lykke Exchange, which comprises a number of Lykke trading venues and services:</p>
                         <List>
                             <li>
@@ -82,7 +97,7 @@ export const TermsAndRegulation = props => {
                         <p>The privacy policy applicable to trading with Lykke Corp AG is included in Lykke’s general <Link href="/privacy-policy"><TextLink noUnderline>Privacy Policy</TextLink></Link>.</p>
                         <h3 id="vanuatu">Rules for trading with Lykke Vanuatu</h3>
                         <p>The following rules apply to trading with Lykke Vanuatu.</p>
-                        <ColumnList>
+                        <StyledColumnList>
                             <li>
                                 <Link href="https://www.lykke.com/media/documents/Privacy_Policy.pdf"><a>Privacy Policy</a></Link>
                             </li>
@@ -104,8 +119,8 @@ export const TermsAndRegulation = props => {
                             <li>
                                 <Link href="https://www.lykke.com/media/documents/Complaints_Handling_Policy.pdf"><a>Complaints Handling Policy</a></Link>
                             </li>
-                        </ColumnList>
-                        <h2 id="b2bServices">Terms and conditions for Lykke’s B2B services</h2>
+                        </StyledColumnList>
+                        <AnchorTitle id="b2bServices">Terms and conditions for Lykke’s B2B services</AnchorTitle>
                         <p>All B2B advisory and technical services, such as blockchain technology implementation and advisory services for ICOs, are provided by Lykke Accelerator AG. <TextLink noUnderline href="https://lykkecomdb.blob.core.windows.net/documents/Terms_and_Conditions%20applicable_to_Lykke%20Accelerator%E2%80%99s_services.pdf">These terms and conditions</TextLink> apply to such an engagement.</p>
                         <p>The privacy policy applicable to Lykke’s B2B Services is included in Lykke’s general <Link href="/privacy-policy"><TextLink noUnderline>Privacy Policy</TextLink></Link>.</p>
                         <h2>Limitations</h2>
