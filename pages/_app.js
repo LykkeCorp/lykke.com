@@ -5,7 +5,7 @@ import TagManager from 'react-gtm-module';
 import CookieBanner from '../components/Banner/CookieBanner';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import MarketList from '../components/MarketList';
+import MarketList from '../components/MarketList/MarketList';
 import theme from '../theme';
 import styled from 'styled-components';
 

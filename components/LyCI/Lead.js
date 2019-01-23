@@ -4,7 +4,7 @@ import {rem} from 'polished';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 
 import {Lead} from '../Home/Lead';
-import {Label} from '../MarketList';
+import {Label} from '../MarketList/styled';
 
 import Chart from './Chart'
 
@@ -92,103 +92,127 @@ export const TableData = styled.td`
   color: ${p => p.green ? p.theme.colors.green : p.theme.colors.red}
 `
 
-export default ({lyci, lyciChart}) => {
+class LyciLead extends React.Component {
+    state = {
+        selectedChart: 0
+    };
+    handleTabSelect = (selected) => {
+        this.setState({selectedChart: selected})
+    };
+    render() {
+        const { lyci, lyciChart } = this.props;
+        const { selectedChart } = this.state;
+        let change = <span>24 hour change</span>;
+        const lyciDate = () => {
+            if (selectedChart === 0) return lyci.Return24H
+            if (selectedChart === 1) {
+                change = <span>5 days change</span>;
+                return lyci.Return5D
+            }
+            if (selectedChart === 2) {
+                change = <span>30 days change</span>;
+                return lyci.Return30D
+            }
+        };
 
-    return (
-        <Section>
-            <Grid className="container">
-                <Row className="justify-content-between">
-                    <Col xs={12} sm={7} md={6}>
-                        <h1>Lykke Crypto Index (LyCI)</h1>
-                        <LeadText className="lead">
-                            An index tracking the financial performance of the top 25
-                            cryptocurrencies.
-                        </LeadText>
+        return (
+            <Section>
+                <Grid className="container">
+                    <Row className="justify-content-between">
+                        <Col xs={12} sm={7} md={6}>
+                            <h1>Lykke Crypto Index (LyCI)</h1>
+                            <LeadText className="lead">
+                                An index tracking the financial performance of the top 25
+                                cryptocurrencies.
+                            </LeadText>
 
-                        <Value>
-                            <Row className="align-items-center">
-                                <Col className="d-md-none">
-                                    <ValueAccent>LyCI</ValueAccent>
-                                </Col>
-                                <Col>
-                                    <ValueAccent>{lyci.Value}</ValueAccent>
-                                </Col>
-                                {lyci.Return5D && (
-                                    <Col>
-                                        <Label dir={lyci.Return5D > 0 ? 'up' : 'down'} big>
-                                            {lyci.Return5D} %
-                                        </Label>
+                            <Value>
+                                <Row className="align-items-center">
+                                    <Col className="d-md-none">
+                                        <ValueAccent>LyCI</ValueAccent>
                                     </Col>
-                                )}
-                                {lyci.Return5D && (
                                     <Col>
-                                        <ValueText>
-                                            <span>24 hour change</span> {new Date().toLocaleString()}
-                                        </ValueText>
+                                        <ValueAccent>{lyci.Value}</ValueAccent>
                                     </Col>
-                                )}
-                            </Row>
-                        </Value>
-                        <Graph>
-                            <Chart lyciChart={lyciChart}/>
-                        </Graph>
-                    </Col>
-                    <Col xs={12} sm={5} md={4}>
-                        <Info>
-                            <InfoTitle className="d-none d-md-block">Key Numbers</InfoTitle>
-                            <InfoTable>
-                                <tbody>
-                                <tr>
-                                    <td>Current Value</td>
-                                    <td>{lyci.Value}</td>
-                                </tr>
-                                <tr>
-                                    <td>Return</td>
-                                    <TableData green={lyci.Return24H > 0}
-                                               className="text-green">{lyci.Return24H} %</TableData>
-                                </tr>
-                                <tr>
-                                    <td>5 day return</td>
-                                    <TableData green={lyci.Return5D > 0}>{lyci.Return5D} %</TableData>
-                                </tr>
-                                <tr>
-                                    <td>1 month return</td>
-                                    <TableData green={lyci.Return30D > 0}>{lyci.Return30D} %</TableData>
-                                </tr>
-                                </tbody>
-                            </InfoTable>
-                            <InfoTable>
-                                <tbody>
-                                <tr>
-                                    <td>24h Max</td>
-                                    <td>{lyci.Max24H}</td>
-                                </tr>
-                                <tr>
-                                    <td>24h Min</td>
-                                    <td>{lyci.Min24H}</td>
-                                </tr>
-                                </tbody>
-                            </InfoTable>
-                            <InfoTable>
-                                <tbody>
-                                <tr>
-                                    <td>24h Vol</td>
-                                    <td>
-                                        {(lyci.Volatility24H * 1).toFixed(2)} %
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>30d Vol</td>
-                                    <td>
-                                        {(lyci.Volatility30D * 1).toFixed(2)} %
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </InfoTable>
-                        </Info>
-                    </Col>
-                </Row>
-            </Grid>
-        </Section>
-    );
+                                    {lyci.Return5D && (
+                                        <Col>
+                                            <Label dir={lyciDate() > 0 ? 'up' : 'down'} big>
+                                                {lyciDate()} %
+                                            </Label>
+                                        </Col>
+                                    )}
+                                    {lyci.Return5D && (
+                                        <Col>
+                                            <ValueText>
+                                                <span>{change}</span>
+                                            </ValueText>
+                                        </Col>
+                                    )}
+                                </Row>
+                            </Value>
+                            <Graph>
+                                <Chart lyciChart={lyciChart} tabSelect={this.handleTabSelect}/>
+                            </Graph>
+                        </Col>
+                        <Col xs={12} sm={5} md={4}>
+                            <Info>
+                                <InfoTitle className="d-none d-md-block">Key Numbers</InfoTitle>
+                                <InfoTable>
+                                    <tbody>
+                                    <tr>
+                                        <td>Current Value</td>
+                                        <td>{lyci.Value}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Return</td>
+                                        <TableData green={lyci.Return24H > 0}
+                                                   className="text-green">{lyci.Return24H} %</TableData>
+                                    </tr>
+                                    <tr>
+                                        <td>5 day return</td>
+                                        <TableData green={lyci.Return5D > 0}>{lyci.Return5D} %</TableData>
+                                    </tr>
+                                    <tr>
+                                        <td>1 month return</td>
+                                        <TableData green={lyci.Return30D > 0}>{lyci.Return30D} %</TableData>
+                                    </tr>
+                                    </tbody>
+                                </InfoTable>
+                                <InfoTable>
+                                    <tbody>
+                                    <tr>
+                                        <td>24h Max</td>
+                                        <td>{lyci.Max24H}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>24h Min</td>
+                                        <td>{lyci.Min24H}</td>
+                                    </tr>
+                                    </tbody>
+                                </InfoTable>
+                                <InfoTable>
+                                    <tbody>
+                                    <tr>
+                                        <td>24h Vol</td>
+                                        <td>
+                                            {(lyci.Volatility24H * 1).toFixed(2)} %
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>30d Vol</td>
+                                        <td>
+                                            {(lyci.Volatility30D * 1).toFixed(2)} %
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </InfoTable>
+                            </Info>
+                        </Col>
+                    </Row>
+                </Grid>
+            </Section>
+        );
+    }
 }
+
+export default LyciLead;

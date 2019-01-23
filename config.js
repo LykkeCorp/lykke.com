@@ -1,3 +1,4 @@
+const moment = require('moment');
 const PRODUCTS = [
   {ticker: 'BTCUSD', name: 'Bitcoin'},
   {ticker: 'ETHUSD', name: 'Ethereum'},
@@ -7,7 +8,7 @@ const PRODUCTS = [
   {ticker: 'ETCUSD', name: 'Ethereum Classic'}
 ];
 
-const CHART_DATA = (dates, data, color) => {
+const CHART_DATA = (dates, data, color, type) => {
   return {
       labels: dates,
       datasets: [{
@@ -21,30 +22,50 @@ const CHART_DATA = (dates, data, color) => {
   }
 };
 
-const CHART_OPTIONS = {
-    events: [],
-    legend: {
-        display: false
-    },
-    bezierCurve : false,
-    scales: {
-        xAxes: [{
-            gridLines: {
-                display:false
-            },
-            ticks: {
-                autoSkip: true,
-                maxTicksLimit: 5
-            }
-        }],
-        yAxes: [{
-            ticks: {
-              stepSize: 20
-            },
-            gridLines: {
-                display:false,
-            }
-        }]
+const CHART_OPTIONS = (type) => {
+    const stepSize = type => {
+        if(type === '24h') {
+            return 14300
+        } else if (type === '5d') {
+            return 1
+        } else return 3
+    }
+    return {
+        events: [],
+        legend: {
+            display: false
+        },
+        bezierCurve : false,
+        scales: {
+            xAxes: [{
+                type: 'time',
+                time: {
+                    unit: type === '24h' ? 'second' : 'day',
+                    distribution: 'linear',
+                    unitStepSize: stepSize(type),
+                    displayFormats: {
+                        millisecond: 'LT',
+                        second: 'LT',
+                        minute: 'LT',
+                        hour: 'll',
+                        day: 'll',
+                        month: 'll',
+                        year: 'll'
+                    }
+                },
+                gridLines: {
+                    display:false
+                }
+            }],
+            yAxes: [{
+                ticks: {
+                    maxTicksLimit: 5,
+                },
+                gridLines: {
+                    display:false,
+                }
+            }]
+        }
     }
 };
 
