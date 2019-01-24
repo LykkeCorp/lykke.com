@@ -25,7 +25,16 @@ const GlobalIcons = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
+  
+  .icon--call:before {
+    content: "\\e909";
+  }
+  .icon--document:before {
+    content: "\\e90a";
+  }
+  .icon--email:before {
+    content: "\\e90b";
+  }
   .icon--instagram:before {
     content: "\\e900";
   }
