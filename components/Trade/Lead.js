@@ -36,29 +36,26 @@ export default () => (
             Buy and sell FX, crypto and other digital assets on our Swiss based
             exchange.
           </p>
-            <Col xs={12} sm={4} lg={6}>
+          <FormSubscribe>
+            <Button className="form_button" href={WALLET_URL}>
+              Get Started
+            </Button>
+            {/*<Row>
+              <Col xs={12} sm={8} lg={9}>
+                <InputGroup>
+                  <Input
+                    type="email"
+                    placeholder="Enter your Email to get started"
+                  />
+                </InputGroup>
+              </Col>
+              <Col xs={12} sm={4} lg={3}>
                 <Button className="form_button" block href={WALLET_URL}>
-                    Get Started
+                  Get Started
                 </Button>
-            </Col>
-          {/*<FormSubscribe>*/}
-            {/*<Row>*/}
-              {/*<Col xs={12} sm={8} lg={9}>*/}
-                {/*<InputGroup>*/}
-                  {/*<Input*/}
-                    {/*typ*/}
-                    {/*e="email"*/}
-                    {/*placeholder="Enter your Email to get started"*/}
-                  {/*/>*/}
-                {/*</InputGroup>*/}
-              {/*</Col>*/}
-              {/*<Col xs={12} sm={4} lg={3}>*/}
-                {/*<Button className="form_button" block href={WALLET_URL}>*/}
-                  {/*Get Started*/}
-                {/*</Button>*/}
-              {/*</Col>*/}
-            {/*</Row>*/}
-          {/*</FormSubscribe>*/}
+              </Col>
+            </Row>*/}
+          </FormSubscribe>
         </Col>
         <Col xs={12} sm={5} md={6}>
           <Image>
