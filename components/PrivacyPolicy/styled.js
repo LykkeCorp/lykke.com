@@ -34,3 +34,10 @@ export const PolicyWrapper = styled.section`
   padding: ${rem('60px')} 0;
   border-bottom: 1px solid ${p => p.theme.colors.greyLight};
 `;
+
+export const AnchorTitle = styled.h2`
+    @media all and (max-width: 991px) {
+        padding-top: ${rem('60px')};
+        margin-top: ${rem('-60px')};
+    }
+`;
