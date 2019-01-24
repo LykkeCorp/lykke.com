@@ -440,7 +440,7 @@ export default class Nav extends Component {
                       <DropdownMenuInner>
                         <DropdownItem>
                           <Link href="https://medium.com/scbc-magazine">
-                            <a target="_blank">CBCS Magazine</a>
+                            <a target="_blank">SCBC Magazine</a>
                           </Link>
                         </DropdownItem>
                         <DropdownItem>
@@ -448,11 +448,11 @@ export default class Nav extends Component {
                             <a>Invest</a>
                           </Link>
                         </DropdownItem>
-                        <DropdownItem>
-                          <Link href="/about/news">
-                            <a>News</a>
-                          </Link>
-                        </DropdownItem>
+                        {/*<DropdownItem>*/}
+                          {/*<Link href="/about/news">*/}
+                            {/*<a>News</a>*/}
+                          {/*</Link>*/}
+                        {/*</DropdownItem>*/}
                         <DropdownItem>
                           <Link href="https://lykkex.zendesk.com/hc/en-us">
                             <a target="_blank">Help center</a>
