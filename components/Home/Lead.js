@@ -151,23 +151,28 @@ export default () => (
             </span>
             <b>No hidden costs. Swiss quality</b>.
           </p>
-          <FormSubscribe>
-            <Row>
-              <Col xs={12} sm={8} lg={9}>
-                <InputGroup>
-                  <Input
-                    type="email"
-                    placeholder="Enter your Email to get started"
-                  />
-                </InputGroup>
-              </Col>
-              <Col xs={12} sm={4} lg={3}>
+            <Col xs={12} sm={4} lg={6}>
                 <Button className="form_button" block href={WALLET_URL}>
-                  Get Started
+                    Get Started
                 </Button>
-              </Col>
-            </Row>
-          </FormSubscribe>
+            </Col>
+          {/*<FormSubscribe>*/}
+            {/*<Row>*/}
+              {/*<Col xs={12} sm={8} lg={9}>*/}
+                {/*<InputGroup>*/}
+                  {/*<Input*/}
+                    {/*type="email"*/}
+                    {/*placeholder="Enter your Email to get started"*/}
+                  {/*/>*/}
+                {/*</InputGroup>*/}
+              {/*</Col>*/}
+              {/*<Col xs={12} sm={4} lg={3}>*/}
+                {/*<Button className="form_button" block href={WALLET_URL}>*/}
+                  {/*Get Started*/}
+                {/*</Button>*/}
+              {/*</Col>*/}
+            {/*</Row>*/}
+          {/*</FormSubscribe>*/}
         </Col>
         <Col xs={12} sm={5} md={6}>
           <Image>
