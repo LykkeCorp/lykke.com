@@ -37,12 +37,14 @@ export default () => (
             exchange.
           </p>
           <FormSubscribe>
-            <Row>
+            <Button className="form_button" href={WALLET_URL}>
+              Get Started
+            </Button>
+            {/*<Row>
               <Col xs={12} sm={8} lg={9}>
                 <InputGroup>
                   <Input
-                    typ
-                    e="email"
+                    type="email"
                     placeholder="Enter your Email to get started"
                   />
                 </InputGroup>
@@ -52,7 +54,7 @@ export default () => (
                   Get Started
                 </Button>
               </Col>
-            </Row>
+            </Row>*/}
           </FormSubscribe>
         </Col>
         <Col xs={12} sm={5} md={6}>

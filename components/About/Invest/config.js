@@ -18,3 +18,11 @@ export const disclosureItems = [
     {url: '/static/images/about/invest/equity_icn.svg', title: 'Lykke Corp Equity Register on Blockchain', href: 'https://blockchainexplorer.lykke.com/asset/AXkedGbAH1XGDpAypVzA5eyjegX4FaCnvM', linkText: 'View in BlockChainExplorer'},
     {url: '/static/images/about/invest/memorandum_icn.svg', title: 'LKK2Y Whitepaper', href: 'https://www.lykke.com/LKK2Y%20whitepaper.pdf', linkText: 'Download'},
 ];
+
+export const investorItems = [
+    {text: 'Lykke is based on a great idea and it starts to be a giant movement that will trigger a lot of very important changes in the financial industry.', author: 'Philipp Netzer', authorInfo: 'Lykke angel investor'},
+    {text: 'Lykke will change the world of finance. This company has everything to make it happen!', author: 'Alexander Spuller', authorInfo: 'Lykke angel investor and board member'},
+    {text: 'As an angel investor, I like to see companies that can focus and create a satisfying customer experience while planning to go big and build on each success. That’s exactly what is happening at Lykke - that rare combination of talent, ambition, and a team that works well together. It’s a pleasure to watch.', author: 'Heinrich Zetlmayer', authorInfo: 'Lykke angel investor and board member'},
+    {text: 'The Lykke project is huge and visionary. They are going to create much more than a currency exchange. You’ll be able to exchange land, cars, fractional ownership of anything, stock, bonds, art, tickets - all kinds of things. If it’s digital and it holds or represents value, you’ll be able to trade it on your Lykke wallet. Think of it as a combination of Google and eBay for digital values.', author: 'Ralph Zurkinden', authorInfo: 'Lykke angel investor and board member'},
+    {text: 'Imagine being part of the Netscape team in the early 90’s. This is what Lykke is about these days - the next wave.', author: 'Michael Hobmeier', authorInfo: 'Lykke angel investor and board member'}
+];

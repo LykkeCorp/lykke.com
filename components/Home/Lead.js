@@ -17,12 +17,17 @@ export const Lead = styled.section`
   }
 
   .lead {
-    margin-bottom: ${rem('70px')};
+    margin-bottom: ${rem('40px')};
+  }
+  
+  .form_button {
+    width: 250px;
+    max-width: 100%;
   }
 
   @media all and (max-width: 767px) {
     padding-top: 40px;
-    padding-bottom: 120px;
+    padding-bottom: 40px;
     text-align: center;
 
     h1 {
@@ -32,6 +37,10 @@ export const Lead = styled.section`
 
     .lead {
       margin-bottom: ${rem('10px')};
+    }
+    
+    .form_button {
+      width: 100%;
     }
   }
 
@@ -79,7 +88,7 @@ export const Input = styled.input`
   ${placeholder({color: '#8c94a0'})};
 `;
 
-export const FormSubscribe = styled.form`
+export const FormSubscribe = styled.div`
   width: 590px;
   max-width: 100%;
 
@@ -91,11 +100,11 @@ export const FormSubscribe = styled.form`
     padding: 0;
   }
 
-  .form_button {
+  /*.form_button {
     width: 100%;
     height: ${rem('54px')};
     padding: ${rem('18px')} ${rem('25px')};
-  }
+  }*/
 
   @media all and (max-width: 767px) {
     position: absolute;
@@ -121,18 +130,18 @@ export const FormSubscribe = styled.form`
   }
 
   @media all and (min-width: 768px) {
-    border-radius: ${p => p.theme.corners.round};
-    box-shadow: 0 4px 15px 0 rgba(25, 112, 236, 0.5);
+    /*border-radius: ${p => p.theme.corners.round};
+    box-shadow: 0 4px 15px 0 rgba(25, 112, 236, 0.5);*/
 
     ${Input} {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
 
-    .form_button {
+    /*.form_button {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-    }
+    }*/
   }
 `;
 
@@ -152,7 +161,10 @@ export default () => (
             <b>No hidden costs. Swiss quality</b>.
           </p>
           <FormSubscribe>
-            <Row>
+            <Button className="form_button" href={WALLET_URL}>
+              Get Started
+            </Button>
+            {/*<Row>
               <Col xs={12} sm={8} lg={9}>
                 <InputGroup>
                   <Input
@@ -166,7 +178,7 @@ export default () => (
                   Get Started
                 </Button>
               </Col>
-            </Row>
+            </Row>*/}
           </FormSubscribe>
         </Col>
         <Col xs={12} sm={5} md={6}>
