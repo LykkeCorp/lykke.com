@@ -32,7 +32,7 @@ export const Policy = () => {
                         <p>The Sites and Apps may contain links to external Sites, which are not governed by this privacy policy, and Lykke does not take responsibility for the privacy practices of any third-party Sites to which we link. We encourage you to review the privacy policies of such Sites before you submit information there.</p>
                         <AnchorTitle id="shortTermPolicy">Short form privacy policy</AnchorTitle>
                         <h3>Your data privacy with Lykke</h3>
-                        <p>At Lykke we care about your privacy and want you to be confident in the way we use your personal information and other data. This page provides a summary for you. If you’d like to read our privacy policy and other terms and conditions in full then select <Link><TextLink href="/terms-of-use">here</TextLink></Link> </p>
+                        <p>At Lykke we care about your privacy and want you to be confident in the way we use your personal information and other data. This page provides a summary for you. If you’d like to read our privacy policy and other terms and conditions in full then select <Link><TextLink href="/terms-and-regulation">here</TextLink></Link> </p>
                         <p>Our data privacy policy applies to all of the products and services we provide you as a customer and user of our site and apps.</p>
                         <p>The information we collect about you helps us provide the best service possible to you. It also helps us keep your information safe and comply with laws and regulations.</p>
                         <h3>About us</h3>
