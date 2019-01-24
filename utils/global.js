@@ -51,9 +51,10 @@ const GlobalStyle = createGlobalStyle`
   h2, .h2,
   h3, .h3,
   h4, .h4 {
+    margin-top: 0;
     font-family: ${p => p.theme.fonts.headings};
     font-weight: 600;
-    margin-top: 0;
+    line-height: normal;
   }
   
   h1, .h1 {
@@ -126,6 +127,10 @@ const GlobalStyle = createGlobalStyle`
     align-items: center!important;
   }
   
+  .align-items-end {
+    align-items: end!important;
+  }
+  
   .align-self-end {
     align-self: flex-end!important;
   }
@@ -181,13 +186,13 @@ const GlobalStyle = createGlobalStyle`
   }
   
   .d-lg-block {
-    @media (min-width: 992px) {
+    @media (min-width: 1024px) {
       display: block!important;
     }
   }
   
   .d-lg-none {
-    @media (min-width: 992px) {
+    @media (min-width: 1024px) {
       display: none!important;
     }
   }

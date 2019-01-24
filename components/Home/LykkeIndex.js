@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import {rem} from 'polished';
@@ -86,7 +86,11 @@ export const Gradient = styled.div`
   margin-top: ${rem('-10px')};
 `;
 
-export const List = styled.div``;
+export const List = styled.div`
+  max-width: 330px;
+  margin: 0 auto;
+  text-align: left;
+`;
 
 export const ListItem = styled.div`
   margin-bottom: 30px;
@@ -119,10 +123,82 @@ export const ListDesc = styled.div`
   line-height: normal;
 `;
 
+class LyciList extends Component {
+  render() {
+    return (
+      <List as={Row}>
+        <ListItem as={Col} xs={4}>
+          <ListColor style={{backgroundImage: 'linear-gradient(165deg, #3023ae, #c86dd7)'}}/>
+          <ListContent>
+            <ListTitle>57.8%</ListTitle>
+            <ListDesc>BTC</ListDesc>
+          </ListContent>
+        </ListItem>
+        <ListItem as={Col} xs={4}>
+          <ListColor style={{backgroundImage: 'linear-gradient(165deg, #ae23a1, #d76d6d)'}}/>
+          <ListContent>
+            <ListTitle>11.3%</ListTitle>
+            <ListDesc>ETH</ListDesc>
+          </ListContent>
+        </ListItem>
+        <ListItem as={Col} xs={4}>
+          <ListColor style={{backgroundImage: 'linear-gradient(165deg, #2399ae, #6dd0d7)'}}/>
+          <ListContent>
+            <ListTitle>11.1%</ListTitle>
+            <ListDesc>XRP</ListDesc>
+          </ListContent>
+        </ListItem>
+        <ListItem as={Col} xs={4}>
+          <ListColor style={{backgroundImage: 'linear-gradient(165deg, #ff4121, #e4b086)'}}/>
+          <ListContent>
+            <ListTitle>5.1%</ListTitle>
+            <ListDesc>BCH</ListDesc>
+          </ListContent>
+        </ListItem>
+        <ListItem as={Col} xs={4}>
+          <ListColor style={{backgroundImage: 'linear-gradient(165deg, #2a70c0, #00bb80)'}}/>
+          <ListContent>
+            <ListTitle>2.6%</ListTitle>
+            <ListDesc>EOS</ListDesc>
+          </ListContent>
+        </ListItem>
+        <ListItem as={Col} xs={4}>
+          <ListColor style={{backgroundImage: 'linear-gradient(165deg, #c03f2a, #bb008a)'}}/>
+          <ListContent>
+            <ListTitle>2.5%</ListTitle>
+            <ListDesc>XLM</ListDesc>
+          </ListContent>
+        </ListItem>
+        <ListItem as={Col} xs={4}>
+          <ListColor style={{backgroundImage: 'linear-gradient(165deg, #2aa3c0, #bb008a)'}}/>
+          <ListContent>
+            <ListTitle>1.7%</ListTitle>
+            <ListDesc>LTC</ListDesc>
+          </ListContent>
+        </ListItem>
+        <ListItem as={Col} xs={4}>
+          <ListColor style={{backgroundImage: 'linear-gradient(165deg, #ffb300, #bb7500)'}}/>
+          <ListContent>
+            <ListTitle>1.1%</ListTitle>
+            <ListDesc>ADA</ListDesc>
+          </ListContent>
+        </ListItem>
+        <ListItem as={Col} xs={4}>
+          <ListColor style={{backgroundImage: 'linear-gradient(165deg, #23ae77, #6d7bd7)'}}/>
+          <ListContent>
+            <ListTitle>6.8%</ListTitle>
+            <ListDesc>Other</ListDesc>
+          </ListContent>
+        </ListItem>
+      </List>
+    )
+  }
+}
+
 export default () => (
   <Wrapper grey>
     <Grid className="container">
-      <Row>
+      <Row className="align-items-center">
         <Col xs={12} sm={6} md={4}>
           <AccentText>Not sure which crypto is right for you?</AccentText>
 
@@ -131,71 +207,9 @@ export default () => (
             <Gradient>Lykke Index</Gradient>
           </Title>
 
-          <List as={Row} className="d-md-none">
-            <ListItem as={Col} xs={4}>
-              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #3023ae, #c86dd7)'}}/>
-              <ListContent>
-                <ListTitle>57.8%</ListTitle>
-                <ListDesc>BTC</ListDesc>
-              </ListContent>
-            </ListItem>
-            <ListItem as={Col} xs={4}>
-              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #ae23a1, #d76d6d)'}}/>
-              <ListContent>
-                <ListTitle>11.3%</ListTitle>
-                <ListDesc>ETH</ListDesc>
-              </ListContent>
-            </ListItem>
-            <ListItem as={Col} xs={4}>
-              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #2399ae, #6dd0d7)'}}/>
-              <ListContent>
-                <ListTitle>11.1%</ListTitle>
-                <ListDesc>XRP</ListDesc>
-              </ListContent>
-            </ListItem>
-            <ListItem as={Col} xs={4}>
-              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #ff4121, #e4b086)'}}/>
-              <ListContent>
-                <ListTitle>5.1%</ListTitle>
-                <ListDesc>BCH</ListDesc>
-              </ListContent>
-            </ListItem>
-            <ListItem as={Col} xs={4}>
-              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #2a70c0, #00bb80)'}}/>
-              <ListContent>
-                <ListTitle>2.6%</ListTitle>
-                <ListDesc>EOS</ListDesc>
-              </ListContent>
-            </ListItem>
-            <ListItem as={Col} xs={4}>
-              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #c03f2a, #bb008a)'}}/>
-              <ListContent>
-                <ListTitle>2.5%</ListTitle>
-                <ListDesc>XLM</ListDesc>
-              </ListContent>
-            </ListItem>
-            <ListItem as={Col} xs={4}>
-              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #2aa3c0, #bb008a)'}}/>
-              <ListContent>
-                <ListTitle>1.7%</ListTitle>
-                <ListDesc>LTC</ListDesc>
-              </ListContent>
-            </ListItem>
-            <ListItem as={Col} xs={4}>
-              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #ffb300, #bb7500)'}}/>
-              <ListContent>
-                <ListTitle>1.1%</ListTitle>
-                <ListDesc>ADA</ListDesc>
-              </ListContent>
-            </ListItem>
-            <ListItem as={Col} xs={4}>
-              <ListColor style={{backgroundImage: 'linear-gradient(165deg, #23ae77, #6d7bd7)'}}/>
-              <ListContent>
-                <ListTitle>6.8%</ListTitle>
-                <ListDesc>Other</ListDesc>
-              </ListContent>
-            </ListItem>
-          </List>
+          <div className="d-md-none">
+            <LyciList/>
+          </div>
 
           <Text>
             LyCI&nbsp;is a&nbsp;weighted index that consolidates and tracks
@@ -210,14 +224,19 @@ export default () => (
             </Link>
           </ButtonContainer>
         </Col>
-        <Col xs={12} sm={6} md={8} className="text-center d-none d-md-block">
-          <Image>
-            <img src="/static/images/chart.png" width="538px" alt="chart" />
-          </Image>
-          <Hint>
-            At the time of writing the cryptocurrencies with the highest market
-            cap and corresponding weights are data from coinmarketcap
-          </Hint>
+        <Col xs={12} sm={6} md={8} className="text-center ">
+          <div className="d-none d-lg-block">
+            <Image>
+              <img src="/static/images/chart.png" width="538px" alt="chart" />
+            </Image>
+            <Hint>
+              At the time of writing the cryptocurrencies with the highest market
+              cap and corresponding weights are data from coinmarketcap
+            </Hint>
+          </div>
+          <div className="d-none d-md-block d-lg-none">
+            <LyciList/>
+          </div>
         </Col>
       </Row>
     </Grid>
