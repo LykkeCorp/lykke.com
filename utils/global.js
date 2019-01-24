@@ -51,9 +51,10 @@ const GlobalStyle = createGlobalStyle`
   h2, .h2,
   h3, .h3,
   h4, .h4 {
+    margin-top: 0;
     font-family: ${p => p.theme.fonts.headings};
     font-weight: 600;
-    margin-top: 0;
+    line-height: normal;
   }
   
   h1, .h1 {
@@ -124,6 +125,10 @@ const GlobalStyle = createGlobalStyle`
   
   .align-items-center {
     align-items: center!important;
+  }
+  
+  .align-items-end {
+    align-items: end!important;
   }
   
   .align-self-end {

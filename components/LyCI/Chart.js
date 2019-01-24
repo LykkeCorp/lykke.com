@@ -11,19 +11,20 @@ const StyledTabList = styled(TabList)`
   display: flex;
   align-items: center;
   list-style: none;
+  color: ${p => p.theme.colors.lightGrey};
   border-bottom: 2px solid ${p => p.theme.colors.greyPale};
-  color: ${p => p.theme.colors.lightGrey}
 `;
 
 const StyledTab = styled(Tab).attrs({
     selectedClassName: 'selected',
     disabledClassName: 'disabled'
 })`
+  padding: ${rem('10px')};
   font-size: ${rem('20px')};
   font-weight: bold;
   font-family: ${p => p.theme.fonts.headings};
-  padding: ${rem('10px')};
   cursor: pointer;
+  
   &.selected {
     color: ${p => p.theme.colors.dark}
   }
