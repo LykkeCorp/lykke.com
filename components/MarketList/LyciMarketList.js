@@ -6,13 +6,15 @@ import {AccentTitle, Value, AccentDesc, Label} from "./styled";
 
 const LyciItem = styled.div`
   position: ${p => p.show ? 'relative' : 'absolute'};
-  width: ${rem('230px')};
+  max-width: ${rem('230px')};
   display: flex;
   align-items: center;
   justify-content: space-between;
   opacity: ${p => p.show ? 1 : 0};
   visibility: ${p => p.show ? 'visible' : 'hidden'};
-  transition: all 0.3s ease;
+  will-change: opacity, visibility;
+  transition: opacity ${p => p.theme.transition.primary}, 
+    visibility ${p => p.theme.transition.primary};
 `;
 
 

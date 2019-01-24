@@ -54,6 +54,16 @@ const Logo = styled.div`
       margin-top: 0;
     }
   }
+  
+  @media all and (max-width: 420px) {
+    width: 30px;
+    overflow: hidden;
+    transition: width ${p => p.theme.transition.primary};
+    
+    .menu-opened & {
+      width: 94px;
+    }
+  }
 `;
 
 const Caret = styled.span`

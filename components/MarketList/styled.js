@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import rem from "polished/lib/helpers/rem";
+import {rem} from 'polished';
 
 export const MarketList = styled.div`
   min-height: ${rem('50px')};
@@ -12,10 +12,16 @@ export const MarketList = styled.div`
     position: fixed;
     top: ${rem('8px')};
     right: 0;
+    width: 50%;
     background-color: transparent;
     z-index: 201;
     transition: opacity ${p => p.theme.transition.primary},
       visibility ${p => p.theme.transition.primary};
+      
+    .justify-content-between,
+    .align-items-center {
+      justify-content: flex-end!important;
+    }
 
     .menu-opened & {
       opacity: 0;
@@ -25,6 +31,10 @@ export const MarketList = styled.div`
 
   @media all and (max-width: 767px) {
     top: 4px;
+  }
+
+  @media all and (max-width: 380px) {
+    width: auto;
   }
 `;
 
