@@ -196,7 +196,7 @@ export default class extends Component {
                           {/*</Link>*/}
                         {/*</li>*/}
                         <li>
-                          <Link href="/api-wallet-trading-rules-fees-limits">
+                          <Link href="/wallet-fees-and-limits">
                             <a>Fees and limits</a>
                           </Link>
                         </li>
