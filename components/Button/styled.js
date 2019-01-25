@@ -67,7 +67,6 @@ export const ButtonBlank = styled.button`
   display: inline-block;
   vertical-align: middle;
   margin: 0;
-  font-family: inherit;
   color: inherit;
   text-decoration: none;
   text-align: center;

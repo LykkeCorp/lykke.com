@@ -69,9 +69,9 @@ export const TermsAndRegulation = props => {
                         </List>
                         <h3 id="uk">Rules for engaging with Lykke Corp UK</h3>
                         <p>The following rules apply to engaging with Lykke Corp UK.</p>
-                        <p>Lykke's general <Link href="/terms-of-use"><TextLink>Terms of Use</TextLink></Link> .</p>
-                        <p><Link href="/uk-rulebook"><TextLink noUnderline>The Rulebook</TextLink></Link>, which describes the functionality of trading on the trading venue maintained by Lykke Corp UK.</p>
-                        <p><Link href="/privacy-policy"><TextLink noUnderline>The Privacy Policy</TextLink></Link>, which applies for trading on the trading venue maintained by Lykke Corp UK.</p>
+                        <p>Lykke's general <Link href="/terms-of-use"><TextLink href="/terms-of-use">Terms of Use</TextLink></Link> .</p>
+                        <p><Link href="/uk-rulebook"><TextLink href="/uk-rulebook" noUnderline>The Rulebook</TextLink></Link>, which describes the functionality of trading on the trading venue maintained by Lykke Corp UK.</p>
+                        <p><Link href="/privacy-policy"><TextLink href="/privacy-policy" noUnderline>The Privacy Policy</TextLink></Link>, which applies for trading on the trading venue maintained by Lykke Corp UK.</p>
                         <h3 id="nl">Rules for trading with Lykke Netherlands</h3>
                         <p>The following rules apply to trading with Lykke Netherlands.</p>
                         <List>
@@ -92,9 +92,9 @@ export const TermsAndRegulation = props => {
                         </List>
                         <h3 id="ag">Rules for trading with Lykke Corp AG</h3>
                         <p>The following rules apply to trading with Lykke Corp AG.</p>
-                        <p>Lykke's general <Link href="/terms-of-use"><TextLink noUnderline>Terms of Use</TextLink></Link>.</p>
-                        <p><Link href="/uk-rulebook"><TextLink noUnderline>The Rulebook</TextLink></Link>, which describes the functionality of trading on the trading venue maintained by Lykke Corp UK, applies mutatis mutandis to the functionality and trading by Lykke Corp AG. </p>
-                        <p>The privacy policy applicable to trading with Lykke Corp AG is included in Lykke’s general <Link href="/privacy-policy"><TextLink noUnderline>Privacy Policy</TextLink></Link>.</p>
+                        <p>Lykke's general <Link href="/terms-of-use"><TextLink href="/terms-of-use" noUnderline>Terms of Use</TextLink></Link>.</p>
+                        <p><Link href="/uk-rulebook"><TextLink href="/uk-rulebook" noUnderline>The Rulebook</TextLink></Link>, which describes the functionality of trading on the trading venue maintained by Lykke Corp UK, applies mutatis mutandis to the functionality and trading by Lykke Corp AG. </p>
+                        <p>The privacy policy applicable to trading with Lykke Corp AG is included in Lykke’s general <Link href="/privacy-policy"><TextLink href="/privacy-policy" noUnderline>Privacy Policy</TextLink></Link>.</p>
                         <h3 id="vanuatu">Rules for trading with Lykke Vanuatu</h3>
                         <p>The following rules apply to trading with Lykke Vanuatu.</p>
                         <StyledColumnList>
@@ -122,9 +122,9 @@ export const TermsAndRegulation = props => {
                         </StyledColumnList>
                         <AnchorTitle id="b2bServices">Terms and conditions for Lykke’s B2B services</AnchorTitle>
                         <p>All B2B advisory and technical services, such as blockchain technology implementation and advisory services for ICOs, are provided by Lykke Accelerator AG. <TextLink noUnderline href="https://lykkecomdb.blob.core.windows.net/documents/Terms_and_Conditions%20applicable_to_Lykke%20Accelerator%E2%80%99s_services.pdf">These terms and conditions</TextLink> apply to such an engagement.</p>
-                        <p>The privacy policy applicable to Lykke’s B2B Services is included in Lykke’s general <Link href="/privacy-policy"><TextLink noUnderline>Privacy Policy</TextLink></Link>.</p>
+                        <p>The privacy policy applicable to Lykke’s B2B Services is included in Lykke’s general <Link href="/privacy-policy"><TextLink href="/privacy-policy" noUnderline>Privacy Policy</TextLink></Link>.</p>
                         <h2>Limitations</h2>
-                        <p>Due to the regulatory restrictions, we are not yet permitted to onboard residents from this <Link href="/restricted-countries"><TextLink noUnderline>country list</TextLink></Link>.</p>
+                        <p>Due to the regulatory restrictions, we are not yet permitted to onboard residents from this <Link href="/restricted-countries"><TextLink href="/restricted-countries" noUnderline>country list</TextLink></Link>.</p>
                     </PolicyWrapper>
                 </Col>
             </Row>
