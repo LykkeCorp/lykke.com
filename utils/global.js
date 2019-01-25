@@ -135,6 +135,10 @@ const GlobalStyle = createGlobalStyle`
     align-self: flex-end!important;
   }
   
+  .text-left {
+    text-align: left;
+  }
+  
   .text-right {
     text-align: right;
   }
