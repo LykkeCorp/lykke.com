@@ -32,11 +32,11 @@ export const Policy = () => {
                         <p>The Sites and Apps may contain links to external Sites, which are not governed by this privacy policy, and Lykke does not take responsibility for the privacy practices of any third-party Sites to which we link. We encourage you to review the privacy policies of such Sites before you submit information there.</p>
                         <AnchorTitle id="shortTermPolicy">Short form privacy policy</AnchorTitle>
                         <h3>Your data privacy with Lykke</h3>
-                        <p>At Lykke we care about your privacy and want you to be confident in the way we use your personal information and other data. This page provides a summary for you. If you’d like to read our privacy policy and other terms and conditions in full then select <Link><TextLink href="/terms-and-regulation">here</TextLink></Link> </p>
+                        <p>At Lykke we care about your privacy and want you to be confident in the way we use your personal information and other data. This page provides a summary for you. If you’d like to read our privacy policy and other terms and conditions in full then select <Link href="/terms-and-regulation"><TextLink href="/terms-and-regulation">here</TextLink></Link> </p>
                         <p>Our data privacy policy applies to all of the products and services we provide you as a customer and user of our site and apps.</p>
                         <p>The information we collect about you helps us provide the best service possible to you. It also helps us keep your information safe and comply with laws and regulations.</p>
                         <h3>About us</h3>
-                        <p>We are Lykke Corp, a Swiss based company but we do have other subsidiaries and affiliates. If you want further information on our any of our companies or wish to get in contact with us you can do <Link><TextLink href="/contacts">here</TextLink></Link>.</p>
+                        <p>We are Lykke Corp, a Swiss based company but we do have other subsidiaries and affiliates. If you want further information on our any of our companies or wish to get in contact with us you can do <Link href="/contacts"><TextLink href="/contacts">here</TextLink></Link>.</p>
                         <h3>What we do with your data</h3>
                         <p>We use the personal information you give us in various ways but primarily to allow us to provide you with the products and services you’d like to use as well as offer our support services. We also use it to help protect you and our services from crime, such as fraud or money laundering. We may share your information with our other group companies and selected third parties but always make sure it remains protected. We don’t sell or make available your data to any third parties for marketing, advertising or related purposes.</p>
                         <h3>What sort of information do we ask you for</h3>
@@ -86,7 +86,7 @@ export const Policy = () => {
                         <h3>Children</h3>
                         <p>Lykke understands the importance of protecting children’s privacy, particularly in their online interactions. The Sites and the Apps are not designed for and do not intentionally target or solicit to persons 18 years of age and younger.</p>
                         <h3>Use of Lykke websites</h3>
-                        <p>Your access to and use of the Sites and the Apps are subject to certain terms and conditions, which are summarized in our <Link><TextLink href="/terms-of-use">Terms and Conditions of Use</TextLink></Link>.</p>
+                        <p>Your access to and use of the Sites and the Apps are subject to certain terms and conditions, which are summarized in our <Link href="/terms-of-use"><TextLink href="/terms-of-use">Terms and Conditions of Use</TextLink></Link>.</p>
                         <h3>Contact us</h3>
                         <p>If you have any questions about this Privacy Policy or the collection and use of information by Lykke, please contact our Data Protection Officer: <TextLink href="mailto:dpo@lykke.com">dpo@lykke.com</TextLink>. <br/>
                             For general queries and support, you can contact us here: <TextLink href="mailto:support@lykke.com">support@lykke.com</TextLink> .</p>
