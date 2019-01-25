@@ -574,7 +574,7 @@ export const FeesAndLimits = () => {
                             </tbody>                    
                         </AssetLimitsTable>
                         <h2>Limitations</h2>
-                        <p>Due to the regulatory restrictions, we are not yet permitted to onboard residents from this <Link href="/restricted-countries"><TextLink>country list</TextLink></Link>.</p>  
+                        <p>Due to the regulatory restrictions, we are not yet permitted to onboard residents from this <Link href="/restricted-countries"><TextLink href="/restricted-countries">country list</TextLink></Link>.</p>
                     </FeesAndLimitsWrapper>
                 </Col>
             </Row>
