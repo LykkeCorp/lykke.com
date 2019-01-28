@@ -30,34 +30,38 @@ const Menu = styled.nav`
     .align-items-center {
       margin: 0;
     }
-    
-    &:before {
-      content: '';
-      top: -60px;
-      bottom: 0;
-      left: 360px;
-      right: 0;
-      position: fixed;
-      background-color: ${p => rgba(p.theme.colors.dark, .8)};
-      pointer-events: none;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity ${p => p.theme.transition.primary};
-    }
-    
-    .menu-opened & {
-      &:before {
-        opacity: 1;
-      }
-    }
   }
   
   @media all and (max-width: 580px) {
     width: 100%;
+  }
+`;
+
+const Backdrop = styled.div`
+  display: none;
+  
+  @media all and (max-width: 991px) {
+    display: block;
+    top: -60px;
+    bottom: 0;
+    left: 360px;
+    right: 0;
+    position: fixed;
+    background-color: ${p => rgba(p.theme.colors.dark, .8)};
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity ${p => p.theme.transition.primary},
+      visibility ${p => p.theme.transition.primary};
     
-    &:before {
-      display: none;
+    .menu-opened & {
+      opacity: 1;
+      visibility: visible;
     }
+  }
+  
+  @media all and (max-width: 580px) {
+    display: none;  
   }
 `;
 
@@ -119,7 +123,6 @@ const Caret = styled.span`
   }
   
   @media all and (max-width: 991px) {
-    
     &:after {
       display: none;
     }
@@ -509,6 +512,7 @@ export default class Nav extends Component {
                 </AccountContainer>
               </MenuInner>
             </Menu>
+            <Backdrop onClick={this.props.menuHandler}/>
           </Col>
         </Row>
       </Wrapper>
