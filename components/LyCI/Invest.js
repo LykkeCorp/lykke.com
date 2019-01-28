@@ -4,6 +4,9 @@ import Link from 'next/link';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import Button from '../Button'
 import {rem} from 'polished';
+import getConfig from 'next/config'
+const {publicRuntimeConfig} = getConfig()
+const { WALLET_URL } = publicRuntimeConfig
 
 export const Invest = styled.section``;
 
@@ -73,7 +76,7 @@ export default () => (
           <Card>
             <CardTitle>25&nbsp;Cryptos&nbsp;&mdash; One click</CardTitle>
             <CardText className="d-none d-md-block">Don&rsquo;t put all your eggs in&nbsp;one basket.</CardText>
-            <CardAction><Button href="#">Start now</Button></CardAction>
+            <CardAction><Button href={WALLET_URL}>Start now</Button></CardAction>
             <CardHint>
               Please read full&nbsp;
               <Link href="/privacy-policy">

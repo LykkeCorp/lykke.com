@@ -376,7 +376,7 @@ export default class Nav extends Component {
             />
           </Col>
           <Col className="col-xs-auto">
-            <Logo>
+            <Logo onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
               <Link href="/">
                 <a>
                   <img src="/static/logo-main.svg" alt="Lykke" width="115px" />
@@ -388,7 +388,7 @@ export default class Nav extends Component {
             <Menu show={this.props.isMenuOpen}>
               <MenuInner>
                 <Row className="align-items-center">
-                  <MenuItem as={Col}>
+                  <MenuItem as={Col} onClick={this.props.isMenuOpen ? this.props.menuHandler : null} >
                     <MenuItemInner>
                       <Link prefetch activeClassName="active" href="/">
                         <a className="with_border">
@@ -402,7 +402,7 @@ export default class Nav extends Component {
                       </Link>
                     </MenuItemInner>
                   </MenuItem>
-                  <MenuItem as={Col}>
+                  <MenuItem as={Col} onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
                     <MenuItemInner>
                       <Link prefetch activeClassName="active" href="/trade">
                         <a className="with_border">
@@ -416,7 +416,7 @@ export default class Nav extends Component {
                       </Link>
                     </MenuItemInner>
                   </MenuItem>
-                  <MenuItem as={Col}>
+                  <MenuItem as={Col} onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
                     <MenuItemInner>
                       <Link  prefetch activeClassName="active"  href="/lyci">
                         <a className="with_border">Lykke Index</a>
@@ -438,12 +438,12 @@ export default class Nav extends Component {
 
                     <DropdownMenu isOpen={this.state.isDropdownOpen}>
                       <DropdownMenuInner>
-                        <DropdownItem>
+                        <DropdownItem onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
                           <Link href="https://medium.com/scbc-magazine">
                             <a target="_blank">SCBC Magazine</a>
                           </Link>
                         </DropdownItem>
-                        <DropdownItem>
+                        <DropdownItem onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
                           <Link href="/about/invest">
                             <a>Invest</a>
                           </Link>
@@ -453,7 +453,7 @@ export default class Nav extends Component {
                             {/*<a>News</a>*/}
                           {/*</Link>*/}
                         {/*</DropdownItem>*/}
-                        <DropdownItem>
+                        <DropdownItem onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
                           <Link href="https://lykkex.zendesk.com/hc/en-us">
                             <a target="_blank">Help center</a>
                           </Link>

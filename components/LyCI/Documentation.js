@@ -95,7 +95,7 @@ export const Text = styled.div`
     }
     
     h4 {
-      margin-bottom: 8px;s
+      margin-bottom: 8px;
     }
   }
 `;
@@ -134,7 +134,7 @@ export default ({lyci}) => {
         constituents = lyci.Composition.map(i => {
             return (
                 <ListItem as={Col} xs={12} sm={6} key={i.AssetId}>
-                    <Row>
+                    <Row className="justify-content-between">
                         <Col>
                             {i.AssetId}
                         </Col>
@@ -227,7 +227,7 @@ export default ({lyci}) => {
                             <h4>Specification</h4>
                             <p>
                                 If you want to know more details about LyCI, you can download
-                                the <a href="#">index specification document</a>.
+                                the <a href="https://www.lykke.com/media/documents/LyCI%20-%20Specification-3.pdf" target="_blank">index specification document</a>.
                             </p>
 
                             <h5>Constituents:</h5>
