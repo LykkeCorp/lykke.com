@@ -36,11 +36,15 @@ export const Section = styled.section`
   }
 
   @media all and (max-width: 767px) {
-      padding-top: 70px;
-      padding-bottom: 40px;
-      font-size: 14px;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    font-size: 14px;
+    
+    ${Row} + ${Row} {
+      margin-top: 50px;    
     }
   }
+}
 `
 
 export const Image = styled.div`
@@ -94,7 +98,7 @@ const Contacts = props => {
                     </Button>
                   </Col>
               </Row>
-              <Row>
+              <Row className="d-none d-md-block">
                   <Col xs={12} sm={12} md={12}>
                     <Image>
                       <img
@@ -111,7 +115,7 @@ const Contacts = props => {
                       <h4>Media</h4>
                       <List>
                         <ListItem>
-                          <a href="/cp/information-for-partners-and-media">
+                          <a href="https://www.lykke.com/cp/information-for-partners-and-media" target="_blank">
                             <i className="icon icon--document"/>
                             <ListTitle>Information for partners and media</ListTitle>
                           </a>
