@@ -23,7 +23,7 @@ export default () => (
     <Row>
       <Col xs={6}>
         <AppItem>
-          <Link href="https://appsto.re/ru/Dwjvcb.i">
+          <Link href="https://itunes.apple.com/de/app/id1112839581">
             <a target="_blank">
               <img src="/static/appstore.svg" width="170px" alt="apps_apple"/>
             </a>
