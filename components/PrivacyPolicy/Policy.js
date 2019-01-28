@@ -2,7 +2,7 @@ import React from 'react';
 import {Col, Grid, Row} from 'react-styled-flexboxgrid';
 import Link from 'next/link';
 
-import { PolicyWrapper, List, TextLink } from './styled';
+import { PolicyWrapper, List, TextLink, AnchorTitle } from './styled';
 
 export const Policy = () => {
     return (
@@ -30,13 +30,13 @@ export const Policy = () => {
                         <p>In addition, information that you submit to Lykke in response to an email request for information or other outreach from Lykke, or through the Lykke employment application processes, will also be treated in accordance with this Privacy Policy.</p>
                         <p>In this written Privacy Policy, Lykke describes the use of your personal data by Lykke and the scope and breadth of our commitment to privacy. Lykke may, in its discretion, amend this Privacy Policy from time to time. Any material changes to our policy will be reflected on this page, so that you remain informed about the information we collect and how we use it. By exploring and using the Sites and Apps, and by submitting information to Lykke, you agree to Lykke use of such information as described herein.</p>
                         <p>The Sites and Apps may contain links to external Sites, which are not governed by this privacy policy, and Lykke does not take responsibility for the privacy practices of any third-party Sites to which we link. We encourage you to review the privacy policies of such Sites before you submit information there.</p>
-                        <h2 id="shortTermPolicy">Short form privacy policy</h2>
+                        <AnchorTitle id="shortTermPolicy">Short form privacy policy</AnchorTitle>
                         <h3>Your data privacy with Lykke</h3>
-                        <p>At Lykke we care about your privacy and want you to be confident in the way we use your personal information and other data. This page provides a summary for you. If you’d like to read our privacy policy and other terms and conditions in full then select <Link href="/terms-of-use"><TextLink>here</TextLink></Link> </p>
+                        <p>At Lykke we care about your privacy and want you to be confident in the way we use your personal information and other data. This page provides a summary for you. If you’d like to read our privacy policy and other terms and conditions in full then select <Link href="/terms-and-regulation"><TextLink href="/terms-and-regulation">here</TextLink></Link> </p>
                         <p>Our data privacy policy applies to all of the products and services we provide you as a customer and user of our site and apps.</p>
                         <p>The information we collect about you helps us provide the best service possible to you. It also helps us keep your information safe and comply with laws and regulations.</p>
                         <h3>About us</h3>
-                        <p>We are Lykke Corp, a Swiss based company but we do have other subsidiaries and affiliates. If you want further information on our any of our companies or wish to get in contact with us you can do <Link href="/contacts"><TextLink>here</TextLink></Link>.</p>
+                        <p>We are Lykke Corp, a Swiss based company but we do have other subsidiaries and affiliates. If you want further information on our any of our companies or wish to get in contact with us you can do <Link href="/contacts"><TextLink href="/contacts">here</TextLink></Link>.</p>
                         <h3>What we do with your data</h3>
                         <p>We use the personal information you give us in various ways but primarily to allow us to provide you with the products and services you’d like to use as well as offer our support services. We also use it to help protect you and our services from crime, such as fraud or money laundering. We may share your information with our other group companies and selected third parties but always make sure it remains protected. We don’t sell or make available your data to any third parties for marketing, advertising or related purposes.</p>
                         <h3>What sort of information do we ask you for</h3>
@@ -53,7 +53,7 @@ export const Policy = () => {
                         <p>You have various rights in your information such as the right to ask us what information we hold about you, ask us to correct or delete information about you or to restrict our use of it. You also have the right to request us to export or transfer data to other companies. And you have the right to complain about our use of your data and submit a complaint to the relevant data protection authority.</p>
                         <h3>Who do I contact to find our more or make a complaint</h3>
                         <p>If you have any questions, comments or complaints regarding how we collect, use and store information about you, Lykke Corp. has Data Protection Officer to help you. If you need assistance, please send an e-mail to <TextLink href="mailto:dpo@lykke.com">dpo@lykke.com</TextLink>.</p>
-                        <h2 id="fullFormPolicy">Full form privacy policy</h2>
+                        <AnchorTitle id="fullFormPolicy">Full form privacy policy</AnchorTitle>
                         <h3>Information that we collect, and how we use it</h3>
                         <p>Lykke collects information from our users when they create their account for the Sites or the Apps, when they request copies of publications, seek additional information regarding our services, or register for conferences and other Lykke events. Some of the forms for Lykke registration, enrollment, account setup, and other purposes may ask users to give us contact information, unique personal identifiers, financial information, subject areas of interest, and/or demographic information. We may use these data to tailor the visitor’s experience at our Sites and Apps or, if applicable, to assess the candidacy of an individual and qualifications for employment with Lykke.</p>
                         <p>You agree that Lykke may use any personal information that you provide, such as your name, address, email address, phone number, subject areas of interest, etc., to inform you about updates to the service and to notify you about other products and services offered by Lykke that may be of interest to you. We will not sell, share, or rent or otherwise make available any of that information to other parties, except that we may disclose the information to third parties who perform services on our behalf and have a need to access the information in connection with the performance of those services. In addition, you agree that Lykke may disclose your contact information in response to inquiries by bona-fide rights owners in connection with allegations of infringement of copyright or other proprietary rights arising from information that you have posted on the Sites or otherwise provided to Lykke. Individuals that subscribe to email newsletters are given the opportunity to opt out of promotions, news, and information at the time of signup. Lykke also provides users the opportunity to opt out of receiving communications from us at the points where we request information. You may also feel free to contact us as indicated below if you wish to opt out of communications received from Lykke at a later point.</p>
@@ -86,7 +86,7 @@ export const Policy = () => {
                         <h3>Children</h3>
                         <p>Lykke understands the importance of protecting children’s privacy, particularly in their online interactions. The Sites and the Apps are not designed for and do not intentionally target or solicit to persons 18 years of age and younger.</p>
                         <h3>Use of Lykke websites</h3>
-                        <p>Your access to and use of the Sites and the Apps are subject to certain terms and conditions, which are summarized in our <Link href="/terms-of-use"><TextLink>Terms and Conditions of Use</TextLink></Link>.</p>
+                        <p>Your access to and use of the Sites and the Apps are subject to certain terms and conditions, which are summarized in our <Link href="/terms-of-use"><TextLink href="/terms-of-use">Terms and Conditions of Use</TextLink></Link>.</p>
                         <h3>Contact us</h3>
                         <p>If you have any questions about this Privacy Policy or the collection and use of information by Lykke, please contact our Data Protection Officer: <TextLink href="mailto:dpo@lykke.com">dpo@lykke.com</TextLink>. <br/>
                             For general queries and support, you can contact us here: <TextLink href="mailto:support@lykke.com">support@lykke.com</TextLink> .</p>

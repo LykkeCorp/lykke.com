@@ -48,7 +48,15 @@ export const Cards = styled.div`
     }
   }
 
-  @media all and (min-width: 992px) {
+  @media all and (min-width: 768px) and (max-width: 991px) {
+    > ${Row} {
+      > ${Col} {
+        margin-bottom: ${rem('20px')}
+      }
+    }
+  }
+
+  @media all and (min-width: 768px) {
     ${Card} {
       height: 100%;
     }
@@ -96,6 +104,7 @@ export const CardFooter = styled.div`
   .btn {
     padding-right: 0;
     padding-left: 0;
+    text-align: right;
   }
 
   form {
@@ -116,6 +125,10 @@ export const CardFooter = styled.div`
 
     form input {
       padding-left: 20px;
+    }
+    
+   .btn {
+      padding-right: 15px;
     }
   }
 `;
@@ -147,8 +160,8 @@ export default () => (
   <Wrapper>
     <Grid className="container">
       <Cards>
-        <Row>
-          <Col xs={12} sm={4}>
+        <Row className="justify-content-center">
+          <Col xs={12} sm={5} md={4}>
             <Card>
               <i className="icon icon--register" />
               <CardTitle>Register</CardTitle>
@@ -160,7 +173,7 @@ export default () => (
               </CardFooter>
             </Card>
           </Col>
-          <Col xs={12} sm={4}>
+          <Col xs={12} sm={5} md={4}>
             <Card>
               <i className="icon icon--follow" />
               <CardTitle>Follow us</CardTitle>
@@ -209,7 +222,7 @@ export default () => (
               </CardFooter>
             </Card>
           </Col>
-          <Col xs={12} sm={4}>
+          <Col xs={12} sm={5} md={4}>
             <Card>
               <i className="icon icon--newsletter" />
               <CardTitle>SCBC Magazine</CardTitle>
@@ -217,10 +230,10 @@ export default () => (
               <CardFooter border>
                 <form>
                   <Row>
-                    <Col xs={7} sm={9}>
+                    <Col xs={7} sm={8}>
                       <input type="text" placeholder="Your email" />
                     </Col>
-                    <Col xs={5} sm={3}>
+                    <Col xs={5} sm={4} className="text-right">
                       <Button flat small block className="btn">
                         Subscribe
                       </Button>

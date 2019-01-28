@@ -6,9 +6,17 @@ import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 export const Documentation = styled.section`
   padding: ${rem('160px')} 0 ${rem('180px')};
   background-color: ${p => p.theme.colors.greyPale};
+  
+  ${Col} + ${Col} {
+    margin-top: 30px;
+  }
 
   @media all and (min-width: 768px) {
-    padding: ${rem('180px')} 0 ${rem('160px')};
+    padding: ${rem('180px')} 0 ${rem('160px')};  
+    
+    ${Col} + ${Col} {
+      margin-top: 0;
+    }
   }
 `;
 
@@ -79,16 +87,34 @@ export const Text = styled.div`
       }
     }
   }
+  
+  @media all and (max-width: 767px) {
+    h3 {
+      margin-bottom: 45px;
+      font-size: 40px;
+    }
+    
+    h4 {
+      margin-bottom: 8px;
+    }
+  }
 `;
 
+const List = styled.ul`
+  list-style: none;
+  padding: 0 !important;
+  font-weight: 600;
+  max-width: 380px;
+`
+
+const ListItem = styled.li``
+
 const CustomGutter = styled.div`
-  table {
-    max-width: 170px;
-    margin-top: ${rem('15px')};
+  ${Col} + ${Col} {
+    margin-top: 0;
   }
 
   @media all and (min-width: 992px) {
-    max-width: 380px;
 
     ${Row} {
       margin-right: ${rem('-20px')};
@@ -107,14 +133,16 @@ export default ({lyci}) => {
     if(lyci.Composition) {
         constituents = lyci.Composition.map(i => {
             return (
-                <tr key={i.AssetId}>
-                    <td>
-                        {i.AssetId}
-                    </td>
-                    <td>
-                        {(i.Weight * 100).toFixed(2)} %
-                    </td>
-                </tr>
+                <ListItem as={Col} xs={12} sm={6} key={i.AssetId}>
+                    <Row className="justify-content-between">
+                        <Col>
+                            {i.AssetId}
+                        </Col>
+                        <Col>
+                            {(i.Weight * 100).toFixed(2)} %
+                        </Col>
+                    </Row>
+                </ListItem>
             )
         });
     }
@@ -199,21 +227,17 @@ export default ({lyci}) => {
                             <h4>Specification</h4>
                             <p>
                                 If you want to know more details about LyCI, you can download
-                                the <a href="#">index specification document</a>.
+                                the <a href="https://www.lykke.com/media/documents/LyCI%20-%20Specification-3.pdf" target="_blank">index specification document</a>.
                             </p>
 
                             <h5>Constituents:</h5>
 
                             <CustomGutter>
-                                <Row>
-                                    <Col xs={12} sm={6}>
-                                        <table>
-                                            <tbody>
-                                                {constituents}
-                                            </tbody>
-                                        </table>
-                                    </Col>
-                                </Row>
+                                <List>
+                                    <Row>
+                                        {constituents}
+                                    </Row>
+                                </List>
                             </CustomGutter>
                         </Col>
                     </Row>

@@ -30,14 +30,45 @@ export const TextLink = styled.a`
   cursor: pointer;
 `;
 
-export const PolicyWrapper = styled.section`
+export const FeesAndLimitsWrapper = styled.section`
   padding: ${rem('60px')} 0;
   border-bottom: 1px solid ${p => p.theme.colors.greyLight};
 `;
 
-export const AnchorTitle = styled.h2`
-    @media all and (max-width: 991px) {
-        padding-top: ${rem('60px')};
-        margin-top: ${rem('-60px')};
+export const FeesAndLimitsTable = styled.table`
+    width: 100%;
+    margin-bottom: ${rem('20px')};
+
+    thead {
+        font-size: ${rem('18px')};
+    }
+
+    td {
+        width: 35%;
+        border-bottom: 1px solid #e1e1e1;
+        padding: ${rem('12px')} ${rem('20px')};
+
+        &:first-child {
+            width: 30%;
+        }
+    }
+`;
+
+export const AssetLimitsTable = styled.table`
+    width: 100%;
+    margin-bottom: ${rem('20px')};
+
+    thead {
+        font-size: ${rem('18px')};
+    }
+
+    td {
+        width: 60%;
+        border-bottom: 1px solid #e1e1e1;
+        padding: ${rem('12px')} ${rem('20px')};
+
+        &:first-child {
+            width: 40%;
+        }
     }
 `;

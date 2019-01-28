@@ -3,11 +3,11 @@ import {createGlobalStyle} from 'styled-components';
 const GlobalIcons = createGlobalStyle`
   @font-face {
     font-family: icons;
-    src:  url("static/fonts/icons.eot");
-    src:  url("static/fonts/icons.eot#iefix") format("embedded-opentype"),
-      url("static/fonts/icons.ttf") format("truetype"),
-      url("static/fonts/icons.woff") format("woff"),
-      url("static/fonts/icons.svg#icons") format("svg");
+    src:  url("/static/fonts/icons.eot");
+    src:  url("/static/fonts/icons.eot#iefix") format("embedded-opentype"),
+      url("/static/fonts/icons.ttf") format("truetype"),
+      url("/static/fonts/icons.woff") format("woff"),
+      url("/static/fonts/icons.svg#icons") format("svg");
     font-weight: normal;
     font-style: normal;
   }
@@ -25,7 +25,16 @@ const GlobalIcons = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
+  
+  .icon--call:before {
+    content: "\\e909";
+  }
+  .icon--document:before {
+    content: "\\e90a";
+  }
+  .icon--email:before {
+    content: "\\e90b";
+  }
   .icon--instagram:before {
     content: "\\e900";
   }

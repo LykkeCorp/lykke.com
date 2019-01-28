@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import styled, {css} from 'styled-components';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
-import {rem} from 'polished';
 import config from '../../config';
 import getConfig from 'next/config'
 const {publicRuntimeConfig} = getConfig()
@@ -9,7 +7,7 @@ const { LYCI_ASSET_INDEX, P_LYCI_ASSET_INDEX, SC_LYCI_ASSET_INDEX } = publicRunt
 
 import axios from '../../axios'
 
-import { MarketList, Wrapper, ListItem, Label, Title, Desc, Value } from "./styled";
+import { MarketList, Wrapper, ListItem, Title, Desc, Value } from './styled';
 import LyciMarketList from './LyciMarketList'
 
 // TODO: find me the better place to live
@@ -115,7 +113,7 @@ export default class extends Component {
           <Wrapper>
             <Row className="justify-content-between align-items-center">
               {lyci && (
-                <Col>
+                <Col xs={12} md={3}>
                   <ListItem>
                     <Row className="align-items-center">
                         <LyciMarketList lyci={lyci} show={this.state.showCount === 0} desc="Lykke Crypto Index"/>

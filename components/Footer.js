@@ -190,17 +190,17 @@ export default class extends Component {
                     <ListWrapper>
                       <ListHeader>For clients</ListHeader>
                       <List>
-                        <li>
+                        {/*<li>
                           <Link href="#">
                             <a>Tokens and coins</a>
                           </Link>
-                        </li>
+                        </li>*/}
                         <li>
-                          <Link href="#">
+                          <Link href="/wallet-fees-and-limits">
                             <a>Fees and limits</a>
                           </Link>
                         </li>
-                        <li>
+                        {/*<li>
                           <Link href="#">
                             <a>Trading indicators</a>
                           </Link>
@@ -209,22 +209,22 @@ export default class extends Component {
                           <Link href="#">
                             <a>Margin trading</a>
                           </Link>
-                        </li>
+                        </li>*/}
                         <li>
-                          <Link href="#">
+                          <Link href="https://blockchainexplorer.lykke.com/asset/AXkedGbAH1XGDpAypVzA5eyjegX4FaCnvM" target="_blank">
                             <a>Blockchain explorer</a>
                           </Link>
                         </li>
-                        <li>
+                        {/*<li>
                           <Link href="#">
                             <a>Public tradelog</a>
                           </Link>
                         </li>
                         <li>
                           <Link href="#">
-                            <a>Apply for listing</a>
+                            <a>Apply for listisng</a>
                           </Link>
-                        </li>
+                        </li>*/}
                       </List>
                     </ListWrapper>
                   </Col>
@@ -237,17 +237,17 @@ export default class extends Component {
                             <a>Lykke team</a>
                           </Link>
                         </li>
-                        <li>
+                        {/*<li>
                           <Link href="#">
                             <a>News</a>
                           </Link>
-                        </li>
+                        </li>*/}
                         <li>
-                          <Link href="#">
+                          <Link href="/about/invest">
                             <a>Invest</a>
                           </Link>
                         </li>
-                        <li>
+                        {/*<li>
                           <Link href="#">
                             <a>Carreers</a>
                           </Link>
@@ -256,22 +256,22 @@ export default class extends Component {
                           <Link href="#">
                             <a>FAQ</a>
                           </Link>
-                        </li>
+                        </li>*/}
                       </List>
                     </ListWrapper>
                     <ListWrapper>
                       <ListHeader>API</ListHeader>
                       <List>
                         <li>
-                          <Link href="#">
+                          <Link href="/api-wallet-trading-rules-fees-limits">
                             <a>API Fees and limits</a>
                           </Link>
                         </li>
-                        <li>
+                        {/*<li>
                           <Link href="#">
                             <a>API Deposits</a>
                           </Link>
-                        </li>
+                        </li>*/}
                       </List>
                     </ListWrapper>
                   </Col>
@@ -280,18 +280,18 @@ export default class extends Component {
                       <ListHeader>Get in touch</ListHeader>
                       <List>
                         <li>
-                          <Link href="#">
+                          <Link href="/contacts">
                             <a>Contacts</a>
                           </Link>
                         </li>
                         <li>
-                          <Link href="#">
-                            <a>Help Center</a>
+                          <Link href="https://lykkex.zendesk.com/hc/en-us">
+                            <a target="_blank">Help Center</a>
                           </Link>
                         </li>
                       </List>
                     </ListWrapper>
-                    <ListWrapper>
+                    {/*<ListWrapper>
                       <ListHeader>Contribute</ListHeader>
                       <List>
                         <li>
@@ -310,7 +310,7 @@ export default class extends Component {
                           </Link>
                         </li>
                       </List>
-                    </ListWrapper>
+                    </ListWrapper>*/}
                   </Col>
                   <Col xs={6} sm={3} md={3}>
                     <ListWrapper>
