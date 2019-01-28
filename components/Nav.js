@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import Link from './Link';
 import {Row, Col} from 'react-styled-flexboxgrid';
 import styled, {css} from 'styled-components';
+import {rem, rgba} from 'polished';
 import Button from './Button';
 import HeaderAccount from './HeaderAccount';
 
-import {rem} from 'polished/lib/index';
 
 const Wrapper = styled.div`
   background-color: ${p => p.theme.colors.transparent};
@@ -13,6 +13,8 @@ const Wrapper = styled.div`
 
 const Menu = styled.nav`
   @media all and (max-width: 991px) {
+    width: 360px;
+    max-width: 100%;
     position: fixed;
     left: 0;
     top: 59px;
@@ -28,14 +30,50 @@ const Menu = styled.nav`
     .align-items-center {
       margin: 0;
     }
+    
+    &:before {
+      content: '';
+      top: -60px;
+      bottom: 0;
+      left: 360px;
+      right: 0;
+      position: fixed;
+      background-color: ${p => rgba(p.theme.colors.dark, .8)};
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity ${p => p.theme.transition.primary};
+    }
+    
+    .menu-opened & {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+  
+  @media all and (max-width: 580px) {
+    width: 100%;
+    
+    &:before {
+      display: none;
+    }
   }
 `;
 
 const MenuInner = styled.div`
+  background-color: ${p => p.theme.colors.white};
+
   @media all and (max-width: 991px) {
     height: 100%;
     padding: 30px 16px;
     overflow: auto;
+  }
+  
+  @media all and (max-width: 580px) {
+    width: 360px;
+    max-width: 100%;
+    margin: 0 auto;
   }
 `;
 
@@ -121,6 +159,9 @@ const AccountContainer = styled.div`
   }
 
   @media all and (max-width: 991px) {
+    margin-left: auto;
+    margin-right: auto;
+    
     &.d-md-none {
       display: block !important;
     }
