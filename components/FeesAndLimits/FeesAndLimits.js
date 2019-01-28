@@ -433,7 +433,7 @@ export const FeesAndLimits = () => {
     return (
         <Grid className="container">
             <Row>
-                <Col md={12}>
+                <Col xs={12} md={12}>
                     <Nav items={navItems} />
                     <FeesAndLimitsWrapper>
                         <h1>Fees and limits</h1>

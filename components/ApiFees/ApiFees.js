@@ -76,7 +76,7 @@ export const ApiFees = () => {
     return (
         <Grid className="container">
             <Row>
-                <Col md={12}>
+                <Col xs={12} md={12}>
                     <Nav items={navItems} />
                     <ApiFeesWrapper>
                         <h1>API Wallet fees, and limits</h1>
