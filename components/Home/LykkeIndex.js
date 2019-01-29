@@ -223,8 +223,8 @@ export default () => (
           </Text>
 
           <ButtonContainer>
-            <Link href="/lyci">
-              <Button href="/lyci" bordered>Learn more about Lykke Index</Button>
+            <Link href="https://info.lykke.com">
+              <Button href="https://info.lykke.com" bordered>Learn more about Lykke Index</Button>
             </Link>
           </ButtonContainer>
         </Col>
