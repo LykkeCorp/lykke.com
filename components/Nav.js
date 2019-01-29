@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import Link from './Link';
 import {Row, Col} from 'react-styled-flexboxgrid';
 import styled, {css} from 'styled-components';
+import {rem, rgba} from 'polished';
 import Button from './Button';
 import HeaderAccount from './HeaderAccount';
 
-import {rem} from 'polished/lib/index';
 
 const Wrapper = styled.div`
   background-color: ${p => p.theme.colors.transparent};
@@ -13,6 +13,8 @@ const Wrapper = styled.div`
 
 const Menu = styled.nav`
   @media all and (max-width: 991px) {
+    width: 360px;
+    max-width: 100%;
     position: fixed;
     left: 0;
     top: 59px;
@@ -29,13 +31,53 @@ const Menu = styled.nav`
       margin: 0;
     }
   }
+  
+  @media all and (max-width: 580px) {
+    width: 100%;
+  }
+`;
+
+const Backdrop = styled.div`
+  display: none;
+  
+  @media all and (max-width: 991px) {
+    display: block;
+    top: -60px;
+    bottom: 0;
+    left: 360px;
+    right: 0;
+    position: fixed;
+    background-color: ${p => rgba(p.theme.colors.dark, .8)};
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity ${p => p.theme.transition.primary},
+      visibility ${p => p.theme.transition.primary};
+    
+    .menu-opened & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
+  @media all and (max-width: 580px) {
+    display: none;  
+  }
 `;
 
 const MenuInner = styled.div`
+  background-color: ${p => p.theme.colors.white};
+
   @media all and (max-width: 991px) {
     height: 100%;
     padding: 30px 16px;
     overflow: auto;
+  }
+  
+  @media all and (max-width: 580px) {
+    width: 360px;
+    max-width: 100%;
+    margin: 0 auto;
   }
 `;
 
@@ -81,7 +123,6 @@ const Caret = styled.span`
   }
   
   @media all and (max-width: 991px) {
-    
     &:after {
       display: none;
     }
@@ -121,6 +162,9 @@ const AccountContainer = styled.div`
   }
 
   @media all and (max-width: 991px) {
+    margin-left: auto;
+    margin-right: auto;
+    
     &.d-md-none {
       display: block !important;
     }
@@ -468,6 +512,7 @@ export default class Nav extends Component {
                 </AccountContainer>
               </MenuInner>
             </Menu>
+            <Backdrop onClick={this.props.menuHandler}/>
           </Col>
         </Row>
       </Wrapper>

@@ -190,13 +190,13 @@ const GlobalStyle = createGlobalStyle`
   }
   
   .d-lg-block {
-    @media (min-width: 1024px) {
+    @media (min-width: 992px) {
       display: block!important;
     }
   }
   
   .d-lg-none {
-    @media (min-width: 1024px) {
+    @media (min-width: 992px) {
       display: none!important;
     }
   }

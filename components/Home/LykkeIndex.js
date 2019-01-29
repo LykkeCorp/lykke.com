@@ -39,6 +39,10 @@ export const Wrapper = styled(Section)`
 export const Image = styled.div`
   margin-top: ${rem('-15px')};
   margin-bottom: ${rem('50px')};
+  
+  img {
+    max-width: 100%;
+  }
 `;
 
 export const Hint = styled.div`
