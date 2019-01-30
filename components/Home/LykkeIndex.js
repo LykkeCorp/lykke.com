@@ -39,6 +39,10 @@ export const Wrapper = styled(Section)`
 export const Image = styled.div`
   margin-top: ${rem('-15px')};
   margin-bottom: ${rem('50px')};
+  
+  img {
+    max-width: 100%;
+  }
 `;
 
 export const Hint = styled.div`
@@ -219,8 +223,8 @@ export default () => (
           </Text>
 
           <ButtonContainer>
-            <Link href="/lyci">
-              <Button href="/lyci" bordered>Learn more about Lykke Index</Button>
+            <Link href="https://info.lykke.com">
+              <Button href="https://info.lykke.com" bordered>Learn more about Lykke Index</Button>
             </Link>
           </ButtonContainer>
         </Col>
