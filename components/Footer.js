@@ -233,7 +233,7 @@ export default class extends Component {
                       <ListHeader>About</ListHeader>
                       <List>
                         <li>
-                          <Link href="#">
+                          <Link href="/about/leadership">
                             <a>Lykke team</a>
                           </Link>
                         </li>
