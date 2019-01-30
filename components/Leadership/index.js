@@ -19,7 +19,6 @@ function TeamList(props) {
         </SectionHeader>
 
         <List as={Row}>
-          {/*We need to show <Modal> with info about team member on <Item> click */}
           {team[key].map((item, i) => (
             <Item key={i} as={Col} xs={6} sm={4} lg={3} onClick={() => props.handleModalOpen(item)}>
               <ItemImage>
@@ -52,9 +51,8 @@ class Leadership extends React.Component {
                 <Grid className="container">
                     <Row className="justify-content-center">
                         <Col xs={12} md={8}>
-                            {/* show this on mobile open <Backdrop/>*/}
-                            { this.state.modalOpen ? <Modal data={this.state.modalData} handleModalOpen={this.handleModalOpen}/> : null }
                             <TeamList data={team} handleModalOpen={this.handleModalOpen}/>
+                          { this.state.modalOpen ? <Modal data={this.state.modalData} handleModalOpen={this.handleModalOpen}/> : null }
                         </Col>
                     </Row>
                 </Grid>
