@@ -94,16 +94,16 @@ export const Social = styled.div`
   }
 `;
 
-export const Backdrop = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: #CFD2D7;
-  opacity: .5;
-  z-index: 1040;
-`;
+// export const Backdrop = styled.div`
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   left: 0;
+//   bottom: 0;
+//   background-color: #CFD2D7;
+//   opacity: .5;
+//   z-index: 1040;
+// `;
 
 export const ButtonClose = styled.button`
     display: block;
@@ -138,9 +138,22 @@ export const ButtonClose = styled.button`
     }
 `;
 
-const Modal = () => {
+const Backdrop = styled.div`
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: #fff;
+    opacity: .6;
+`;
+
+const Modal = (props) => {
+    const {imageURL, name, position, info, email, social} = props.data;
     return (
       <Wrapper>
+        <Backdrop/>
         <Inner>
           <Content>
             <Header style={{backgroundImage: 'url(' + imageURL +')'}}/>
@@ -153,7 +166,7 @@ const Modal = () => {
               {email && <Email><a href={`mailto: ${email}`}>{email}</a></Email>}
               {social && <Social><a href={social.link}>{social.name}</a></Social>}
             </Body>
-            <ButtonClose type="button"/>
+            <ButtonClose type="button" onClick={props.handleModalOpen}/>
           </Content>
         </Inner>
       </Wrapper>

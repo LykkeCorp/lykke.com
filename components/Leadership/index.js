@@ -6,6 +6,7 @@ import {SectionHeader, List, ListGroup, Item, ItemImage} from './styled'
 
 // import {Modal} from './Modal'
 import {team} from './data'
+import Modal from "./Modal";
 
 function TeamList(props) {
   const team = props.data;
@@ -20,7 +21,7 @@ function TeamList(props) {
         <List as={Row}>
           {/*We need to show <Modal> with info about team member on <Item> click */}
           {team[key].map((item, i) => (
-            <Item key={i} as={Col} xs={6} sm={4} lg={3}>
+            <Item key={i} as={Col} xs={6} sm={4} lg={3} onClick={() => props.handleModalOpen(item)}>
               <ItemImage>
                 <img src={item.imagePreviewURL} alt={item.name} width="200px"/>
               </ItemImage>
@@ -35,19 +36,31 @@ function TeamList(props) {
   return <List>{listItems}</List>;
 }
 
-const Leadership = () => {
-    return (
-      <Section>
-        <Grid className="container">
-          <Row className="justify-content-center">
-            <Col xs={12} md={8}>
-              {/* show this on mobile open <Backdrop/>*/}
-              <TeamList data={team}/>
-            </Col>
-          </Row>
-        </Grid>
-      </Section>
-    )
+class Leadership extends React.Component {
+    state = {
+        modalOpen: false,
+        modalData: team['Leadership'][0]
+    };
+    handleModalOpen = (data) => {
+        this.setState((previousState, currentProps) => {
+            return data ? { modalOpen: !previousState.modalOpen, modalData: data } : { modalOpen: !previousState.modalOpen }
+        });
+    };
+    render() {
+        return (
+            <Section>
+                <Grid className="container">
+                    <Row className="justify-content-center">
+                        <Col xs={12} md={8}>
+                            {/* show this on mobile open <Backdrop/>*/}
+                            { this.state.modalOpen ? <Modal data={this.state.modalData} handleModalOpen={this.handleModalOpen}/> : null }
+                            <TeamList data={team} handleModalOpen={this.handleModalOpen}/>
+                        </Col>
+                    </Row>
+                </Grid>
+            </Section>
+        )
+    }
 }
 
 export default Leadership;
