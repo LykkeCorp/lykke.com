@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from "styled-components";
-import {rem} from 'polished';
+import styled from 'styled-components';
+import {rem, rgba} from 'polished';
 
 export const Wrapper = styled.div`
   position: fixed;
@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Inner = styled.div`
-
+  height: 100%;
 `;
 
 export const Body = styled.div`
@@ -94,17 +94,6 @@ export const Social = styled.div`
   }
 `;
 
-// export const Backdrop = styled.div`
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   left: 0;
-//   bottom: 0;
-//   background-color: #CFD2D7;
-//   opacity: .5;
-//   z-index: 1040;
-// `;
-
 export const ButtonClose = styled.button`
     display: block;
     position: absolute;
@@ -145,29 +134,57 @@ const Backdrop = styled.div`
     width: 100%;
     height: 100%;
     z-index: 0;
-    background-color: #fff;
+    background-color: ${p => rgba(p.theme.colors.dark, .8)};
     opacity: .6;
+    
+    @media all and (max-width: 767px) {
+      display: none;
+    }
+
+`;
+
+const InnerTable = styled.div`
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+`;
+
+const InnerRow = styled.div`
+  display: table-row;
+  height: 100%;
+`;
+
+const InnerCell = styled.div`
+  display: table-cell;
+  vertical-align: middle;
 `;
 
 const Modal = (props) => {
     const {imageURL, name, position, info, email, social} = props.data;
     return (
       <Wrapper>
-        <Backdrop/>
+        <Backdrop onClick={props.handleModalOpen}/>
         <Inner>
-          <Content>
-            <Header style={{backgroundImage: 'url(' + imageURL +')'}}/>
-            <Body>
-              <Title>{name}</Title>
-              {position && <Desc>{position}</Desc>}
-              {info && <Text>{info}</Text>}
+          <InnerTable>
+            <InnerRow>
+              <InnerCell>
+                <Content>
+                  <Header style={{backgroundImage: 'url(' + imageURL +')'}}/>
+                  <Body>
+                  <Title>{name}</Title>
+                  {position && <Desc>{position}</Desc>}
+                  {info && <Text>{info}</Text>}
 
-              {email || social ? <h5>Contacts:</h5> : null}
-              {email && <Email><a href={`mailto: ${email}`}>{email}</a></Email>}
-              {social && <Social><a href={social.link}>{social.name}</a></Social>}
-            </Body>
-            <ButtonClose type="button" onClick={props.handleModalOpen}/>
-          </Content>
+                  {email || social ? <h5>Contacts:</h5> : null}
+                  {email && <Email><a href={`mailto: ${email}`}>{email}</a></Email>}
+                  {social && <Social><a href={social.link}>{social.name}</a></Social>}
+                  </Body>
+                  <ButtonClose type="button" onClick={props.handleModalOpen}/>
+                </Content>
+              </InnerCell>
+            </InnerRow>
+          </InnerTable>
         </Inner>
       </Wrapper>
     )
