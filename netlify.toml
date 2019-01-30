@@ -3,5 +3,6 @@
   [headers.values]
     Referrer-Policy = "no-referrer"
     X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block;"
-    Access-Control-Allow-Origin =  "*"
+    X-XSS-Protection = "1; mode=block"
+    Feature-Policy = "geolocation=none; microphone=none; camera=none"
+    Access-Control-Allow-Origin = "*"
