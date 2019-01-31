@@ -8,4 +8,4 @@
     Strict-Transport-Security = "max-age=31536000"
     X-Content-Type-Options = "nosniff"
     Access-Control-Allow-Origin = "*"
-    Content-Security-Policy = "script-src 'self' sha256-AmeY7VwTfNGH4wjnHSBQd3egIr3AAOuwuW4sZNZNrNM= https://platform.twitter.com/widgets.js"
+    Content-Security-Policy = "script-src https://platform.twitter.com/widgets.js sha256-AmeY7VwTfNGH4wjnHSBQd3egIr3AAOuwuW4sZNZNrNM= 'self'"
