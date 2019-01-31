@@ -47,7 +47,7 @@ export const CardText = styled.p`
 
 export const CardHint = styled.div`
   margin-top: ${rem('30px')};
-  font-size: ${rem('10px')};
+  font-size: ${rem('12px')};
   text-align: center;
 
   a {
@@ -79,8 +79,8 @@ export default () => (
             <CardAction><Button href={WALLET_URL}>Start now</Button></CardAction>
             <CardHint>
               Please read full&nbsp;
-              <Link href="/privacy-policy">
-                <a>Risk Disclosure</a>
+              <Link href="/lyci-terms-of-service">
+                <a>Terms of service</a>
               </Link>.
             </CardHint>
           </Card>
