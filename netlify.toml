@@ -8,4 +8,4 @@
     Strict-Transport-Security = "max-age=31536000"
     X-Content-Type-Options = "nosniff"
     Access-Control-Allow-Origin = "*"
-    Content-Security-Policy = "script-src https://platform.twitter.com/widgets.js https://www.googletagmanager.com/gtm.js 'unsafe-inline' 'self'"
+    Content-Security-Policy = "script-src 'https://s.adroll.com/j/roundtrip.js https://a.quora.com/qevents.js https://connect.facebook.net/en_US/fbevents.js https://platform.twitter.com/widgets.js https://www.googletagmanager.com/gtm.js https://www.google-analytics.com/analytics.js 'unsafe-inline' 'self'"
