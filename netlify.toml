@@ -8,4 +8,4 @@
     Strict-Transport-Security = "max-age=31536000"
     X-Content-Type-Options = "nosniff"
     Access-Control-Allow-Origin = "*"
-    Content-Security-Policy = "script-src https://platform.twitter.com/*/*.js https://www.googletagmanager.com/gtm.js 'unsafe-inline' 'self'"
+    Content-Security-Policy = "script-src https://platform.twitter.com/widgets.js https://www.googletagmanager.com/gtm.js 'unsafe-inline' 'self'"
