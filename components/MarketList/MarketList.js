@@ -133,7 +133,7 @@ export default class extends Component {
                         {/*<LyciMarketList lyci={pLyci} show={this.state.showCount === 1} desc="Top-10 Payment Coins"/>*/}
                         {/*<LyciMarketList lyci={scLyci} show={this.state.showCount === 2} desc="Top-10 Smart Contract Coins"/>*/}
 
-                        <LyciMarketList lyci={lyciUsd} show={true} desc="LyCI Service Token"/>
+                        <LyciMarketList black lyci={lyciUsd} show={true} desc="LyCI Service Token"/>
                     </Row>
                   </ListItem>
                 </Col>
