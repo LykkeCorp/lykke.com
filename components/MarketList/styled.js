@@ -56,8 +56,13 @@ export const Title = styled.div`
 
 export const Value = styled.span`
   margin-left: ${rem('8px')};
-  color: ${p =>
-    p.dir === 'up' ? p.theme.colors.green : p.theme.colors.orangeRed};
+  color: ${p => {
+      if (p.black) {
+         return p.theme.colors.dark
+      } else {
+          return p.dir === 'up' ? p.theme.colors.green : p.theme.colors.orangeRed
+      }
+}};
   font-weight: 600;
 `;
 
