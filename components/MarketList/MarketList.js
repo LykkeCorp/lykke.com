@@ -35,14 +35,17 @@ export default class extends Component {
         price: 0,
         change: 0
     },
+    lyciUsd: {
+        name: '',
+        price: 0,
+        change: 0
+    },
     showCount: 0
   };
 
-  startLyciSlider = () => {
+  startLyciSlider = (numOfSlides) => {
       return setInterval(() => {
-          if(this.state.showCount === 0) {
-              this.setState((prevState) => ({showCount: ++prevState.showCount}))
-          } else if (this.state.showCount === 1) {
+          if(this.state.showCount < (numOfSlides-1)) {
               this.setState((prevState) => ({showCount: ++prevState.showCount}))
           } else {
               this.setState({showCount: 0})
@@ -55,9 +58,10 @@ export default class extends Component {
         axios.get(`/indices/${LYCI_ASSET_INDEX}`),
         axios.get(`/indices/${P_LYCI_ASSET_INDEX}`),
         axios.get(`/indices/${SC_LYCI_ASSET_INDEX}`),
-        axios.get('/markets')
+        axios.get('/markets'),
+        axios.get(`/markets/${LYCI_ASSET_INDEX}USD`)
       ])
-          .then(([lyci, pLyci, scLyci, markets]) => {
+          .then(([lyci, pLyci, scLyci, markets, lyciUsd]) => {
               this.setState({
                   lyci: {
                       ...this.state.lyci,
@@ -76,9 +80,15 @@ export default class extends Component {
                       name: scLyci.data.Name,
                       price: scLyci.data.Value,
                       change: scLyci.data.Return24H
+                  },
+                  lyciUsd: {
+                      ...this.state.lyciUsd,
+                      name: 'LyCI',
+                      price: `$ ${lyciUsd.data.LastPrice}`,
+                      change: lyciUsd.data.PriceChange24H
                   }
               });
-              this.startLyciSlider();
+              this.startLyciSlider(4);
               let quotes = [];
               for (let i = 0; i < config.PRODUCTS.length; i++) {
                   const {ticker, name} = config.PRODUCTS[i];
@@ -105,7 +115,8 @@ export default class extends Component {
       quotes: [...rest],
       lyci,
       pLyci,
-      scLyci
+      scLyci,
+      lyciUsd
     } = this.state;
     return (
       <MarketList>
@@ -116,9 +127,13 @@ export default class extends Component {
                 <Col xs={12} md={3}>
                   <ListItem>
                     <Row className="align-items-center">
-                        <LyciMarketList lyci={lyci} show={this.state.showCount === 0} desc="Lykke Crypto Index"/>
-                        <LyciMarketList lyci={pLyci} show={this.state.showCount === 1} desc="Top-10 Payment Coins"/>
-                        <LyciMarketList lyci={scLyci} show={this.state.showCount === 2} desc="Top-10 Smart Contract Coins"/>
+                        {/*POSSIBLE CHANGES DO NOT REMOVE COMMENTED CODE FOR NOW*/}
+
+                        {/*<LyciMarketList lyci={lyci} show={this.state.showCount === 0} desc="Lykke Crypto Index"/>*/}
+                        {/*<LyciMarketList lyci={pLyci} show={this.state.showCount === 1} desc="Top-10 Payment Coins"/>*/}
+                        {/*<LyciMarketList lyci={scLyci} show={this.state.showCount === 2} desc="Top-10 Smart Contract Coins"/>*/}
+
+                        <LyciMarketList lyci={lyciUsd} show={true} desc="LyCI Service Token"/>
                     </Row>
                   </ListItem>
                 </Col>
