@@ -462,8 +462,8 @@ export default class Nav extends Component {
                   </MenuItem>
                   <MenuItem as={Col} onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
                     <MenuItemInner>
-                      <Link  prefetch activeClassName="active"  href="/lyci">
-                        <a className="with_border">Lykke Index</a>
+                      <Link  prefetch activeClassName="active"  href="https://info.lykke.com/">
+                        <a className="with_border" target="_blank">LyCI</a>
                       </Link>
                     </MenuItemInner>
                   </MenuItem>
