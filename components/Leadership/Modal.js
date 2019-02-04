@@ -19,6 +19,7 @@ export const Wrapper = styled.div`
     padding: 0;
     background-color: ${p => p.theme.colors.white};
   }
+ 
 `;
 
 export const Inner = styled.div`
@@ -50,11 +51,28 @@ export const Content = styled.div`
   background-color: ${p => p.theme.colors.white};
   border-radius: 8px;
   pointer-events: all;
+  animation-name: modalOpen;
+  animation-duration: .4s;
   
+  @keyframes modalOpen {
+    from {
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(.8) translate(0,10%);
+    }
+  
+    to {
+      visibility: visible;
+      opacity: 1;
+      transform: scale(1) translate(0,0);
+    }
+  }
+    
   @media all and (max-width: 767px) {
     width: 100%;
     border-radius: 0;
     margin: 0;
+    animation: none;
   }
 `;
 
@@ -95,52 +113,79 @@ export const Social = styled.div`
 `;
 
 export const ButtonClose = styled.button`
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    width: ${rem('60px')};
-    height: ${rem('60px')};
-    margin: 2.5rem auto;
-    text-align: center;
-    opacity: .7;
-    border: 0;
-    background: url(/static/circle_close.svg) center no-repeat;
-    background-size: cover;
-    outline: none;
-    appearance: none;
-    cursor: pointer;
-    transition: opacity  ${p => p.theme.transition.primary};
-
-    &:hover {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: ${rem('60px')};
+  height: ${rem('60px')};
+  margin: 2.5rem auto;
+  text-align: center;
+  opacity: .7;
+  border: 0;
+  background: url(/static/circle_close.svg) center no-repeat;
+  background-size: cover;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: opacity  ${p => p.theme.transition.primary};
+  animation-name: showModalButton;
+  animation-duration: .5s;
+  
+  &:hover {
+    opacity: 1;
+  }
+  
+  @keyframes showModalButton {
+    from {
+      opacity: 0;
+      transform: translate(0,-70%);
+    }
+  
+    to {
       opacity: 1;
+      transform: translate(0,0);
     }
+  }
     
-    @media all and (max-width: 767px) {
-      top: 10px;
-      right: 10px;
-      left: auto;
-      margin: 0;
-      width: 30px;
-      height: 30px;
-    }
+  
+  @media all and (max-width: 767px) {
+    top: 10px;
+    right: 10px;
+    left: auto;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 const Backdrop = styled.div`
-    position: fixed;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background-color: ${p => rgba(p.theme.colors.dark, .8)};
-    opacity: .6;
-    
-    @media all and (max-width: 767px) {
-      display: none;
-    }
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: ${p => rgba(p.theme.colors.dark, .8)};
+  opacity: .6;
+  animation-name: fadeIn;
+  animation-duration: .2s;
+   
+  @media all and (max-width: 767px) {
+    display: none;
+    animation: none;
+  }
 
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: .6;
+    }
+  }
 `;
 
 const InnerTable = styled.div`
@@ -148,16 +193,28 @@ const InnerTable = styled.div`
   table-layout: fixed;
   width: 100%;
   height: 100%;
+  
+  @media all and (max-width: 767px) {
+    display: block;
+  }
 `;
 
 const InnerRow = styled.div`
   display: table-row;
   height: 100%;
+  
+  @media all and (max-width: 767px) {
+    display: block;
+  }
 `;
 
 const InnerCell = styled.div`
   display: table-cell;
   vertical-align: middle;
+    
+  @media all and (max-width: 767px) {
+    display: block;
+  }
 `;
 
 const Modal = (props) => {
@@ -188,6 +245,6 @@ const Modal = (props) => {
         </Inner>
       </Wrapper>
     )
-}
+};
 
 export default Modal;
