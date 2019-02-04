@@ -58,10 +58,25 @@ export default class extends Component {
         axios.get(`/indices/${LYCI_ASSET_INDEX}`),
         axios.get(`/indices/${P_LYCI_ASSET_INDEX}`),
         axios.get(`/indices/${SC_LYCI_ASSET_INDEX}`),
-        axios.get('/markets'),
-        axios.get(`/markets/${LYCI_ASSET_INDEX}USD`)
+        axios.get('/markets')
       ])
-          .then(([lyci, pLyci, scLyci, markets, lyciUsd]) => {
+          .then(([lyci, pLyci, scLyci, markets]) => {
+              let quotes = [];
+              for (let i = 0; i < config.PRODUCTS.length; i++) {
+                  const {ticker, name} = config.PRODUCTS[i];
+                  const idx = markets.data.findIndex(x => x.AssetPair === ticker);
+                  if (idx > -1) {
+                      quotes.push({
+                          ...mapToProduct(markets.data[idx]),
+                          name
+                      });
+                  }
+              }
+              const lyciIdx = markets.data.findIndex(x => x.AssetPair === 'TLYCIUSD');
+              let lyciToUsd;
+              if (lyciIdx > -1) {
+                  lyciToUsd = mapToProduct(markets.data[lyciIdx]);
+              }
               this.setState({
                   lyci: {
                       ...this.state.lyci,
@@ -84,25 +99,12 @@ export default class extends Component {
                   lyciUsd: {
                       ...this.state.lyciUsd,
                       name: 'LyCI',
-                      price: `$ ${lyciUsd.data.LastPrice}`,
-                      change: lyciUsd.data.PriceChange24H
-                  }
+                      price: `$ ${lyciToUsd.price}`,
+                      change: lyciToUsd.change
+                  },
+                  quotes,
               });
               this.startLyciSlider(4);
-              let quotes = [];
-              for (let i = 0; i < config.PRODUCTS.length; i++) {
-                  const {ticker, name} = config.PRODUCTS[i];
-                  const idx = markets.data.findIndex(x => x.AssetPair === ticker);
-                  if (idx > -1) {
-                      quotes.push({
-                          ...mapToProduct(markets.data[idx]),
-                          name
-                      });
-                  }
-              }
-              this.setState({
-                  quotes
-              });
           });
   }
 
