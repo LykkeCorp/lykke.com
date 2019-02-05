@@ -1,22 +1,10 @@
 import React from 'react';
 import {Col, Grid, Row} from 'react-styled-flexboxgrid';
 import Link from 'next/link';
-import {Nav} from '../../components/Nav/Nav';
 
 import {FeesAndLimitsWrapper, List, TextLink, FeesAndLimitsTable, AssetLimitsTable} from './styled';
 
 export const FeesAndLimits = () => {
-    const navItems = [
-        {
-            href: '/wallet-fees-and-limits',
-            active: true,
-            text: 'Fees and limits'
-        },
-        {
-            href: 'https://blockchainexplorer.lykke.com/',
-            text: 'Blockchain explorer'
-        }
-    ];
     const assetFees = [
         {
             name: 'AE',
@@ -434,7 +422,6 @@ export const FeesAndLimits = () => {
         <Grid className="container">
             <Row>
                 <Col xs={12} md={12}>
-                    <Nav items={navItems} />
                     <FeesAndLimitsWrapper>
                         <h1>Fees and limits</h1>
                         <h3>Trading</h3>
