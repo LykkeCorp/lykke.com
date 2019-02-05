@@ -9,7 +9,10 @@ export const ApiFeesWrapper = styled.section`
 
 export const ApiFeesTable = styled.table`
     width: 100%;
-    font-size: ${rem('20px')};
+
+    thead {
+        font-size: ${rem('18px')};
+    }
 
     td {
         border-bottom: 1px solid #e1e1e1;

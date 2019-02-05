@@ -51,6 +51,10 @@ export const FeesAndLimitsTable = styled.table`
         &:first-child {
             width: 30%;
         }
+
+        @media all and (max-width: 400px) {
+            padding: ${rem('12px')} ${rem('5px')};
+        }
     }
 `;
 
