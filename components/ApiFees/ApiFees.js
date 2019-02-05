@@ -1,21 +1,9 @@
 import React from 'react';
 import {Col, Grid, Row} from 'react-styled-flexboxgrid';
-import {Nav} from '../../components/Nav/Nav';
 
 import {ApiFeesWrapper, ApiFeesTable} from './styled';
 
 export const ApiFees = () => {
-    const navItems = [
-        {
-            href: '/api-wallet-trading-rules-fees-limits',
-            active: true,
-            text: 'API fees and limits'
-        },
-        {
-            href: 'https://wallet.lykke.com',
-            text: 'API deposits'
-        }
-    ];
     const assetFees = {
         'AE': 0.4,
         'AGI': 0.5,
@@ -77,7 +65,6 @@ export const ApiFees = () => {
         <Grid className="container">
             <Row>
                 <Col xs={12} md={12}>
-                    <Nav items={navItems} />
                     <ApiFeesWrapper>
                         <h1>API Wallet fees, and limits</h1>
                         <h3>Fees</h3>
