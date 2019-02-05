@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import {rem} from 'polished';
 
-
 export const SectionHeader = styled.div`
   margin-bottom: ${rem('42px')};
 `;
@@ -24,12 +23,14 @@ export const ItemImage = styled.div`
 
   img {
     width: 100%;
+    pointer-events: none;
   }
 `;
 
 export const Item = styled.div`
   padding: 0;
   cursor: pointer;
+  user-select: none;
   
   &:hover {
     z-index: 1;

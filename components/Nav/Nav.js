@@ -10,7 +10,7 @@ export const Nav = (props) => {
                 const Item = item.active ? NavItemActive : NavItem;
 
                 return (
-                    <Item >
+                    <Item>
                         <Link href={item.href}>{item.text}</Link>
                     </Item>
                 );
