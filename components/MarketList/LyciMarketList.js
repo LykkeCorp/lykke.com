@@ -32,7 +32,7 @@ const LyciMarketList = ({ lyci, show, desc, color }) => {
             </Col>
             <Col className="clear-height">
                 <Label dir={lyci.change > 0 ? 'up' : 'down'}>
-                    {lyci.change} %
+                    {lyci.change}
                 </Label>
             </Col>
         </LyciItem>
