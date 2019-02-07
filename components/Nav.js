@@ -87,7 +87,7 @@ const Logo = styled.div`
   img {
     display: inline-block;
     vertical-align: middle;
-    margin-top: -1px;
+    margin-top: ${rem('-6px')};
   }
 
   @media all and (max-width: 991px) {

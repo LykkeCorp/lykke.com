@@ -22,10 +22,10 @@ const LyciTos = (props) => {
                 title="Lykke – Buy and sell cryptocurrency and digital assets"
                 description="Global marketplace for any kind of assets built on the top of blockchain technology"
             />
-            <MinHeightGrid>
-                <Row>
-                    <Col xs={12} md={12} lg={12}>
-                        <StyledPolicyWrapper>
+            <MinHeightGrid className="container">
+                <Row className="justify-content-center">
+                    <Col xs={12} md={8}>
+                        <StyledPolicyWrapper className="text-container">
                             <h1>
                                 Lyci terms of service
                             </h1>
