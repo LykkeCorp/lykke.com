@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { PolicyWrapper, List, TextLink } from "../PrivacyPolicy/styled";
 
 const ListGray = styled.ol`
-  color: ${p => p.theme.colors.grey};
+  color: ${p => p.theme.colors.slate};
   padding-left: 20px;
   
   li {
@@ -17,11 +17,11 @@ const ListGray = styled.ol`
 const TermsOfUseComponent = props => {
     return (
         <Grid className="container">
-            <Row>
-                <Col xs={12} sm={12} md={12}>
-                    <PolicyWrapper>
+            <Row className="justify-content-center">
+                <Col xs={12} md={8}>
+                    <PolicyWrapper className="text-container">
                         <h1>Terms of Use</h1>
-                        <p>8 June 2018</p>
+                        <p><b>8 JUNE 2018</b></p>
                         <p>PLEASE READ THESE TERMS OF USE CAREFULLY. BY CLICKING TO ACCEPT, AND BY ACCESSING OR USING OUR SERVICES, YOU AGREE TO BE BOUND BY THESE TERMS OF USE AND ALL TERMS INCORPORATED BY REFERENCE.</p>
                         <p>If you are accepting these terms on behalf of an entity, you confirm that you are authorized on behalf of that entity to agree to be bound by these Terms of Use (the “Terms of Use” or “Terms”) and all terms incorporated by reference and to enter into a legally binding transaction (a transaction means the creation of a binding contract with counterparties).</p>
                         <h3>1. Scope</h3>

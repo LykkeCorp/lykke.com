@@ -8,9 +8,9 @@ import { PolicyWrapper, List } from "../PrivacyPolicy/styled";
 const RestrictedCountriesComponent = () => {
     return (
         <Grid className="container">
-            <Row>
-                <Col xs={12} sm={12} md={12}>
-                    <PolicyWrapper>
+            <Row className="justify-content-center">
+                <Col xs={12} md={8}>
+                    <PolicyWrapper className="text-container">
                         <h1>Restricted countries</h1>
                         <p>Due to the regulatory restrictions, we are not yet permitted to approve residents from following countries for full trading:</p>
                         <List>

@@ -23,9 +23,9 @@ const StyledColumnList = styled(ColumnList)`
 export const TermsAndRegulation = props => {
     return (
         <Grid className="container">
-            <Row>
-                <Col xs={12} sm={12} md={12}>
-                    <PolicyWrapper>
+            <Row className="justify-content-center">
+                <Col xs={12} md={8}>
+                    <PolicyWrapper className="text-container">
                         <h1>Terms and regulation</h1>
                         <p>This page discusses all the terms, regulations, and other rules that apply to your use of Lykke’s services, including:</p>
                         <List>

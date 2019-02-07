@@ -63,9 +63,9 @@ export const ApiFees = () => {
 
     return (
         <Grid className="container">
-            <Row>
-                <Col xs={12} md={12}>
-                    <ApiFeesWrapper>
+            <Row className="justify-content-center">
+                <Col xs={12} md={8}>
+                    <ApiFeesWrapper className="text-container">
                         <h1>API Wallet fees, and limits</h1>
                         <h3>Fees</h3>
                         <p>Lykke does not charge trading fees.</p>
