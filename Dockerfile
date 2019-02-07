@@ -1,4 +1,4 @@
-FROM nginx
+FROM ilagnev/alpine-nginx-lua
 ARG build=./out
 WORKDIR /usr/share/nginx/html
 COPY $build .
