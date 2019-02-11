@@ -7,9 +7,9 @@ import { PolicyWrapper, List, TextLink, AnchorTitle } from './styled';
 export const Policy = () => {
     return (
         <Grid className="container">
-            <Row>
-                <Col xs={12} md={12}>
-                    <PolicyWrapper>
+            <Row className="justify-content-center">
+                <Col xs={12} md={8}>
+                    <PolicyWrapper className="text-container">
                         <h1>
                             Privacy Policy
                         </h1>
@@ -21,10 +21,10 @@ export const Policy = () => {
                                 <Link href="#fullFormPolicy"><a>Full form</a></Link>
                             </li>
                             <li>
-                                <Link href="https://www.lykke.com/media/documents/Privacy_Policy_23.05.2018.pdf"><a>PDF Version</a></Link>
+                                <Link href="https://www.lykke.com/media/documents/Privacy_Policy_23.05.2018.pdf"><a target="_blank">PDF Version</a></Link>
                             </li>
                         </List>
-                        <p>23 MAY 2018</p>
+                        <p><b>23 MAY 2018</b></p>
                         <p>This is the Privacy Policy of Lykke Corp UK Ltd, a company incorporated under the laws of the United Kingdom with registration number 10093552 and registered address 86-90 Paul Street, London, United Kingdom, EC2A 4NE (hereinafter called «Lykke,» «we,» or «us»). Lykke is a 100% subsidiary of Lykke Corp, a company incorporated under the laws of Switzerland with registration number CHE-345.258.499 and registered address 2 Baarerstrasse, 6300 Zug, Switzerland. This Privacy Policy is applying also to Lykke Corp and to other entities of the Lykke Group</p>
                         <p>Lykke understands that your privacy is important. Lykke is strongly committed to protecting your privacy and the personal information that you may provide to Lykke as you access and use the materials on Lykke.com, Lykkex.com (the «Sites»), our iOS and Android mobile apps (the «Apps»), recipients of our emails, or when you otherwise interact with us, including the subscription pages of the Sites.</p>
                         <p>In addition, information that you submit to Lykke in response to an email request for information or other outreach from Lykke, or through the Lykke employment application processes, will also be treated in accordance with this Privacy Policy.</p>

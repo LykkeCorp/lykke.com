@@ -94,6 +94,47 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 0 ${rem('12px')};;
   }
   
+  .text-container {
+    h1, .h1 {
+      margin-bottom: ${rem('48px')};
+    }
+    
+    h2, .h2, h3, .h3 {
+      margin-bottom: ${rem('24px')};
+    }
+    
+    h4, .h4, h5, .h5 {
+      margin-bottom: ${rem('18px')};
+    }
+    
+    p, ol, ul, table {
+      margin-bottom: ${rem('18px')};
+
+      + h2, + .h2, + h3, + .h3, + h4, + .h4 {
+          margin-top: ${rem('48px')};
+      }
+      
+      a {
+        font-weight: 600;
+        text-decoration: none;
+      }
+    }
+    
+    ol, ul {
+      li {
+        margin-bottom: ${rem('14px')};
+      }
+      
+      + p {
+        margin-top: ${rem('48px')};
+      }
+    }
+    
+    strong, b {
+      font-weight: 600;
+    }
+  }
+  
   .lead {
     color: ${p => p.theme.colors.grey};
     font-size: ${p => rem(p.theme.fontSize.lead)};
