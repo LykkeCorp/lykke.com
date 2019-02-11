@@ -1,22 +1,10 @@
 import React from 'react';
 import {Col, Grid, Row} from 'react-styled-flexboxgrid';
 import Link from 'next/link';
-import {Nav} from '../../components/Nav/Nav';
 
 import {FeesAndLimitsWrapper, List, TextLink, FeesAndLimitsTable, AssetLimitsTable} from './styled';
 
 export const FeesAndLimits = () => {
-    const navItems = [
-        {
-            href: '/wallet-fees-and-limits',
-            active: true,
-            text: 'Fees and limits'
-        },
-        {
-            href: 'https://blockchainexplorer.lykke.com/',
-            text: 'Blockchain explorer'
-        }
-    ];
     const assetFees = [
         {
             name: 'AE',
@@ -432,17 +420,14 @@ export const FeesAndLimits = () => {
 
     return (
         <Grid className="container">
-            <Row>
-                <Col xs={12} md={12}>
-                    <Nav items={navItems} />
-                    <FeesAndLimitsWrapper>
+            <Row className="justify-content-center">
+                <Col xs={12} md={8}>
+                    <FeesAndLimitsWrapper className="text-container">
                         <h1>Fees and limits</h1>
                         <h3>Trading</h3>
                         <p>There are no fees for trading.</p>
                         <h3>Fees and limits for cryptocurrency transactions</h3>
-                        <br />
                         <p>AE, AGI, AION, AIR, AMLT, APPC, BCH, BMC, BNT, BSV, BTC, BTG, BTS, CAN, CLN, CVC, DASH, DAT, DEB, DENT, DNT, DTH, ENG, EOS, EOSold, ETC, ETH, ETHOS, ETM, ETM, EVX, FDZ, FREC, GAT, GCP, GCPold, GNO, GNT, GVT, HBZ, HGT, HVN, ICX, IND, IOST, IPS, KEY, LC, LGL, LOC, LRC, LTC, MANA, MSP, MTL, MWAT, MYST, old_PCL, OMG, PASS, PKT, POWR, PPT, QNTU, REP, REQ, SLR, SNM, STORJ, SUB, TIME, TREE, VEE, VIB, VLD, WAX, WPR, WTC, XLM, XRP, ZEC, ZIL, ZRX</p>
-                        <br />
                         <h4>for Deposits</h4>
                         <p>There are no fees or limits for cryptocurrency deposits.</p>
                         <h4>for Withdrawals</h4>
@@ -466,7 +451,6 @@ export const FeesAndLimits = () => {
                                 ))}
                             </tbody>
                         </FeesAndLimitsTable>
-                        <br />
                         <h3>Fees and limits for credit cards and payment systems</h3>
                         <p><strong>CHF, USD, EUR, GBP</strong></p>
                         <h4>for Deposits</h4>

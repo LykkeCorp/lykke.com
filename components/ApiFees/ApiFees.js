@@ -1,21 +1,9 @@
 import React from 'react';
 import {Col, Grid, Row} from 'react-styled-flexboxgrid';
-import {Nav} from '../../components/Nav/Nav';
 
 import {ApiFeesWrapper, ApiFeesTable} from './styled';
 
 export const ApiFees = () => {
-    const navItems = [
-        {
-            href: '/api-wallet-trading-rules-fees-limits',
-            active: true,
-            text: 'API fees and limits'
-        },
-        {
-            href: 'https://wallet.lykke.com',
-            text: 'API deposits'
-        }
-    ];
     const assetFees = {
         'AE': 0.4,
         'AGI': 0.5,
@@ -75,10 +63,9 @@ export const ApiFees = () => {
 
     return (
         <Grid className="container">
-            <Row>
-                <Col xs={12} md={12}>
-                    <Nav items={navItems} />
-                    <ApiFeesWrapper>
+            <Row className="justify-content-center">
+                <Col xs={12} md={8}>
+                    <ApiFeesWrapper className="text-container">
                         <h1>API Wallet fees, and limits</h1>
                         <h3>Fees</h3>
                         <p>Lykke does not charge trading fees.</p>

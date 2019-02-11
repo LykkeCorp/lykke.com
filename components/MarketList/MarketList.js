@@ -3,7 +3,7 @@ import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import config from '../../config';
 import getConfig from 'next/config'
 const {publicRuntimeConfig} = getConfig()
-const { LYCI_ASSET_INDEX, P_LYCI_ASSET_INDEX, SC_LYCI_ASSET_INDEX } = publicRuntimeConfig
+const { LYCI_ASSET_INDEX, P_LYCI_ASSET_INDEX, SC_LYCI_ASSET_INDEX, LYCIUSD_ASSET_PAIR } = publicRuntimeConfig
 
 import axios from '../../axios'
 
@@ -13,8 +13,8 @@ import LyciMarketList from './LyciMarketList'
 // TODO: find me the better place to live
 export const mapToProduct = x => ({
   ticker: x.AssetPair,
-  price: x.LastPrice,
-  change: x.PriceChange24H
+  price: x.LastPrice.toFixed(2),
+  change: `${x.PriceChange24H.toFixed(2)} %`
 });
 
 export default class extends Component {
@@ -72,7 +72,7 @@ export default class extends Component {
                       });
                   }
               }
-              const lyciIdx = markets.data.findIndex(x => x.AssetPair === 'TLYCIUSD');
+              const lyciIdx = markets.data.findIndex(x => x.AssetPair === LYCIUSD_ASSET_PAIR);
               let lyciToUsd;
               if (lyciIdx > -1) {
                   lyciToUsd = mapToProduct(markets.data[lyciIdx]);
