@@ -125,6 +125,17 @@ export const TermsAndRegulation = props => {
                         <p>The privacy policy applicable to Lykke’s B2B Services is included in Lykke’s general <Link href="/privacy-policy"><TextLink href="/privacy-policy" noUnderline>Privacy Policy</TextLink></Link>.</p>
                         <h2>Limitations</h2>
                         <p>Due to the regulatory restrictions, we are not yet permitted to onboard residents from this <Link href="/restricted-countries"><TextLink href="/restricted-countries" noUnderline>country list</TextLink></Link>.</p>
+                        <h2>LyCI Terms of Service</h2>
+                        <List>
+                            <ul>
+                                <li>
+                                    <Link href="https://lkefiles.blob.core.windows.net/lykkecom/LyCI%20SERVICE%20TOKEN%20-%20TERMS%20OF%20SERVICE%20-%2025.01.2019%20(FINAL).pdf"><a target="_blank">Terms of Service</a></Link>
+                                </li>
+                                <li>
+                                    <Link href="https://lkefiles.blob.core.windows.net/lykkecom/ANNEX_1_LyCI_SERVICE_TOKEN_Service.pdf"><a target="_blank">Annex 1 of the LyCI Service token</a></Link>
+                                </li>
+                            </ul>
+                        </List>
                     </PolicyWrapper>
                 </Col>
             </Row>
