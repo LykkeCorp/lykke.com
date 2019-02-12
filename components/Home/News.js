@@ -182,7 +182,7 @@ export default class extends Component {
   };
 
   async componentDidMount() {
-    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/scbc-magazine`)
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/lykke`)
       .then(resp => resp.json())
       .then(data => {
         this.setState({
@@ -261,7 +261,7 @@ export default class extends Component {
           <SectionLink>
             <h4>Share. Discuss. Connect.</h4>
             <Button bordered href="https://medium.com/scbc-magazine">
-              Join our 90,000 members community
+              Subscribe to newsletter
             </Button>
           </SectionLink>
         </Wrapper>

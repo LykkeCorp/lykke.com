@@ -28,7 +28,7 @@ export const social = {
   },
   telegram: {
     name: 'Telegram',
-    url: 'https://t.co/TmjMYnQD7T',
+    url: 'https://t.me/joinchat/AtlSzUF-_dNnkeehGrEI2A',
     icon: 'icon--telegram'
   },
   telegramDev: {
