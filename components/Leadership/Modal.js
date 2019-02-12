@@ -17,9 +17,10 @@ export const Wrapper = styled.div`
   
   @media all and (max-width: 767px) {
     padding: 0;
+    animation-name: modalOpen;
+    animation-duration: .3s;
     background-color: ${p => p.theme.colors.white};
   }
- 
 `;
 
 export const Inner = styled.div`
@@ -148,7 +149,6 @@ export const ButtonClose = styled.button`
       transform: translate(0,0);
     }
   }
-    
   
   @media all and (max-width: 767px) {
     top: 10px;

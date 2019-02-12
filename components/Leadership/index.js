@@ -4,9 +4,8 @@ import {Col, Grid, Row} from 'react-styled-flexboxgrid';
 import {Section} from '../Home/styled'
 import {SectionHeader, List, ListGroup, Item, ItemImage} from './styled'
 
-// import {Modal} from './Modal'
 import {team} from './data'
-import Modal from "./Modal";
+import Modal from './Modal';
 
 function TeamList(props) {
   const team = props.data;
@@ -51,7 +50,7 @@ class Leadership extends React.Component {
                 <Grid className="container">
                     <Row className="justify-content-center">
                         <Col xs={12} md={8}>
-                            <TeamList data={team} handleModalOpen={this.handleModalOpen}/>
+                          <TeamList data={team} handleModalOpen={this.handleModalOpen}/>
                           { this.state.modalOpen ? <Modal data={this.state.modalData} handleModalOpen={this.handleModalOpen}/> : null }
                         </Col>
                     </Row>
