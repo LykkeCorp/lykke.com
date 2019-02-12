@@ -151,14 +151,13 @@ export default () => (
       <Row>
         <Col xs={12} sm={7} md={6}>
           <h1>
-            Become a <br className="d-md-none" /> Bitcoin&nbsp;owner
+            Buy your <br className="d-md-none" /> First Bitcoin
           </h1>
           <p className="lead">
-            <span className="d-none d-md-block">
-              Lykke is the easiest and secure way to buy, exchange and sell
-              cryptos.
+            <span>
+              Securly buy, exchange and sell and digital asset with Lykke.
             </span>
-            <b>No hidden costs. Swiss quality</b>.
+            <b className="d-none d-md-block">No hidden costs. Swiss quality.</b>
           </p>
           <FormSubscribe>
             <Button className="form_button" href={WALLET_URL}>
