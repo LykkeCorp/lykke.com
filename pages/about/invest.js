@@ -18,9 +18,9 @@ export default () => {
     return (
         <>
             <Head/>
-            <SectionWrapper>
-                <Lead/>
-            </SectionWrapper>
+            {/*<SectionWrapper>*/}
+                {/*<Lead/>*/}
+            {/*</SectionWrapper>*/}
             <SectionWrapper bgColor="rgba(234,237,239,.4)">
                 <Shares/>
             </SectionWrapper>
