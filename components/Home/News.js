@@ -260,7 +260,7 @@ export default class extends Component {
 
           <SectionLink>
             <h4>Share. Discuss. Connect.</h4>
-            <Button bordered href="https://medium.com/scbc-magazine">
+            <Button bordered href="https://medium.com/lykke">
               Subscribe to newsletter
             </Button>
           </SectionLink>
