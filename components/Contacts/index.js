@@ -101,7 +101,7 @@ const Contacts = () => {
             <Col xs={12} sm={12} md={12}>
               <Image>
                 <img
-                  src="/static/images/office-bg.jpg"
+                  src="/static/images/about/office-bg.jpg"
                   alt="office"
                 />
               </Image>
