@@ -46,10 +46,6 @@ const Desc = styled.div`
   line-height: 1.67;
 `;
 
-const Middot = styled.span`
-  margin: 0 .625rem;
-`;
-
 const Actions = styled.div`
   a {
     padding: 1.25rem 0;
@@ -84,7 +80,7 @@ const JobList = () => {
           </Title>
           <Desc>
             Full-time
-            <Middot>&nbsp;&middot;&nbsp;</Middot>
+            <span className="middot">&nbsp;&middot;&nbsp;</span>
             Office
           </Desc>
         </Info>
@@ -107,7 +103,7 @@ const JobList = () => {
           </Title>
           <Desc>
             Full-time
-            <Middot>&nbsp;&middot;&nbsp;</Middot>
+            <span className="middot">&nbsp;&middot;&nbsp;</span>
             Office
           </Desc>
         </Info>

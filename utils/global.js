@@ -256,6 +256,10 @@ const GlobalStyle = createGlobalStyle`
       max-width: 100%;
     }
   }
+  
+  .middot {
+    margin: 0 .625rem;
+  }
 `;
 
 export default GlobalStyle;
