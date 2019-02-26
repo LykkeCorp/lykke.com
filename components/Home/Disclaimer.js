@@ -40,7 +40,7 @@ export const Disclaimer = styled.div`
     }
     
     ${Col} {
-      padding-right: ${rem('20px')}
+      padding-right: ${rem('20px')};
       padding-left: ${rem('20px')};
     }
   }

@@ -9,6 +9,10 @@ import HeaderAccount from './HeaderAccount';
 
 const Wrapper = styled.div`
   background-color: ${p => p.theme.colors.transparent};
+  
+  a:focus {
+    outline: none;
+  }
 `;
 
 const Menu = styled.nav`
@@ -256,6 +260,7 @@ const MenuItem = styled.div`
   position: relative;
   padding-right: ${rem('4px')};
   padding-left: ${rem('4px')};
+  cursor: pointer;
 
   ${p =>
     p.dropdown &&
@@ -490,6 +495,11 @@ export default class Nav extends Component {
                         <DropdownItem onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
                           <Link href="/about/invest">
                             <a>Invest</a>
+                          </Link>
+                        </DropdownItem>
+                        <DropdownItem onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
+                          <Link href="/about/careers">
+                            <a>Careers</a>
                           </Link>
                         </DropdownItem>
                         {/*<DropdownItem>*/}
