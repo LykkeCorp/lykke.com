@@ -211,8 +211,8 @@ export default class extends Component {
                           </Link>
                         </li>*/}
                         <li>
-                          <Link href="https://blockchainexplorer.lykke.com/asset/AXkedGbAH1XGDpAypVzA5eyjegX4FaCnvM" target="_blank">
-                            <a>Blockchain explorer</a>
+                          <Link href="https://blockchainexplorer.lykke.com/asset/AXkedGbAH1XGDpAypVzA5eyjegX4FaCnvM">
+                            <a target="_blank">Blockchain explorer</a>
                           </Link>
                         </li>
                         {/*<li>

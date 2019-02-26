@@ -44,7 +44,7 @@ export default class LykkeApp extends App {
     super(props);
 
     this.state = {
-      isMenuOpen: false
+      isMenuOpen: false,
     };
   }
 
