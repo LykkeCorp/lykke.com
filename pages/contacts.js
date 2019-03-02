@@ -3,7 +3,7 @@ import React from 'react'
 import Head from '../components/Head'
 import Contacts from '../components/Contacts'
 
-const TermsOfUse = () => {
+const ContactPage = () => {
     return (
         <>
             <Head/>
@@ -12,4 +12,4 @@ const TermsOfUse = () => {
     )
 };
 
-export default TermsOfUse;
+export default ContactPage;
