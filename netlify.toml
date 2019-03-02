@@ -3,9 +3,9 @@
   [headers.values]
     Referrer-Policy = "no-referrer"
     X-Frame-Options = "sameorigin"
-    X-XSS-Protection = "1; mode=block"
+    X-XSS-Protection = "1; mode=block;"
     Feature-Policy = "geolocation 'none'; microphone 'none'; camera 'none'"
     Strict-Transport-Security = "max-age=31536000"
     X-Content-Type-Options = "nosniff"
     Access-Control-Allow-Origin = "*"
-    Content-Security-Policy = "script-src https://sc-static.net/* https://*.hotjar.com/ https://*.adroll.com/ https://cdn.syndication.twimg.com/ https://*.quora.com/ https://connect.facebook.net/ https://*.twitter.com/ https://www.googletagmanager.com/ https://www.google-analytics.com/ 'unsafe-inline' 'self'; style-src 'self' 'unsafe-inline'"
+    Content-Security-Policy = "script-src https://sc-static.net/scevent.min.js https://*.hotjar.com/ https://*.adroll.com/ https://cdn.syndication.twimg.com/ https://*.quora.com/ https://connect.facebook.net/ https://*.twitter.com/ https://www.googletagmanager.com/ https://www.google-analytics.com/ 'unsafe-inline' 'self'; style-src 'self' 'unsafe-inline'"
