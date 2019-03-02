@@ -135,6 +135,14 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   
+  hr {
+    width: 100%;
+    max-width: none;
+    margin: ${rem('40px')} auto;
+    border: 0;
+    border-bottom: 1px solid ${p => p.theme.colors.greyLight};
+  }
+  
   .lead {
     color: ${p => p.theme.colors.grey};
     font-size: ${p => rem(p.theme.fontSize.lead)};
@@ -247,6 +255,10 @@ const GlobalStyle = createGlobalStyle`
       width: 360px;
       max-width: 100%;
     }
+  }
+  
+  .middot {
+    margin: 0 .625rem;
   }
 `;
 

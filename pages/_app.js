@@ -30,13 +30,13 @@ const Main = styled.main`
 `;
 
 const Layout = ({quotes, children, menuHandler, isMenuOpen}) => (
-  <Wrapper>
-    <MarketList quotes={quotes} />
-    <Header isMenuOpen={isMenuOpen} menuHandler={menuHandler}/>
-    <Main>{children}</Main>
-    <CookieBanner />
-    <Footer />
-  </Wrapper>
+    <Wrapper>
+        <MarketList quotes={quotes} />
+        <Header isMenuOpen={isMenuOpen} menuHandler={menuHandler}/>
+        <Main>{children}</Main>
+        <CookieBanner />
+        <Footer />
+    </Wrapper>
 );
 
 export default class LykkeApp extends App {
@@ -83,12 +83,12 @@ export default class LykkeApp extends App {
             <GlobalStyle />
             <GlobalIcons />
             <Icomoon />
-            <Layout
+            { this.props.router.pathname !== '/auth' ? <Layout
               menuHandler={this.openMenu}
               isMenuOpen={this.state.isMenuOpen}
             >
               <Component {...pageProps} />
-            </Layout>
+            </Layout> : <Component {...pageProps} /> }
           </Container>
         </ThemeProvider>
       </div>

@@ -247,12 +247,12 @@ export default class extends Component {
                             <a>Invest</a>
                           </Link>
                         </li>
-                        {/*<li>
-                          <Link href="#">
-                            <a>Carreers</a>
+                        <li>
+                          <Link href="/about/careers">
+                            <a>Careers</a>
                           </Link>
                         </li>
-                        <li>
+                        {/*<li>
                           <Link href="#">
                             <a>FAQ</a>
                           </Link>

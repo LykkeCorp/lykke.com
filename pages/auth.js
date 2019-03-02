@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
+import { UserManager } from 'oidc-client'
 
 class Auth extends Component {
     componentDidMount() {
-        const value = new URL(window.location).hash
-            .substr(1)
-            .split('&')
-            .find(param => !!param.match(new RegExp(`^${'id_token'}`)));
-        if (value) {
-            sessionStorage.setItem('token', value.split('=')[1])
-        }
-        window.location.href = '/';
+        new UserManager({ loadUserInfo: true, filterProtocolClaims: true }).signinRedirectCallback().then(function (user) {
+            window.history.replaceState(
+                {},
+                window.document.title,
+                window.location.origin + window.location.pathname);
+            window.location.href = "/";
+        }).catch(function (err) {
+            console.log(err);
+        });
     }
     render() {
         return null
