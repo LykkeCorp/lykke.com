@@ -1,4 +1,6 @@
 import { Log, UserManager } from 'oidc-client';
+import getConfig from 'next/config';
+const {publicRuntimeConfig} = getConfig();
 const { SELF_URL } = publicRuntimeConfig;
 
 export class AuthService {
