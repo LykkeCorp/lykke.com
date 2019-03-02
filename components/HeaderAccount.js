@@ -25,12 +25,28 @@ class HeaderAccount extends React.Component {
         super(props);
         this.state = {
             buttonUrl: '',
-            loggedIn: false
+            loggedIn: null,
+            user: {}
         };
     }
 
     componentDidMount() {
         this.authService = new AuthService();
+        this.authService.getUser().then(user => {
+            console.log("user: ", user);
+        });
+        if (sessionStorage.getItem('oidc.user:https://lykke.tech:lykke_website')) {
+            const user = JSON.parse(sessionStorage.getItem('oidc.user:https://lykke.tech:lykke_website'))
+            this.setState({
+                user,
+                loggedIn: true
+            })
+        } else {
+            this.setState({
+                user: {},
+                loggedIn: false
+            })
+        }
     }
 
     handleLogin = () => {
