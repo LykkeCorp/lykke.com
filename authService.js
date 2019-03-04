@@ -20,6 +20,10 @@ export class AuthService {
         Log.level = Log.INFO;
     }
 
+    manager = () => {
+        return this.userManager
+    };
+
     getUser = () => {
         return this.userManager.getUser();
     };
