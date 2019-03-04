@@ -21,43 +21,12 @@ const AccountLink = styled.a`
 `;
 
 class HeaderAccount extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            buttonUrl: '',
-            loggedIn: null,
-            user: {}
-        };
-    }
-
-    componentDidMount() {
-        this.authService = new AuthService();
-        this.authService.getUser().then(user => {
-            console.log("user: ", user);
-        });
-        if (sessionStorage.getItem('oidc.user:https://lykke.tech:lykke_website')) {
-            const user = JSON.parse(sessionStorage.getItem('oidc.user:https://lykke.tech:lykke_website'))
-            this.setState({
-                user,
-                loggedIn: true
-            })
-        } else {
-            this.setState({
-                user: {},
-                loggedIn: false
-            })
-        }
-    }
-
-    handleLogin = () => {
-        this.authService.login();
-    };
     renderLoginButton = () => {
-        const { loggedIn } = this.state;
+        const { loggedIn } = this.props;
         if( loggedIn === null ) return null;
         return loggedIn ? <Button href={WALLET_URL}>Go to dashboard</Button> :
             <>
-            <AccountLink onClick={this.handleLogin}>Login</AccountLink>
+            <AccountLink onClick={this.props.handleLogin}>Login</AccountLink>
             <Button href='/signup'>Get Started</Button>
             </>
     };
