@@ -4,6 +4,7 @@ import Nav from './Nav';
 import HeaderAccount from './HeaderAccount';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import {rem} from 'polished';
+import {AuthService} from "../authService";
 
 const Header = styled.header`
   padding-top: ${rem('22px')};
@@ -27,17 +28,38 @@ const Wrapper = styled.div`
   flex-shrink: 0;
 `;
 
-export default ({menuHandler, isMenuOpen}) => (
-  <Header>
-    <Wrapper as={Grid}>
-      <Row className="justify-content-between align-items-center">
-        <Col className="col-sm-auto">
-          <Nav menuHandler={menuHandler} isMenuOpen={isMenuOpen}/>
-        </Col>
-        <Col className="col-sm-auto text-right d-none d-lg-block">
-          <HeaderAccount />
-        </Col>
-      </Row>
-    </Wrapper>
-  </Header>
-);
+export default class extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            buttonUrl: '',
+            loggedIn: null,
+            user: {}
+        };
+    }
+    componentDidMount() {
+        this.authService = new AuthService();
+        this.authService.getUser().then(user => {
+            user ? this.setState({ user, loggedIn: true }) : this.setState({ user: {}, loggedIn: false })
+        });
+    }
+    handleLogin = () => {
+        this.authService.login();
+    };
+    render() {
+        return (
+            <Header>
+                <Wrapper as={Grid}>
+                    <Row className="justify-content-between align-items-center">
+                        <Col className="col-sm-auto">
+                            <Nav menuHandler={this.props.menuHandler} isMenuOpen={this.props.isMenuOpen}/>
+                        </Col>
+                        <Col className="col-sm-auto text-right d-none d-lg-block">
+                            <HeaderAccount handleLogin={this.handleLogin} loggedIn={this.state.loggedIn}/>
+                        </Col>
+                    </Row>
+                </Wrapper>
+            </Header>
+        )
+    }
+} ;
