@@ -43,7 +43,7 @@ export default class extends React.Component {
             user ? this.setState({ user, loggedIn: true }) : this.setState({ user: {}, loggedIn: false })
         });
         this.authService.manager().events.addUserSignedOut(function () {
-            console.log("User signed out of OP");
+            this.setState({ user: {}, loggedIn: false })
         });
 
     }
