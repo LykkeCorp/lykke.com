@@ -41,15 +41,10 @@ export default class extends React.Component {
         this.authService = new AuthService();
         const self = this;
         this.authService.getUser().then(user => {
-            if(user)  {
+            if (user)  {
                 this.setState({ user, loggedIn: true })
             } else {
-                this.authService.manager().querySessionStatus().then(res => {
-                    console.log("res: ", res);
-                    this.setState({ user, loggedIn: true })
-                }).catch(err => {
-                    this.setState({ user: {}, loggedIn: false });
-                })
+                this.setState({ user: {}, loggedIn: false });
             }
 
         });
