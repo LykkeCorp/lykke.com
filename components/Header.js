@@ -39,15 +39,25 @@ export default class extends React.Component {
     }
     componentDidMount() {
         this.authService = new AuthService();
-        this.authService.getUser().then(user => {
-            user ? this.setState({ user, loggedIn: true }) : this.setState({ user: {}, loggedIn: false })
-        });
         const self = this;
+        this.authService.getUser().then(user => {
+            if(user)  {
+                this.setState({ user, loggedIn: true })
+            } else {
+                this.authService.manager().querySessionStatus().then(res => {
+                    console.log("res: ", res);
+                    this.setState({ user, loggedIn: true })
+                }).catch(err => {
+                    this.setState({ user: {}, loggedIn: false });
+                })
+            }
+
+        });
         this.authService.manager().events.addUserSignedOut(function () {
             self.setState({ user: {}, loggedIn: false });
-            sessionStorage.clear();
         });
         this.authService.manager().events.addUserLoaded(function () {
+            console.log("ovde");
             self.authService.login();
         })
 
