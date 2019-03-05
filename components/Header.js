@@ -47,6 +47,9 @@ export default class extends React.Component {
             self.setState({ user: {}, loggedIn: false });
             sessionStorage.clear();
         });
+        this.authService.manager().events.addUserLoaded(function () {
+            self.authService.login();
+        })
 
     }
     handleLogin = () => {
