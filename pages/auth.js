@@ -10,7 +10,7 @@ class Auth extends Component {
                 window.location.origin + window.location.pathname);
             window.location.href = "/";
         }).catch(function (err) {
-            console.log('error: ', err);
+            sessionStorage.clear()
         });
     }
     render() {
