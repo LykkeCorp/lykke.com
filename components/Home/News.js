@@ -201,7 +201,7 @@ export default class extends Component {
               <Row className="align-items-center">
                 <Col xs={12} sm={6} md={12}>
                   <MainTitle>
-                      Lykke Medium Our news to you!
+                      Lykke Medium <br/> Our news to you!
                   </MainTitle>
                 </Col>
                 <Col xs={12} sm={6} md={12}>

@@ -497,11 +497,11 @@ export default class Nav extends Component {
                             <a>Invest</a>
                           </Link>
                         </DropdownItem>
-                        <DropdownItem onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
-                          <Link href="/about/careers">
-                            <a>Careers</a>
-                          </Link>
-                        </DropdownItem>
+                        {/*<DropdownItem onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>*/}
+                          {/*<Link href="/about/careers">*/}
+                            {/*<a>Careers</a>*/}
+                          {/*</Link>*/}
+                        {/*</DropdownItem>*/}
                         {/*<DropdownItem>*/}
                           {/*<Link href="/about/news">*/}
                             {/*<a>News</a>*/}
