@@ -109,6 +109,19 @@ const List = styled.ul`
 
 const ListItem = styled.li``
 
+const ListWrapper = styled.div`
+  flex-direction: column;
+  max-height: 375px;
+
+  @media all and (min-width: 768px) and (max-width: 1100px) {
+    max-height: 300px;
+  }
+
+  @media all and (max-width: 768px) {
+    max-height: 100%;
+  }
+`;
+
 const CustomGutter = styled.div`
   ${Col} + ${Col} {
     margin-top: 0;
@@ -229,9 +242,9 @@ export default ({lyci}) => {
 
                             <CustomGutter>
                                 <List>
-                                    <Row>
+                                    <ListWrapper as={Row}>
                                         {constituents}
-                                    </Row>
+                                    </ListWrapper>
                                 </List>
                             </CustomGutter>
 
