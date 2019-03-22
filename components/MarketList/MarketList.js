@@ -131,9 +131,9 @@ export default class extends Component {
                     <Row className="align-items-center">
                         {/*POSSIBLE CHANGES DO NOT REMOVE COMMENTED CODE FOR NOW*/}
 
-                        {/*<LyciMarketList lyci={lyci} show={this.state.showCount === 0} desc="Lykke Crypto Index"/>*/}
-                        {/*<LyciMarketList lyci={pLyci} show={this.state.showCount === 1} desc="Top-10 Payment Coins"/>*/}
-                        {/*<LyciMarketList lyci={scLyci} show={this.state.showCount === 2} desc="Top-10 Smart Contract Coins"/>*/}
+                        <LyciMarketList lyci={lyci} show={this.state.showCount === 0} desc="Lykke Crypto Index"/>
+                        <LyciMarketList lyci={pLyci} show={this.state.showCount === 1} desc="Top-10 Payment Coins"/>
+                        <LyciMarketList lyci={scLyci} show={this.state.showCount === 2} desc="Top-10 Smart Contract Coins"/>
 
                         <LyciMarketList black lyci={lyciUsd} show={true} desc="LyCI Service Token"/>
                     </Row>
@@ -151,7 +151,7 @@ export default class extends Component {
                         green={quote.change > 0}
                         dir={quote.change > 0 ? 'up' : 'down'}
                       >
-                        {quote.change.toLocaleString(undefined, {
+                        {(quote.change*100).toLocaleString(undefined, {
                           style: 'percent',
                           minimumFractionDigits: 2
                         })}
