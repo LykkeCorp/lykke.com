@@ -100,7 +100,7 @@ export default class extends Component {
                       ...this.state.lyciUsd,
                       name: 'LyCI',
                       price: `$ ${lyciToUsd.price}`,
-                      change: lyciToUsd.change
+                      change: `${lyciToUsd.change} %`
                   },
                   quotes,
               });
