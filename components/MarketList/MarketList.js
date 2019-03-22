@@ -153,7 +153,7 @@ export default class extends Component {
                         {(quote.change).toLocaleString(undefined, {
                           style: 'percent',
                           minimumFractionDigits: 2
-                        })}
+                        })} %
                       </Value>
                     </Desc>
                   </ListItem>
