@@ -14,7 +14,7 @@ import LyciMarketList from './LyciMarketList'
 export const mapToProduct = x => ({
   ticker: x.AssetPair,
   price: x.LastPrice.toFixed(2),
-  change: `${x.PriceChange24H.toFixed(2)} %`
+  change: `${(x.PriceChange24H*100).toFixed(2)} %`
 });
 
 export default class extends Component {
@@ -134,8 +134,7 @@ export default class extends Component {
                         <LyciMarketList lyci={lyci} show={this.state.showCount === 0} desc="Lykke Crypto Index"/>
                         <LyciMarketList lyci={pLyci} show={this.state.showCount === 1} desc="Top-10 Payment Coins"/>
                         <LyciMarketList lyci={scLyci} show={this.state.showCount === 2} desc="Top-10 Smart Contract Coins"/>
-
-                        <LyciMarketList black lyci={lyciUsd} show={true} desc="LyCI Service Token"/>
+                        <LyciMarketList black lyci={lyciUsd} show={this.state.showCount === 3} desc="LyCI Service Token"/>
                     </Row>
                   </ListItem>
                 </Col>
@@ -151,7 +150,7 @@ export default class extends Component {
                         green={quote.change > 0}
                         dir={quote.change > 0 ? 'up' : 'down'}
                       >
-                        {(quote.change*100).toLocaleString(undefined, {
+                        {(quote.change).toLocaleString(undefined, {
                           style: 'percent',
                           minimumFractionDigits: 2
                         })}
