@@ -82,19 +82,19 @@ export default class extends Component {
                       ...this.state.lyci,
                       name: lyci.data.Name,
                       price: lyci.data.Value,
-                      change: `${lyci.data.Return24H} %`
+                      change: `${lyci.data.Return24H}`
                   },
                   pLyci: {
                       ...this.state.pLyci,
                       name: pLyci.data.Name,
                       price: pLyci.data.Value,
-                      change: `${pLyci.data.Return24H} %`
+                      change: `${pLyci.data.Return24H}`
                   },
                   scLyci: {
                       ...this.state.scLyci,
                       name: scLyci.data.Name,
                       price: scLyci.data.Value,
-                      change: `${scLyci.data.Return24H} %`
+                      change: `${scLyci.data.Return24H}`
                   },
                   lyciUsd: {
                       ...this.state.lyciUsd,
