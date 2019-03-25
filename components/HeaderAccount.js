@@ -35,8 +35,7 @@ class HeaderAccount extends React.Component {
             <Wrapper>
                 <Row className="justify-content-end">
                     <Col>
-                        {/*{ this.renderLoginButton() }*/}
-                        <Button href={WALLET_URL}>Go to dashboard</Button>
+                        { this.renderLoginButton() }
                     </Col>
                 </Row>
             </Wrapper>
