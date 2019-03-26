@@ -6,7 +6,7 @@ import {Row, Col} from 'react-styled-flexboxgrid';
 import getConfig from 'next/config';
 import {AuthService} from "../authService";
 const {publicRuntimeConfig} = getConfig();
-const { WALLET_URL } = publicRuntimeConfig;
+const { AUTH_REDIRECT_URL, WALLET_URL } = publicRuntimeConfig;
 
 const Wrapper = styled.div`
   flex-shrink: 0;
@@ -24,7 +24,7 @@ class HeaderAccount extends React.Component {
     renderLoginButton = () => {
         const { loggedIn } = this.props;
         if( loggedIn === null ) return null;
-        return loggedIn ? <Button href={WALLET_URL}>Go to dashboard</Button> :
+        return loggedIn ? <Button href={AUTH_REDIRECT_URL || WALLET_URL}>Go to dashboard</Button> :
             <>
             <AccountLink onClick={this.props.handleLogin}>Login</AccountLink>
             <Button href='/signup'>Get Started</Button>
