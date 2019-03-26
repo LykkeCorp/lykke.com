@@ -66,7 +66,7 @@ export default class extends React.Component {
                 <Wrapper as={Grid}>
                     <Row className="justify-content-between align-items-center">
                         <Col className="col-sm-auto">
-                            <Nav menuHandler={this.props.menuHandler} isMenuOpen={this.props.isMenuOpen}/>
+                            <Nav menuHandler={this.props.menuHandler} isMenuOpen={this.props.isMenuOpen} handleLogin={this.handleLogin} loggedIn={this.state.loggedIn}/>
                         </Col>
                         <Col className="col-sm-auto text-right d-none d-lg-block">
                             <HeaderAccount handleLogin={this.handleLogin} loggedIn={this.state.loggedIn}/>
