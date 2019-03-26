@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { UserManager } from 'oidc-client'
+import { UserManager, WebStorageStateStore } from 'oidc-client'
 
 class Auth extends Component {
     componentDidMount() {
-        new UserManager({ loadUserInfo: true, filterProtocolClaims: true }).signinRedirectCallback().then(function (user) {
+        new UserManager({ loadUserInfo: true, filterProtocolClaims: true, userStore: new WebStorageStateStore({ store: window.localStorage }) }).signinRedirectCallback().then(function (user) {
             window.history.replaceState(
                 {},
                 window.document.title,
