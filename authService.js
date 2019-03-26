@@ -40,4 +40,8 @@ export class AuthService {
     logout = () => {
         return this.userManager.signoutRedirect();
     }
+
+    clearStaleState = () => {
+        return this.userManager.clearStaleState(new WebStorageStateStore({ store: window.localStorage }));
+    }
 }
