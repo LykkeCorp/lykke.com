@@ -48,6 +48,9 @@ export const TermsAndRegulation = props => {
                             <li>
                                 <span>Lykke Corp AG, for trading Lykke coins (LKK) and one and two year forwards on Lykke coins (LKK1Y and LKK2Y)</span>
                             </li>
+                            <li>
+                                <span>On July 4 2018, Lykke Cyprus Limited received approval from the Cyprus Securities and Exchange Commission (CySEC) to operate as a regulated Cyprus Investment Firm (CIF; license number 363/18)</span>
+                            </li>
                         </List>
                         <p>When trading through the Lykke Wallet app, any of the coins, tokens, and services listed above, you are using the corresponding trading venue on which those coins or tokens are traded or by which those services are offered. When engaging with any of the trading venues, you are bound by the applicable rules:</p>
                         <List>
