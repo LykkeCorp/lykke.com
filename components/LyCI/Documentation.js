@@ -144,7 +144,7 @@ const CustomGutter = styled.div`
 export default ({lyci}) => {
     let constituents = [];
     if(lyci.Composition) {
-        constituents = lyci.Composition.map(i => {
+        constituents = lyci.Composition.sort((i1, i2) => i2.Weight - i1.Weight).map(i => {
             return (
                 <ListItem as={Col} xs={12} sm={6} key={i.AssetId}>
                     <Row className="justify-content-between">
