@@ -222,7 +222,7 @@ export default ({lyci}) => {
                             <h4>What assets are included in LyCI?</h4>
                             <p>
                                 LyCI is a weighted index which means that the proportion of each
-                                digital assets contained in the group is dependent on their total
+                                digital asset contained in the group is dependent on their total
                                 market capitalization. LyCI takes the current mid-market prices of
                                 the 25 cryptocurrencies with the largest market capitalization –
                                 i.e. those that are worth the most in terms of total asset value.
