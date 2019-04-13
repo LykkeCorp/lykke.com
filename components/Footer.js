@@ -248,8 +248,8 @@ export default class extends Component {
                           </Link>
                         </li>
                         <li>
-                          <Link href="/about/careers">
-                            <a>Careers</a>
+                          <Link href="https://lykke.bamboohr.com/jobs/">
+                            <a target="_blank">Careers</a>
                           </Link>
                         </li>
                         {/*<li>
