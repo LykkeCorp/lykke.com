@@ -155,7 +155,7 @@ export default () => (
           </h1>
           <p className="lead">
             <span>
-              Securly buy, exchange and sell and digital asset with Lykke.
+              Securely buy, exchange and sell and digital asset with Lykke.
             </span>
             <b className="d-none d-md-block">No hidden costs. Swiss quality.</b>
           </p>
