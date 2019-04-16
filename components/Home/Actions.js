@@ -225,21 +225,12 @@ export default () => (
           <Col xs={12} sm={5} md={4}>
             <Card>
               <i className="icon icon--newsletter" />
-              <CardTitle>SCBC Magazine</CardTitle>
-              <CardText>Get our latest news right to your mailbox</CardText>
+              <CardTitle>Lykke Medium</CardTitle>
+              <CardText>View our latest products, projects, listings and updates</CardText>
               <CardFooter border>
-                <form>
-                  <Row>
-                    <Col xs={7} sm={8}>
-                      <input type="text" placeholder="Your email" />
-                    </Col>
-                    <Col xs={5} sm={4} className="text-right">
-                      <Button flat small block className="btn">
-                        Subscribe
-                      </Button>
-                    </Col>
-                  </Row>
-                </form>
+                <Button flat small target="_blank" href="https://medium.com/lykke" className="btn">
+                  View
+                </Button>
               </CardFooter>
             </Card>
           </Col>
