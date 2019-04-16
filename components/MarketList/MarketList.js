@@ -131,10 +131,10 @@ export default class extends Component {
                     <Row className="align-items-center">
                         {/*POSSIBLE CHANGES DO NOT REMOVE COMMENTED CODE FOR NOW*/}
 
-                        <LyciMarketList lyci={lyci} show={this.state.showCount === 0} desc="Lykke Crypto Index"/>
-                        <LyciMarketList lyci={pLyci} show={this.state.showCount === 1} desc="Top-10 Payment Coins"/>
-                        <LyciMarketList lyci={scLyci} show={this.state.showCount === 2} desc="Top-10 Smart Contract Coins"/>
-                        <LyciMarketList black lyci={lyciUsd} show={this.state.showCount === 3} desc="LyCI Service Token"/>
+                        <LyciMarketList lyci={lyci} show={this.state.showCount === 0} name="LyCI" desc="Lykke Crypto Index"/>
+                        <LyciMarketList lyci={pLyci} show={this.state.showCount === 1} name="PLYCI" desc="Top-10 Payment Coins"/>
+                        <LyciMarketList lyci={scLyci} show={this.state.showCount === 2} name="SLYCI" desc="Top-10 Smart Contract Coins"/>
+                        <LyciMarketList black lyci={lyciUsd} show={this.state.showCount === 3} name="LYCI" desc="LyCI Service Token"/>
                     </Row>
                   </ListItem>
                 </Col>
