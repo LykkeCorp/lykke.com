@@ -18,12 +18,12 @@ const LyciItem = styled.div`
 `;
 
 
-const LyciMarketList = ({ lyci, show, desc, color }) => {
+const LyciMarketList = ({ lyci, show, desc, color, name }) => {
     return (
         <LyciItem show={show}>
             <Col>
                 <AccentTitle>
-                    {lyci.name}{' '}
+                    {name}{' '}
                     <Value dir={lyci.change > 0 ? 'up' : 'down'} black>
                         {lyci.price.toLocaleString()}
                     </Value>
