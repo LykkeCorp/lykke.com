@@ -151,7 +151,7 @@ export default () => (
       <Row>
         <Col xs={12} sm={7} md={6}>
           <h1>
-            Buy your <br className="d-md-none" /> First Bitcoin
+            Swiss Quality Exchange
           </h1>
           <p className="lead">
             <span>
