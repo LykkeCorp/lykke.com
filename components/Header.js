@@ -49,6 +49,7 @@ export default class extends React.Component {
 
         });
         this.authService.manager().events.addUserSignedOut(function () {
+            self.authService.clearStaleState();
             self.setState({ user: {}, loggedIn: false });
         });
         this.authService.manager().events.addUserLoaded(function () {
