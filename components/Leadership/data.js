@@ -26,14 +26,6 @@ export const team = {
       'Experience obtained primarily in a complex, global setting focused on European and Emerging Markets.',
     },
     {
-      name: 'Alfonso Rodriguez',
-      position: 'Chief Product Officer',
-      imageURL: '/static/images/leadership/big/alfonso.jpg',
-      imagePreviewURL: '/static/images/leadership/alfonso_preview.jpg',
-      info: 'Alfonso is an expert in large scale digital consumer platforms and corporate turnarounds. He joins Lykke from Dein Deal where ' +
-      'he was COO and prior to that he looked after the consumer product platforms for SwissCom and Bluewin. Alfonso is also a Kundalini Yoga teacher.',
-    },
-    {
       name: 'Cameron Fletcher',
       position: 'Chief Technology Officer',
       imageURL: '/static/images/leadership/big/cameron.jpg',
