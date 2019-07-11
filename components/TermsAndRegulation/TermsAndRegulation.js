@@ -49,7 +49,7 @@ export const TermsAndRegulation = props => {
                                 <span>Lykke Corp AG, for trading Lykke coins (LKK) and one and two year forwards on Lykke coins (LKK1Y and LKK2Y)</span>
                             </li>
                             <li>
-                                <span>Lykke Vanuatu, for margin trading</span>
+                                <span>On July 4 2018, Lykke Cyprus Limited received approval from the Cyprus Securities and Exchange Commission (CySEC) to operate as a regulated Cyprus Investment Firm (CIF; license number 363/18)</span>
                             </li>
                         </List>
                         <p>When trading through the Lykke Wallet app, any of the coins, tokens, and services listed above, you are using the corresponding trading venue on which those coins or tokens are traded or by which those services are offered. When engaging with any of the trading venues, you are bound by the applicable rules:</p>
@@ -62,9 +62,6 @@ export const TermsAndRegulation = props => {
                             </li>
                             <li>
                                 <Link href="#ag"><a>Rules for trading with Lykke Corp AG</a></Link>
-                            </li>
-                            <li>
-                                <Link href="#vanuatu"><a>Rules for trading with Lykke Vanuatu</a></Link>
                             </li>
                         </List>
                         <h3 id="uk">Rules for engaging with Lykke Corp UK</h3>
@@ -95,31 +92,6 @@ export const TermsAndRegulation = props => {
                         <p>Lykke's general <Link href="/terms-of-use"><TextLink href="/terms-of-use" noUnderline>Terms of Use</TextLink></Link>.</p>
                         <p><Link href="/uk-rulebook"><TextLink href="/uk-rulebook" noUnderline>The Rulebook</TextLink></Link>, which describes the functionality of trading on the trading venue maintained by Lykke Corp UK, applies mutatis mutandis to the functionality and trading by Lykke Corp AG. </p>
                         <p>The privacy policy applicable to trading with Lykke Corp AG is included in Lykke’s general <Link href="/privacy-policy"><TextLink href="/privacy-policy" noUnderline>Privacy Policy</TextLink></Link>.</p>
-                        <h3 id="vanuatu">Rules for trading with Lykke Vanuatu</h3>
-                        <p>The following rules apply to trading with Lykke Vanuatu.</p>
-                        <StyledColumnList>
-                            <li>
-                                <Link href="https://www.lykke.com/media/documents/Privacy_Policy.pdf"><a>Privacy Policy</a></Link>
-                            </li>
-                            <li>
-                                <Link href="https://www.lykke.com/media/documents/Order_Execution_Policy.pdf"><a>Order Execution Policy</a></Link>
-                            </li>
-                            <li>
-                                <Link href="https://lykke.vu/Product_Description_MT.pdf"><a>Trading Conditions</a></Link>
-                            </li>
-                            <li>
-                                <Link href="https://www.lykke.com/media/documents/Conflict_of_Interest_Policy.pdf"><a>Conflict of Interest Policy</a></Link>
-                            </li>
-                            <li>
-                                <Link href="https://www.lykke.com/media/documents/Client_Agreement.pdf"><a>Client Agreement</a></Link>
-                            </li>
-                            <li>
-                                <Link href="https://www.lykke.com/media/documents/Terms_of_Withdrawal.pdf"><a>Terms of Withdrawal</a></Link>
-                            </li>
-                            <li>
-                                <Link href="https://www.lykke.com/media/documents/Complaints_Handling_Policy.pdf"><a>Complaints Handling Policy</a></Link>
-                            </li>
-                        </StyledColumnList>
                         <AnchorTitle id="b2bServices">Terms and conditions for Lykke’s B2B services</AnchorTitle>
                         <p>All B2B advisory and technical services, such as blockchain technology implementation and advisory services for ICOs, are provided by Lykke Accelerator AG. <TextLink noUnderline href="https://lykkecomdb.blob.core.windows.net/documents/Terms_and_Conditions%20applicable_to_Lykke%20Accelerator%E2%80%99s_services.pdf">These terms and conditions</TextLink> apply to such an engagement.</p>
                         <p>The privacy policy applicable to Lykke’s B2B Services is included in Lykke’s general <Link href="/privacy-policy"><TextLink href="/privacy-policy" noUnderline>Privacy Policy</TextLink></Link>.</p>

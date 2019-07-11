@@ -268,9 +268,7 @@ export default class extends Component {
                         Secure storage. Peace of mind.
                       </AccordionTitle>
                       <AccordionText>
-                        Become a part of the future of finance. Buy your first
-                        Bitcoin, Ether or other cryptocurrencies with your
-                        credit card or bank wire.
+                        Easily transfer and safely store all your assets to your Lykke Wallet whenever you want, wherever your want.
                       </AccordionText>
                     </AccordionContent>
                   </AccordionItem>
@@ -304,9 +302,7 @@ export default class extends Component {
                         Convert crypto to currency easily.
                       </AccordionTitle>
                       <AccordionText>
-                        Become a part of the future of finance. Buy your first
-                        Bitcoin, Ether or other cryptocurrencies with your
-                        credit card or bank wire.
+                        Request immediate withdrawal to your private crypto wallet or withdraw your cash to your bank account.
                       </AccordionText>
                     </AccordionContent>
                   </AccordionItem>

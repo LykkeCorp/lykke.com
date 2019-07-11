@@ -51,20 +51,18 @@ export default () => (
     <Grid className="container">
       <Row>
         <Col xs={12} sm={6}>
-          <p>Trading financial products involves significant risk and can result in the loss of your invested capital. You should not invest more
-            than you can afford to lose and should ensure that you fully understand the risks involved. Trading leveraged products may not be suitable
-            for all investors. Before trading, please take into consideration your level of experience, investment objectives and seek independent financial
-            advice if necessary. It is the responsibility of the Client to ascertain whether he/ she is permitted to use the services of Lykke Vanuatu Limited
-            based on the legal requirements in his/ her country of residence. Please read full&nbsp;
+          <p>Trading financial products involves significant risk and can result in the loss of your invested capital. 
+            You should not invest more than you can afford to lose and should ensure that you fully understand the risks involved. 
+            Trading leveraged products may not be suitable for all investors. Before trading, please take into consideration your level of experience, 
+            investment objectives and seek independent financial advice if necessary. Please read full&nbsp;
             <Link href="/privacy-policy"><a>Risk Disclosure</a></Link>.</p>
-          <p>Spot FX trading is provided by Lykke Corp UK. Leveraged FX &amp; CFD trading is only available to Lykke Vanuatu clients who reside in Asian and
-            African countries. Lykke services are not available to the residents of US, Canada, Japan, Australia. For full list of countries please refer to the&nbsp;
-            <Link href="/terms-and-regulation"><a>Terms of Use</a></Link>.</p>
+          <p>Spot FX trading is provided by Lykke Corp UK.
+            Lykke services are not available for the residents of the <Link href="/restricted-countries"><a>restricted countries list</a></Link>.</p>
+          <p>Lykke Corp (Lykke AG) is registered in Zug, Switzerland. Identification number CHE-345.258.499. <Link href="https://zg.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-345.258.499"><a>Commercial register</a></Link>.</p>
         </Col>
         <Col xs={12} sm={6}>
-          <p>Lykke Corp (Lykke AG) is registered in Zurich, Switzerland. Identification number CHE-345.258.499. <Link href="https://zg.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-345.258.499"><a>Commercial register</a></Link>.</p>
-          <p>Lykke Corp UK Limited is a company registered in England number 10093552 limited by shares with its registered office at 86-90 Paul Street, London EC2A 4NE</p>
-          <p>Lykke Vanuatu Limited is regulated by the Vanuatu Financial Services Commission (VFSC) of Vanuatu with Company number 17909</p>
+          <p>Lykke Corp UK Limited is a company registered in England number 10093552 limited by shares with its registered office at 86-90 Paul Street, London EC2A 4NE.</p>
+          <p>On July 4 2018, Lykke Cyprus Limited received approval from the Cyprus Securities and Exchange Commission (CySEC) to operate as a regulated Cyprus Investment Firm (CIF; license number 363/18).</p>
           <p>Risk warning: Trading leveraged products can result in losses that exceed your deposits. Ensure you understand the risks. Read full <Link href="/privacy-policy"><a>Risk Disclosure</a></Link>.</p>
         </Col>
       </Row>
