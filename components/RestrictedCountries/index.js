@@ -15,13 +15,19 @@ const RestrictedCountriesComponent = () => {
                         <p>Due to the regulatory restrictions, we are not yet permitted to approve residents from following countries for full trading:</p>
                         <List>
                             <li>Afghanistan</li>
-                            <li>British Columbia, Quebec, and Saskatchewan provinces in Canada</li>
-                            <li>Democratic People's Republic of Korea (DPRK)</li>
+                            <li>Canada British Columbia, Quebec, and Saskatchewan</li>
+                            <li>China</li>
                             <li>Iran</li>
+                            <li>Iraq</li>
                             <li>Japan</li>
+                            <li>Lebanon</li>
+                            <li>Libya</li>
+                            <li>Namibia</li>
                             <li>New Zealand</li>
+                            <li>North Korea</li>
                             <li>Syria</li>
-                            <li>USA</li>
+                            <li>United States</li>
+                            <li>Yemen</li>
                         </List>
                     </PolicyWrapper>
                 </Col>

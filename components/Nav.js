@@ -518,7 +518,7 @@ export default class Nav extends Component {
                 </Row>
 
                 <AccountContainer className="d-md-none">
-                  <HeaderAccount />
+                  <HeaderAccount handleLogin={this.props.handleLogin} loggedIn={this.props.loggedIn} />
                 </AccountContainer>
               </MenuInner>
             </Menu>

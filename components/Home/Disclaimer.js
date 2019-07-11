@@ -56,7 +56,8 @@ export default () => (
             Trading leveraged products may not be suitable for all investors. Before trading, please take into consideration your level of experience, 
             investment objectives and seek independent financial advice if necessary. Please read full&nbsp;
             <Link href="/privacy-policy"><a>Risk Disclosure</a></Link>.</p>
-          <p>Spot FX trading is provided by Lykke Corp UK. Lykke services are not available to the residents of US, Canada, Japan, Australia. For full list of countries please refer to the <Link href="/terms-and-regulation"><a>Terms of Use</a></Link>.</p>
+          <p>Spot FX trading is provided by Lykke Corp UK.
+            Lykke services are not available for the residents of the <Link href="/restricted-countries"><a>restricted countries list</a></Link>.</p>
           <p>Lykke Corp (Lykke AG) is registered in Zug, Switzerland. Identification number CHE-345.258.499. <Link href="https://zg.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-345.258.499"><a>Commercial register</a></Link>.</p>
         </Col>
         <Col xs={12} sm={6}>

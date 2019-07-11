@@ -80,21 +80,21 @@ export default class extends Component {
               this.setState({
                   lyci: {
                       ...this.state.lyci,
-                      name: lyci.data.Name,
-                      price: lyci.data.Value,
-                      change: `${lyci.data.Return24H}`
+                      name: lyci.data ? lyci.data.Name : '',
+                      price: lyci.data ? lyci.data.Value : '',
+                      change: lyci.data ? `${lyci.data.Return24H}` : ''
                   },
                   pLyci: {
                       ...this.state.pLyci,
-                      name: pLyci.data.Name,
-                      price: pLyci.data.Value,
-                      change: `${pLyci.data.Return24H}`
+                      name: pLyci.data ? pLyci.data.Name : '',
+                      price: pLyci.data ? pLyci.data.Value : '',
+                      change: pLyci.data ? `${pLyci.data.Return24H}` : ''
                   },
                   scLyci: {
                       ...this.state.scLyci,
-                      name: scLyci.data.Name,
-                      price: scLyci.data.Value,
-                      change: `${scLyci.data.Return24H}`
+                      name: scLyci.data ? scLyci.data.Name : '',
+                      price: scLyci.data ? scLyci.data.Value : '',
+                      change: scLyci.data ? `${scLyci.data.Return24H}` : ''
                   },
                   lyciUsd: {
                       ...this.state.lyciUsd,

@@ -6,7 +6,7 @@ import {Row, Col} from 'react-styled-flexboxgrid';
 import getConfig from 'next/config';
 import {AuthService} from "../authService";
 const {publicRuntimeConfig} = getConfig();
-const { WALLET_URL } = publicRuntimeConfig;
+const { AUTH_REDIRECT_URL, WALLET_URL } = publicRuntimeConfig;
 
 const Wrapper = styled.div`
   flex-shrink: 0;
@@ -17,16 +17,22 @@ const AccountLink = styled.a`
   margin-right: ${rem('40px')};
   font-weight: 600;
   cursor: pointer;
-  font-size: ${rem('18px')}
+  font-size: ${rem('18px')};
+ 
+  @media all and (max-width: 991px) {
+    margin-right: 0;
+    margin-bottom: ${rem('10px')};
+    display: block;
+  }
 `;
 
 class HeaderAccount extends React.Component {
     renderLoginButton = () => {
-        const { loggedIn } = this.props;
+        const { loggedIn, handleLogin } = this.props;
         if( loggedIn === null ) return null;
-        return loggedIn ? <Button href={WALLET_URL}>Go to dashboard</Button> :
+        return loggedIn ? <Button href={AUTH_REDIRECT_URL || WALLET_URL}>Go to dashboard</Button> :
             <>
-            <AccountLink onClick={this.props.handleLogin}>Login</AccountLink>
+            <AccountLink onClick={handleLogin}>Login</AccountLink>
             <Button href='/signup'>Get Started</Button>
             </>
     };
@@ -35,8 +41,7 @@ class HeaderAccount extends React.Component {
             <Wrapper>
                 <Row className="justify-content-end">
                     <Col>
-                        {/*{ this.renderLoginButton() }*/}
-                        <Button href={WALLET_URL}>Go to dashboard</Button>
+                        { this.renderLoginButton() }
                     </Col>
                 </Row>
             </Wrapper>

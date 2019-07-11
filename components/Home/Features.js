@@ -5,7 +5,7 @@ import Button from '../Button';
 import {rem} from 'polished';
 import getConfig from 'next/config'
 const {publicRuntimeConfig} = getConfig()
-const { WALLET_URL } = publicRuntimeConfig
+const { AUTH_REDIRECT_URL, WALLET_URL } = publicRuntimeConfig
 
 import {Section, SectionHeader, SectionLink} from './styled';
 
@@ -335,7 +335,7 @@ export default class extends Component {
           </TabSlider>
 
           <SectionLink>
-            <Button href={WALLET_URL}>Go to dashboard</Button>
+            <Button href={AUTH_REDIRECT_URL || WALLET_URL}>Go to dashboard</Button>
           </SectionLink>
         </Grid>
       </Section>
