@@ -7,7 +7,7 @@ export class AuthService {
     constructor() {
         const config = {
             authority: AUTH_SERVER_URL || "https://lykke.tech",
-            client_id: "easy_wallet_spa",
+            client_id: "850e2ee9-3cd6-4f10-a44a-ac2c0ad2d64d",
             redirect_uri: AUTH_REDIRECT_URL || `${SELF_URL}/auth` || "http://localhost:3000/auth",
             silent_redirect_uri: AUTH_REDIRECT_URL || `${SELF_URL}/auth` || "http://localhost:3000/auth",
             post_logout_redirect_uri: `${SELF_URL}` || "http://localhost:3000",
