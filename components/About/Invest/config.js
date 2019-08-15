@@ -17,6 +17,8 @@ export const disclosureItems = [
     {url: '/static/images/about/invest/memorandum_icn.svg', title: 'LKK Whitepaper', href: 'https://www.lykke.com/media/Whitepaper_LykkeExchange.pdf', linkText: 'Download'},
     {url: '/static/images/about/invest/equity_icn.svg', title: 'Lykke Corp Equity Register on Blockchain', href: 'https://blockchainexplorer.lykke.com/asset/AXkedGbAH1XGDpAypVzA5eyjegX4FaCnvM', linkText: 'View in BlockChainExplorer'},
     {url: '/static/images/about/invest/memorandum_icn.svg', title: 'LKK2Y Whitepaper', href: 'https://www.lykke.com/LKK2Y%20whitepaper.pdf', linkText: 'Download'},
+    {url: '/static/images/about/invest/annual_report_icn.svg', title: 'Independent Auditor Report on the Financial Statements (2018)', href: 'https://www.lykke.com/static/pdf/LykkeCorp_AuditedFinancialStatement2018.pdf', linkText: 'Download'},
+    {url: '/static/images/about/invest/annual_report_icn.svg', title: 'Annual Report (2018)', href: 'https://www.lykke.com/static/pdf/Lykke_2019CoinholderMeeting_SupportingDeck_Q&A.pdf', linkText: 'Download'},
 ];
 
 export const investorItems = [
