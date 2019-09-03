@@ -63,7 +63,7 @@ export default class LykkeApp extends App {
   componentDidMount() {
     if (process.env.NODE_ENV === 'production') {
       const tagManagerArgs = {
-        gtmId: 'GTM-5ZXBJWR'
+        gtmId: 'GTM-MRGJ9WT'
       };
       TagManager.initialize(tagManagerArgs);
     }
