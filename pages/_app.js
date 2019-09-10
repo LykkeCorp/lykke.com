@@ -68,7 +68,7 @@ export default class LykkeApp extends App {
   }
 
   componentDidMount() {
-    // if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'production') {
       const gtmHead = `<!-- Google Tag Manager -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -98,7 +98,7 @@ export default class LykkeApp extends App {
       for (let i = bodyElement.length-1; i >= 0; i--) {
         document.body.prepend(bodyElement[i]);
       }
-    // }
+    }
   }
 
   openMenu = () => {
