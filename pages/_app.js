@@ -29,6 +29,13 @@ const Main = styled.main`
   }
 `;
 
+const htmlToElement = (html) => {
+  var template = document.createElement('template');
+  html = html.trim();
+  template.innerHTML = html;
+  return template.content.childNodes;
+}
+
 const Layout = ({quotes, children, menuHandler, isMenuOpen}) => (
     <Wrapper>
         <MarketList quotes={quotes} />
@@ -61,12 +68,37 @@ export default class LykkeApp extends App {
   }
 
   componentDidMount() {
-    if (process.env.NODE_ENV === 'production') {
-      const tagManagerArgs = {
-        gtmId: 'GTM-MRGJ9WT'
-      };
-      TagManager.initialize(tagManagerArgs);
-    }
+    // if (process.env.NODE_ENV === 'production') {
+      const gtmHead = `<!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MRGJ9WT');</script>
+      <!-- End Google Tag Manager -->
+      <!-- Start Alexa Certify Javascript -->
+      <script type="text/javascript">
+      _atrk_opts = { atrk_acct:"38jqt1hNdI20fn", domain:"lykke.com",dynamic: true};
+      (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://certify-js.alexametrics.com/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+      </script>
+      <noscript><img src="https://certify.alexametrics.com/atrk.gif?account=38jqt1hNdI20fn(43 B)
+      https://certify.alexametrics.com/atrk.gif?account=38jqt1hNdI20fn
+      " style="display:none" height="1" width="1" alt="" /></noscript>
+      <!-- End Alexa Certify Javascript -->`;
+      const gtmBody = `<!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MRGJ9WT"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->`;
+
+      const headElement = htmlToElement(gtmHead);
+      for (let i = headElement.length-1; i >= 0; i--) {
+        document.head.prepend(headElement[i]);
+      }
+      const bodyElement = htmlToElement(gtmBody);
+      for (let i = bodyElement.length-1; i >= 0; i--) {
+        document.body.prepend(bodyElement[i]);
+      }
+    // }
   }
 
   openMenu = () => {
