@@ -8,14 +8,14 @@ const { WALLET_URL } = publicRuntimeConfig
 import {Section, SectionHeader, SectionLink} from './styled';
 
 export default () => (
-  <Section grey>
+  <Section blue>
     <Grid className="container">
       <SectionHeader>
         <h3>Join the voices of the future of finance</h3>
       </SectionHeader>
 
       <SectionLink>
-        <Button href={WALLET_URL}>Sign up</Button>
+        <Button href={WALLET_URL}>Sign Up on Lykke</Button>
       </SectionLink>
     </Grid>
   </Section>

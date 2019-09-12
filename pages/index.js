@@ -9,6 +9,7 @@ import Disclaimer from '../components/Home/Disclaimer';
 import LykkeIndex from '../components/Home/LykkeIndex';
 import News from '../components/Home/News';
 import Team from '../components/Home/Team';
+import Testimonials from '../components/Home/Testimonials';
 
 const Home = ({posts}) => (
   <>
@@ -21,6 +22,7 @@ const Home = ({posts}) => (
     <Features />
     <LykkeIndex />
     <News posts={posts} />
+    <Testimonials />
     <Team />
 
     <Actions />

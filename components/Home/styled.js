@@ -7,7 +7,7 @@ export const Section = styled.section`
   padding-bottom: ${rem('80px')};
   
   @media all and (max-width: 767px) {
-    padding-top: 70px;
+    padding-top: 50px;
     padding-bottom: 40px;
   }
   
@@ -29,6 +29,26 @@ export const Section = styled.section`
       background-color: ${p => p.theme.colors.greyPale};
     `
   }
+
+  ${(p) => p.blue &&
+    css`
+      background: url(/static/images/bg-signup.jpg) 50% 100% no-repeat;
+      background-size: cover;
+      padding-top: ${rem('50px')};
+      padding-bottom: ${rem('50px')};
+
+      h3 {
+        color: ${p => p.theme.colors.white};
+        margin-bottom: ${rem('-10px')};
+      }
+
+      a {
+        background: ${p => p.theme.colors.white} !important;
+        color: ${p => p.theme.colors.grey} !important;
+        max-width: 280px !important;
+      }
+    `
+  }
 `;
 
 export const SectionHeader = styled.div`
@@ -45,6 +65,10 @@ export const SectionHeader = styled.div`
     margin-right: auto;
     margin-left: auto;
     color: ${p => p.theme.colors.grey};
+  }
+
+  @media all and (max-width: 767px) {
+    margin-bottom: 30px;
   }
 `;
 
