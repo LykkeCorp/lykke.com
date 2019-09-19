@@ -190,7 +190,7 @@ export default class extends Component {
           <SectionHeader>
             <h3>Everything you need. Right where you need it.</h3>
             <p>
-              The Lykke Wallet is packed with simple yet powerful features to
+              The <a href="https://wallet.lykke.com/" target="_blank">Lykke Wallet</a> is packed with simple yet powerful features to
               give you everything you need to secure your future in digital
               assets.
             </p>

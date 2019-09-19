@@ -27,8 +27,8 @@ export const Dark = styled.div`
 const Trade = () => (
   <>
     <Head
-      title="Lykke – Buy and sell cryptocurrency and digital assets"
-      description="Global marketplace for any kind of assets built on the top of blockchain technology"
+      title="Trade Bitcoin & Cryptocurrency 0% Trading Fees - Lykke"
+      description="Swiss based digital asset exchange with trading & FX Easily deposit funds with Lykke, bank transfer, wire transfer, or digital currency with zero fees!"
     />
     <Dark>
       <Lead />

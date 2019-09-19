@@ -44,8 +44,8 @@ class LyCI extends Component {
     return (
       <>
         <Head
-          title="Lykke – Buy and sell cryptocurrency and digital assets"
-          description="Global marketplace for any kind of assets built on the top of blockchain technology"
+          title="Lykke Crypto Index (LyCi) - Lykke"
+          description="LyCI is a tool that consolidates and tracks the performance or value of a selection of underlying cryptocurrencies giving customers the chance to spread their funds across the top cryptos"
         />
         <Lead lyci={lyci} lyciChart={lyciChart}/>
         <Invest />

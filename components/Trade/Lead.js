@@ -33,7 +33,7 @@ export default () => (
         <Col xs={12} sm={7} md={6}>
           <h1>Secure and trusted platform for pro traders.</h1>
           <p className="lead">
-            Buy and sell FX, crypto and other digital assets on our Swiss based
+            Buy and sell FX, cryptocurrency such as <a href="https://www.lykke.com" target="_blank">Bitcoin & Ethereum</a> and other digital assets on our Swiss based
             exchange.
           </p>
           <FormSubscribe>

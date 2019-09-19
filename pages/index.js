@@ -14,8 +14,8 @@ import Testimonials from '../components/Home/Testimonials';
 const Home = ({posts}) => (
   <>
     <Head
-      title="Lykke – Buy and sell cryptocurrency and digital assets"
-      description="Global marketplace for any kind of assets built on the top of blockchain technology"
+      title="Buy & Sell Cryptocurrency & Bitcoin Online - Lykke"
+      description="Lykke is a secure platform that makes it easy to buy, sell, and store cryptocurrency like Bitcoin, Ethereum, and more"
     />
     <Lead />
     <Chips />

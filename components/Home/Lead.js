@@ -155,7 +155,7 @@ export default () => (
           </h1>
           <p className="lead">
             <span>
-              Securely buy, exchange and sell any digital asset with Lykke.
+              Securely buy, exchange and sell any digital assets & cryprocurrencies with Lykke such as Bitcoin, Ethereum, Litecoin and more.
             </span>
             <b className="d-none d-md-block">No hidden costs. Swiss quality.</b>
           </p>

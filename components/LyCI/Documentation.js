@@ -142,6 +142,7 @@ const CustomGutter = styled.div`
 `;
 
 export default ({lyci}) => {
+    const linkedAssets = ['BTC', 'ETH', 'XRP', 'BCH', 'XLM', 'DASH'];
     let constituents = [];
     if(lyci.Composition) {
         constituents = lyci.Composition.sort((i1, i2) => i2.Weight - i1.Weight).map(i => {
@@ -149,7 +150,11 @@ export default ({lyci}) => {
                 <ListItem as={Col} xs={12} sm={6} key={i.AssetId}>
                     <Row className="justify-content-between">
                         <Col>
-                            {i.AssetId}
+                            {
+                              linkedAssets.indexOf(i.AssetId) >= 0 ?
+                                <a href="https://www.lykke.com" target="_blank">{i.AssetId}</a> :
+                                i.AssetId
+                            }
                         </Col>
                         <Col>
                             {(i.Weight * 100).toFixed(2)} %
@@ -169,7 +174,7 @@ export default ({lyci}) => {
                             <h4>What is the Lykke Crypto Index?</h4>
                             <p>
                                 LyCI is a tool that consolidates and tracks the performance or
-                                value of a selection of underlying cryptocurrencies. This provides
+                                value of a selection of underlying <a href="https://www.lykke.com" target="_blank">cryptocurrencies</a>. This provides
                                 a snapshot of how this selection of the crypto market is
                                 performing overall in one single, easily understandable measure.
                                 This ensures that even where one cryptocurrency in the index goes
@@ -185,7 +190,7 @@ export default ({lyci}) => {
                             </p>
                             <ul>
                                 <li>
-                                    Useful benchmark of individual cryptocurrencies against a
+                                    Useful benchmark of individual <a href="https://www.lykke.com" target="_blank">cryptocurrencies</a> against a
                                     measure of market overall performance
                                 </li>
                                 <li>
@@ -223,12 +228,16 @@ export default ({lyci}) => {
                             <p>
                                 LyCI is a weighted index which means that the proportion of each
                                 digital asset contained in the group is dependent on their total
-                                market capitalization. LyCI takes the current mid-market prices of
-                                the 25 cryptocurrencies with the largest market capitalization –
+                                market capitalization. With a larger weighting in <a href="https://www.lykke.com" target="_blank">Bitcoin</a> we can ensure that there is less
+                                exposure to less well known <a href="https://www.lykke.com" target="_blank">cryptocurrencies</a>.
+                            </p> 
+                            <p>
+                                LyCI takes the current mid-market prices of
+                                the 25 <a href="https://www.lykke.com" target="_blank">cryptocurrencies</a> with the largest market capitalization –
                                 i.e. those that are worth the most in terms of total asset value.
                             </p>
                             <p>
-                                At the time of writing the cryptocurrencies with the highest
+                                At the time of writing the <a href="https://www.lykke.com" target="_blank">cryptocurrencies</a> with the highest
                                 market cap and corresponding weights are (data from
                                 coinmarketcap):
                             </p>
