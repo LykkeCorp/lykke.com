@@ -12,6 +12,10 @@ export const Lead = styled.section`
   padding-top: ${rem('80px')};
   padding-bottom: ${rem('40px')};
 
+  a.link {
+    text-decoration: underline;
+  }
+
   h1 {
     margin-bottom: ${rem('18px')};
   }

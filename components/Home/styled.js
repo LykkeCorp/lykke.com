@@ -67,6 +67,10 @@ export const SectionHeader = styled.div`
     color: ${p => p.theme.colors.grey};
   }
 
+  a {
+    text-decoration: underline;
+  }
+
   @media all and (max-width: 767px) {
     margin-bottom: 30px;
   }
