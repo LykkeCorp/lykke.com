@@ -7,6 +7,7 @@ module.exports = {
 
     return config
   },
+  experimental: { publicDirectory: true },
   publicRuntimeConfig: {
       SELF_URL: process.env.SELF_URL || 'http://localhost:3000',
       BASE_API_URL: process.env.BASE_API_URL || 'https://apiv2-dev.lykkex.net/api',
