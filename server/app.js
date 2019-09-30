@@ -1,5 +1,6 @@
 const express = require('express');
 const next = require('next');
+const path = require('path');
 const api = require('./api');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -16,6 +17,20 @@ app
     const server = express();
 
     api(server);
+
+    const sitemapFiles = [
+      'ror.xml',
+      'sitemap.html',
+      'sitemap.xml',
+      'sitemap.xml.gz',
+      'urllist.txt'
+    ];
+
+    sitemapFiles.forEach(file => {
+      server.get(`/${file}`, (req, res) => {
+        app.serveStatic(req, res, path.resolve(`./static/sitemap/${file}`));
+      });
+    });
 
     server.get('*', (req, res) => {
       return handle(req, res);
