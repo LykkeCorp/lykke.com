@@ -465,12 +465,33 @@ export default class Nav extends Component {
                       </Link>
                     </MenuItemInner>
                   </MenuItem>
-                  <MenuItem as={Col} onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
+                  <MenuItem
+                    as={Col}
+                    dropdown
+                    active={this.state.isDropdownOpen}
+                    onClick={this.openDropdownMenu}
+                  >
                     <MenuItemInner>
-                      <Link  prefetch activeClassName="active"  href="https://info.lykke.com/">
-                        <a className="with_border" target="_blank">LyCI</a>
-                      </Link>
+                      <a>
+                        LyCI products
+                        <Caret />
+                      </a>
                     </MenuItemInner>
+
+                    <DropdownMenu isOpen={this.state.isDropdownOpen}>
+                      <DropdownMenuInner>
+                        <DropdownItem onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
+                          <Link href="https://info.lykke.com">
+                            <a target="_blank">LyCI</a>
+                          </Link>
+                        </DropdownItem>
+                        <DropdownItem onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
+                          <Link href="https://info.lykke.com/shortlyci">
+                            <a target="_blank">Short LyCI</a>
+                          </Link>
+                        </DropdownItem>
+                      </DropdownMenuInner>
+                    </DropdownMenu>
                   </MenuItem>
                   <MenuItem
                     as={Col}
