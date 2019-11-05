@@ -40,9 +40,7 @@ const Bottom = styled.section`
       color: ${p => p.theme.colors.slate};
     }
 
-    &:last-child {
-      margin-left: ${rem('25px')};
-    }
+    margin-left: ${rem('25px')};
   }
 
   @media all and (max-width: 767px) {
@@ -329,12 +327,16 @@ export default class extends Component {
                 © {this.showCurrentYear()} Lykke, Inc.
               </Col>
               <Col xs={12} sm={6} className="text-right">
-                <Link href="/privacy-policy">
-                  <a>Privacy Policy</a>
+                <Link href="/terms-of-use">
+                  <a>Terms of Use</a>
                 </Link>
                 <br className="d-md-none" />
-                <Link href="/terms-and-regulation">
-                  <a>Terms of Use</a>
+                <Link href="/trading-rules">
+                  <a>Trading Rules</a>
+                </Link>
+                <br className="d-md-none" />
+                <Link href="/privacy-policy">
+                  <a>Privacy Policy</a>
                 </Link>
               </Col>
             </Row>

@@ -31,10 +31,28 @@ const LyciTos = (props) => {
                             </h1>
                             <List>
                                 <li>
-                                    <Link href="https://lkefiles.blob.core.windows.net:443/lykkecom/LyCI%20SERVICE%20TOKEN%20-%20TERMS%20OF%20SERVICE%20-%2025.01.2019%20(FINAL).pdf"><a target="_blank">LyCI Service Token - Terms of Service</a></Link>
+                                    <Link href="https://info.lykke.com/wp-content/uploads/2019/10/LyCI-SERVICE-TOKEN-TERMS-OF-SERVICE-25.01.2019-FINAL.pdf"><a target="_blank">LyCI Service Token - Terms of Service</a></Link>
                                 </li>
                                 <li>
-                                    <Link href="https://lkefiles.blob.core.windows.net:443/lykkecom/ANNEX_1_LyCI_SERVICE_TOKEN_Service.pdf"><a target="_blank">LyCI Service Token - Service Methodology</a></Link>
+                                    <Link href="https://info.lykke.com/wp-content/uploads/2019/03/ANNEX_1_LyCI_SERVICE_TOKEN_Service.pdf"><a target="_blank">LyCI Service Token - Service Methodology</a></Link>
+                                </li>
+                                <li>
+                                    <Link href="https://info.lykke.com/wp-content/uploads/2019/10/PayLyCI-SERVICE-TOKEN-TERMS-OF-SERVICE-20.03.2019-FINAL.pdf"><a target="_blank">PayLyCI Service Token - Terms of Service</a></Link>
+                                </li>
+                                <li>
+                                    <Link href="https://info.lykke.com/wp-content/uploads/2019/03/ANNEX-1-PayLyCI-SERVICE-TOKEN-Service-Methodology-20.03.2019-FINAL-1.pdf"><a target="_blank">PayLyCI Service Token - Service Methodology</a></Link>
+                                </li>
+                                <li>
+                                    <Link href="https://info.lykke.com/wp-content/uploads/2019/10/SmartLyCI-SERVICE-TOKEN-TERMS-OF-SERVICE-20.03.2019-FINAL.pdf"><a target="_blank">SmartLyCI Service Token - Terms of Service</a></Link>
+                                </li>
+                                <li>
+                                    <Link href="https://info.lykke.com/wp-content/uploads/2019/03/ANNEX-1-SmartLyCI-SERVICE-TOKEN-Service-Methodology-20.03.2019-FINAL.pdf"><a target="_blank">SmartLyCI Service Token - Service Methodology</a></Link>
+                                </li>
+                                <li>
+                                    <Link href="https://info.lykke.com/wp-content/uploads/2019/10/SHORT-LyCI-SERVICE-TOKEN-TERMS-OF-SERVICE-1.pdf"><a target="_blank">Short LyCI Service Token - Terms of Service</a></Link>
+                                </li>
+                                <li>
+                                    <Link href="https://info.lykke.com/wp-content/uploads/2019/10/Annex1_Service-Methodology_Short-LyCI.pdf"><a target="_blank">Short LyCI Service Token - Service Methodology</a></Link>
                                 </li>
                             </List>
                         </StyledPolicyWrapper>

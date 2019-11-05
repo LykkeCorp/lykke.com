@@ -15,8 +15,9 @@ export default class extends Component {
     renderText() {
         return (
             <div>
-                This website uses cookies and similar technologies to help us provide you with a better service. They allow us to remember you and understand how you use this site.
-                <br />NOTE: Your further use of this site will be considered consent.
+                This website stores cookies on your computer. We use this information to customize your browsing experience and for analytics and metrics about our visitors both on this website and other devices.
+                <br />If you decline, your personal information won’t be tracked when you visit this website. You can also use the settings of your browser to turn them off.
+                <br />To find out more about the cookies we use, see our <Link href="/privacy-policy">Privacy Policy</Link>
             </div>
         );
     }
@@ -24,16 +25,30 @@ export default class extends Component {
     renderFooter() {
         return (
             <CookieBannerButtons>
-                <Link href="/privacy-policy">
-                    <CookiePolicyButton>
-                        <CookiePolicyIcon className="icomoon icomoon-blogpost-icn" /><span>Full cookie policy</span>
-                    </CookiePolicyButton>
-                </Link>
                 <AgreeButton onClick={this.hideBanner.bind(this)}>
-                    I agree
+                    Accept
+                </AgreeButton>
+                <AgreeButton onClick={this.handleDecline.bind(this)}>
+                    Decline
                 </AgreeButton>
             </CookieBannerButtons>
         );
+    }
+
+    deleteAllCookies() {
+        const cookies = document.cookie.split(';');
+    
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i];
+            const eqPos = cookie.indexOf('=');
+            const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+        }
+    }
+
+    handleDecline() {
+        this.setState({visible: false});
+        this.deleteAllCookies();
     }
 
     hideBanner() {

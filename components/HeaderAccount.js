@@ -32,8 +32,8 @@ class HeaderAccount extends React.Component {
         if( loggedIn === null ) return null;
         return loggedIn ? <Button href={AUTH_REDIRECT_URL || WALLET_URL}>Go to dashboard</Button> :
             <>
-            <AccountLink onClick={handleLogin}>Login</AccountLink>
-            <Button href='/signup'>Get Started</Button>
+            <AccountLink href={WALLET_URL}>Login</AccountLink>
+            <Button href={WALLET_URL}>Get Started</Button>
             </>
     };
     render() {

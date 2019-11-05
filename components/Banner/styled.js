@@ -55,12 +55,14 @@ export const BannerText = styled.div`
     color: ${p => p.theme.colors.dark};
     padding-bottom: 14px;
     border-bottom: 1px solid ${p => p.theme.colors.greyLight};
+
+    a {
+        text-decoration: underline;
+    }
 `;
 
 export const CookieBannerButtons = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    float: right;
     padding-top: 12px;
 `;
 
@@ -84,5 +86,6 @@ export const AgreeButton = styled.a`
     font-size: ${p => p.theme.fontSize.primary};
     font-weight: 600;
     line-height: 1.5;
+    margin-right: 20px;
     color: ${p => p.theme.colors.primary};
 `;
