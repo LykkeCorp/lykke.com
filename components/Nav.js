@@ -437,20 +437,6 @@ export default class Nav extends Component {
             <Menu show={this.props.isMenuOpen}>
               <MenuInner>
                 <Row className="align-items-center">
-                  <MenuItem as={Col} onClick={this.props.isMenuOpen ? this.props.menuHandler : null} >
-                    <MenuItemInner>
-                      <Link prefetch activeClassName="active" href="/">
-                        <a className="with_border">
-                          <img
-                            src="/static/lykke_wallet_logo.svg"
-                            alt="Lykke"
-                            width="36px"
-                          />{' '}
-                          Lykke Wallet
-                        </a>
-                      </Link>
-                    </MenuItemInner>
-                  </MenuItem>
                   <MenuItem as={Col} onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
                     <MenuItemInner>
                       <Link prefetch activeClassName="active" href="/trade">
@@ -477,7 +463,6 @@ export default class Nav extends Component {
                         <Caret />
                       </a>
                     </MenuItemInner>
-
                     <DropdownMenu isOpen={this.state.isDropdownOpen}>
                       <DropdownMenuInner>
                         <DropdownItem onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
@@ -492,6 +477,15 @@ export default class Nav extends Component {
                         </DropdownItem>
                       </DropdownMenuInner>
                     </DropdownMenu>
+                  </MenuItem>
+                  <MenuItem as={Col} onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
+                    <MenuItemInner>
+                      <Link prefetch activeClassName="active" href="https://info.lykke.com/lykke-business/">
+                        <a target="_blank">
+                          B2B
+                        </a>
+                      </Link>
+                    </MenuItemInner>
                   </MenuItem>
                   <MenuItem
                     as={Col}
