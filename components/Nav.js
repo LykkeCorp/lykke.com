@@ -480,9 +480,9 @@ export default class Nav extends Component {
                   </MenuItem>
                   <MenuItem as={Col} onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
                     <MenuItemInner>
-                      <Link prefetch activeClassName="active" href="https://info.lykke.com/lykke-business/">
+                      <Link prefetch activeClassName="active" href="https://lykke-business.ch/">
                         <a target="_blank">
-                          B2B
+                        Lykke Business
                         </a>
                       </Link>
                     </MenuItemInner>
