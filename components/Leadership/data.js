@@ -33,14 +33,6 @@ export const team = {
       info: 'Cameron is a seasoned professional with a strong engineering background and extensive experience working in the financial sector ' +
       'across Europe, leading agile transformation in international environments.',
     },
-    {
-      name: 'Sebastian Gerigk',
-      position: 'Chief Innovation Officer',
-      imageURL: '/static/images/leadership/big/seb.jpg',
-      imagePreviewURL: '/static/images/leadership/seb_preview.jpg',
-      info: 'Sebastian has vast experience in quantitative finance and financial product development. Prior to joining Lykke, he was heading a team of ' +
-      'quantitative specialists at PwC Switzerland and in that position was leading various projects at Swiss and international financial institutions.',
-    },
   ],
   'Lykke Future': [
     {
