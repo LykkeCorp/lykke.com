@@ -423,16 +423,15 @@ export const FeesAndLimits = () => {
             <Row className="justify-content-center">
                 <Col xs={12} md={8}>
                     <FeesAndLimitsWrapper className="text-container">
-                        <h1>Fees and limits</h1>
+                        <h1>Fees, limits and account levels</h1>
                         <h3>Trading</h3>
                         <p>There are no fees for trading.</p>
                         <h3>Fees and limits for cryptocurrency transactions</h3>
-                        <p>AE, AGI, AION, AIR, AMLT, APPC, BCH, BMC, BNT, BSV, BTC, BTG, BTS, CAN, CLN, CVC, DASH, DAT, DEB, DENT, DNT, DTH, ENG, EOS, EOSold, ETC, ETH, ETHOS, ETM, ETM, EVX, FDZ, FREC, GAT, GCP, GCPold, GNO, GNT, GVT, HBZ, HGT, HVN, ICX, IND, IOST, IPS, KEY, LC, LGL, LOC, LRC, LTC, MANA, MSP, MTL, MWAT, MYST, old_PCL, OMG, PASS, PKT, POWR, PPT, QNTU, REP, REQ, SLR, SNM, STORJ, SUB, TIME, TREE, VEE, VIB, VLD, WAX, WPR, WTC, XLM, XRP, ZEC, ZIL, ZRX</p>
                         <h4>for Deposits</h4>
                         <p>There are no fees or limits for cryptocurrency deposits.</p>
                         <h4>for Withdrawals</h4>
                         <p>There are no maximum withdrawal limits.</p>
-                        <p>All withdrawal operations including transfer from Trading Wallet to Private Wallet have the following fees and minimum limits:</p>
+                        <p>All withdrawal operations have the following fees and minimum limits:</p>
                         <FeesAndLimitsTable>
                             <thead>
                                 <tr>
@@ -451,54 +450,43 @@ export const FeesAndLimits = () => {
                                 ))}
                             </tbody>
                         </FeesAndLimitsTable>
-                        <h3>Fees and limits for credit cards and payment systems</h3>
-                        <p><strong>CHF, USD, EUR, GBP</strong></p>
-                        <h4>for Deposits</h4>
+                        <h3>Fees and limits for fiat transactions</h3>
+                        <p>Deposits can be made via credit card and wire transfer in the following currencies: CHF, EUR, GBP.</p>
+                        <p>USD is available only for withdrawals.</p>
+                        <h4>Fees for Deposits via credit card:</h4>
                         <List>
-                            <li>Deposit transaction fee is 3.9%</li>
-                            <li>There's a 3 transaction limit a day</li>
-                            <li>There's a $3 000 (or equal amount in other currency) per transaction limit</li>
-                            <li>There's a $16 000 (or equal amount in other currency) monthly limit</li>
-                            <li>All of these numbers are fixed</li>
+                            <li>Deposit transaction fee is 3.9%.</li>
                         </List>
-                        <p>Based on our current logic for monthly limit, the reset does not depend on the 1st day of the month. It depends on the day when you started depositing. For example, for credit card limit = 16 000 USD for 30 days. If you deposited 8 000 from the credit card on the 1st of November, then 3 000 on 11/02 and 5 000 on 11/30, you will be able to deposit 8 000 USD on the 1st of December, then 3 000 USD on 12/02 and 5 000 on 12/30.</p>
-                        <AssetLimitsTable>
-                            <thead>
-                                <tr>
-                                    <td><strong>Asset</strong></td>
-                                    <td><strong>Minimum deposit</strong></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Swiss franc</td>
-                                    <td>1 CHF</td>
-                                </tr>
-                                <tr>
-                                    <td>United States dollar</td>
-                                    <td>1 USD</td>
-                                </tr>
-                                <tr>
-                                    <td>Euro</td>
-                                    <td>1 EUR</td>
-                                </tr>
-                                <tr>
-                                    <td>Pound sterling</td>
-                                    <td>1 GBP</td>
-                                </tr>
-                            </tbody>                    
-                        </AssetLimitsTable>
-                        <p><strong>Requirements:</strong> KYC, Credit Card matching with Lykke Wallet details (No card on the third person)</p>
-                        <h4>for Withdrawals</h4>
-                        <p>Withdrawals not allowed</p>
-                        <h3>Bank wire fees and limits</h3>
-                        <p><strong>CHF, EUR, GBP, USD</strong></p>
-                        <h4>for Deposits</h4>
+                        <h4>Fees for Deposits via wire transfer:</h4>
                         <List>
-                            <li>There is no fee for deposits</li>
-                            <li>Maximum deposit is 1 000 000 USD (or equal amount in other currency)</li>
+                            <li>There is no fee for deposits.</li>
                         </List>
-                        <p>If a single transfer (or cumulative of multiple transfers) is less than 17 000 USD per month (or equal amount for other currencies), then regular KYC will apply. In case a single transfer or cumulative of multiple transfers is above 17 000 USD, then the compliance team will follow Enhanced KYC procedure including the request for Proof of Funds. Please note that the funds are not granted until the enhanced KYC is passed successfully.</p>
+                        <h4>Account Levels</h4>
+
+                        <p>Deposit amounts are based on the approved level for your account. Please review the levels you may have after signing up for a Lykke account:</p>
+                        <List>
+                          <li>Beginner</li>
+                          <li>Advanced</li>
+                          <li>Pro Individual</li>
+                        </List>
+
+                        <p>More information on account levels can be found <Link href="https://support.lykke.com/hc/en-us/articles/360010340059-Account-levels-and-Limits-for-fiat-"><TextLink href="https://support.lykke.com/hc/en-us/articles/360010340059-Account-levels-and-Limits-for-fiat-">here</TextLink></Link>.</p>
+                        <p>Please note that  limits may vary according to your country of residence. These limits were set based on the AML Basel Index, FATF high risk jurisdiction list and EU high risk third country list.</p>
+                        <p>To ensure you can avail of our product offering please refer to our list of unsupported countries <Link href="/restricted-countries"><TextLink href="/restricted-countries">here</TextLink></Link>.</p>
+                        <p>Requirements: NO third party deposits or withdrawals are accepted. Customers can use only their personal bank accounts or credit cards.</p>
+                        
+                        <h4>Withdrawals to credit card</h4>
+                        <p>
+                          <u>NOT</u> available
+                        </p>
+
+                        <h4>Withdrawals to bank account</h4>
+                        <List>
+                          <li>Lykke does not charge any fees for withdrawal operations. Please note that the receiving or intermediary banks might charge a fee for the operation.</li>
+                          <li>Maximum withdrawal is based on the approved level of your account.</li>
+                        </List>
+
+                        <p>Note that the following minimum amount is applied for wire transfer regardless of the account level for <strong>deposits and withdrawals</strong>. If the transferred amount is less than indicated below, Lykke may not accept it. </p>
                         <AssetLimitsTable>
                             <thead>
                                 <tr>
@@ -525,40 +513,6 @@ export const FeesAndLimits = () => {
                                 </tr>
                             </tbody>                    
                         </AssetLimitsTable>
-                        <h4>for Withdrawals</h4>
-                        <List>
-                            <li>Lykke does not charge any fees for withdrawal operations.<br />Please note, that receiving or intermediary banks might charge a fee for the operation.</li>
-                            <li>Maximum withdrawal is 1 000 000 USD (or equal amount in other currency)</li>
-                        </List>      
-                        <p>In case a single withdrawal (or cumulative of multiple withdrawals) is above 17 000 USD; if Enhanced KYC is requested at the fiat deposit stage, there will be no additional requirements, if Enhanced KYC has not been required at the deposit stage (multiple small deposits less than 17 000 USD / month) then the Compliance Team will follow Enhanced KYC procedure including request for Proof of Funds; In case the source of the withdrawal is crypto assets and the client requests a single withdrawal (or cumulative of multiple withdrawals) above 17 000 USD then the Lykke Compliance Team will follow Enhanced KYC Procedure including request for Proof of Funds. Please note that Lykke is required to act in accordance with AML/CTF rules.</p>
-                        <AssetLimitsTable>
-                            <thead>
-                                <tr>
-                                    <td><strong>Asset</strong></td>
-                                    <td><strong>Minimum withdrawal</strong></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Swiss franc</td>
-                                    <td>50 CHF</td>
-                                </tr>
-                                <tr>
-                                    <td>United States dollar</td>
-                                    <td>50 USD</td>
-                                </tr>
-                                <tr>
-                                    <td>Euro</td>
-                                    <td>50 EUR</td>
-                                </tr>
-                                <tr>
-                                    <td>Pound sterling</td>
-                                    <td>50 GBP</td>
-                                </tr>
-                            </tbody>                    
-                        </AssetLimitsTable>
-                        <h2>Limitations</h2>
-                        <p>Due to the regulatory restrictions, we are not yet permitted to onboard residents from this <Link href="/restricted-countries"><TextLink href="/restricted-countries">country list</TextLink></Link>.</p>
                     </FeesAndLimitsWrapper>
                 </Col>
             </Row>

@@ -195,7 +195,7 @@ export default class extends Component {
                         </li>*/}
                         <li>
                           <Link href="/wallet-fees-and-limits">
-                            <a>Fees and limits</a>
+                            <a>Account levels {'&'} fees</a>
                           </Link>
                         </li>
                         {/*<li>
