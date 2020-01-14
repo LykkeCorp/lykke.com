@@ -17,6 +17,8 @@ export const mapToProduct = x => ({
   change: `${(x.PriceChange24H*100).toFixed(2)}`
 });
 
+const MARKETS_INTERVAL = 5000;
+
 export default class extends Component {
   state = {
     quotes: [],
@@ -40,20 +42,25 @@ export default class extends Component {
         price: 0,
         change: 0
     },
-    showCount: 0
+    showCount: 0,
+    sliderStarted: false
   };
 
   startLyciSlider = (numOfSlides) => {
       return setInterval(() => {
           if(this.state.showCount < (numOfSlides-1)) {
-              this.setState((prevState) => ({showCount: ++prevState.showCount}))
+              this.setState((prevState) => ({showCount: ++prevState.showCount, sliderStarted: true}))
           } else {
-              this.setState({showCount: 0})
+              this.setState({showCount: 0, sliderStarted: false})
           }
       }, 3000);
   };
 
   componentDidMount() {
+    this.fetchIndicesAndMarkets();
+  }
+
+  fetchIndicesAndMarkets() {
       Promise.all([
         axios.get(`/indices/${LYCI_ASSET_INDEX}`),
         axios.get(`/indices/${P_LYCI_ASSET_INDEX}`),
@@ -104,7 +111,11 @@ export default class extends Component {
                   },
                   quotes,
               });
-              this.startLyciSlider(4);
+              if (!this.state.sliderStarted) {
+                this.startLyciSlider(4);
+              }
+              // get new values every a few seconds
+              setTimeout(() => this.fetchIndicesAndMarkets, MARKETS_INTERVAL);
           });
   }
 
