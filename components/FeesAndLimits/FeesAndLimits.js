@@ -470,9 +470,9 @@ export const FeesAndLimits = () => {
                           <li>Pro Individual</li>
                         </List>
 
-                        <p>More information on account levels can be found <Link href="https://support.lykke.com/hc/en-us/articles/360010340059-Account-levels-and-Limits-for-fiat-"><TextLink href="https://support.lykke.com/hc/en-us/articles/360010340059-Account-levels-and-Limits-for-fiat-">here</TextLink></Link>.</p>
+                        <p>More information on account levels can be found <u><TextLink href="https://support.lykke.com/hc/en-us/articles/360010340059-Account-levels-and-Limits-for-fiat-">here</TextLink></u>.</p>
                         <p>Please note that  limits may vary according to your country of residence. These limits were set based on the AML Basel Index, FATF high risk jurisdiction list and EU high risk third country list.</p>
-                        <p>To ensure you can avail of our product offering please refer to our list of unsupported countries <Link href="/restricted-countries"><TextLink href="/restricted-countries">here</TextLink></Link>.</p>
+                        <p>To ensure you can avail of our product offering please refer to our list of unsupported countries <u><TextLink href="https://support.lykke.com/hc/en-us/articles/360011386999-Unsupported-Countries">here</TextLink></u>.</p>
                         <p>Requirements: NO third party deposits or withdrawals are accepted. Customers can use only their personal bank accounts or credit cards.</p>
                         
                         <h4>Withdrawals to credit card</h4>
