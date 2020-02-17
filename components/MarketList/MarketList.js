@@ -13,7 +13,7 @@ import LyciMarketList from './LyciMarketList'
 // TODO: find me the better place to live
 export const mapToProduct = x => ({
   ticker: x.AssetPair,
-  price: x.LastPrice.toFixed(2),
+  price: x.LastPrice,
   change: `${(x.PriceChange24H*100).toFixed(2)}`
 });
 
