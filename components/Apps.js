@@ -18,7 +18,7 @@ const AppItem = styled.div`
   }
 `;
 
-export default () => (
+export default ({ hideGooglePlay }) => (
   <Wrapper>
     <Row>
       <Col xs={6}>
@@ -30,15 +30,17 @@ export default () => (
           </Link>
         </AppItem>
       </Col>
-      <Col xs={6}>
-        <AppItem>
-          <Link href="https://play.google.com/store/apps/details?id=com.lykkex.LykkeWallet">
-            <a target="_blank">
-              <img src="/static/google-play.svg" width="170px" alt="apps_google"/>
-            </a>
-          </Link>
-        </AppItem>
-      </Col>
+      {!hideGooglePlay && (
+        <Col xs={6}>
+          <AppItem>
+            <Link href="https://play.google.com/store/apps/details?id=com.lykkex.LykkeWallet">
+              <a target="_blank">
+                <img src="/static/google-play.svg" width="170px" alt="apps_google"/>
+              </a>
+            </Link>
+          </AppItem>
+        </Col>
+      )}
     </Row>
   </Wrapper>
 );

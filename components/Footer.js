@@ -146,6 +146,14 @@ export default class extends Component {
   }
 
   render() {
+    let hideGooglePlay = false;
+    if (typeof window !== 'undefined' && typeof window.navigator !== 'undefined') {
+      const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      if (iOS) {
+        // hide google play link if a iphone/ipad user visits
+        hideGooglePlay = true;
+      }
+    }
     return (
       <Footer>
         <Grid className="container">
@@ -159,7 +167,7 @@ export default class extends Component {
                     </a>
                   </Link>
                 </Logo>
-                <Apps />
+                <Apps hideGooglePlay={hideGooglePlay} />
               </Col>
 
               <Col xs={12} md={8}>
