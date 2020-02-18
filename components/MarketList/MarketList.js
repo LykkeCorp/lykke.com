@@ -43,7 +43,8 @@ export default class extends Component {
         change: 0
     },
     showCount: 0,
-    sliderStarted: false
+    sliderStarted: false,
+    indicesLoaded: false
   };
 
   startLyciSlider = (numOfSlides) => {
@@ -110,6 +111,7 @@ export default class extends Component {
                       change: `${lyciToUsd.change}`
                   },
                   quotes,
+                  indicesLoaded: true
               });
               if (!this.state.sliderStarted) {
                 this.startLyciSlider(4);
@@ -129,14 +131,15 @@ export default class extends Component {
       lyci,
       pLyci,
       scLyci,
-      lyciUsd
+      lyciUsd,
+      indicesLoaded
     } = this.state;
     return (
       <MarketList>
         <Grid>
           <Wrapper>
             <Row className="justify-content-between align-items-center">
-              {lyci && (
+              {lyci && indicesLoaded && (
                 <Col xs={12} md={3}>
                   <ListItem>
                     <Row className="align-items-center">
