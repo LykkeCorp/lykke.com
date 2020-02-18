@@ -37,7 +37,9 @@ const Head = props => (
     <meta property="og:image" content={props.ogImage || defaultOGImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+    <script src="/static/linkedin.js"></script>
+    <script async src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script>
   </NextHead>
 );
 
