@@ -34,6 +34,14 @@ export const Banner = styled.div`
         left: 0;
         margin-left: 0px;
         width: 100%;
+        padding: 10px 20px;
+    }
+
+    &.wide {
+      width: 100%;
+      margin-left: 0px;
+      left: 0px;
+      bottom: 0px;
     }
 `;
 
@@ -59,11 +67,28 @@ export const BannerText = styled.div`
     a {
         text-decoration: underline;
     }
+
+    &.small {
+      font-size: 16px;
+    }
+
+    @media all and (max-width: 800px) {
+      font-size: 14px !important;
+    }
 `;
 
-export const CookieBannerButtons = styled.div`
-    float: right;
+export const CookieFooter = styled.div`
+    display: flex;
     padding-top: 12px;
+
+    @media all and (max-width: 800px) {
+        flex-direction: column;
+    }
+`;
+
+export const CookieCheckboxes = styled.div`
+    display: flex;
+    flex-grow: 1;
 `;
 
 export const CookiePolicyIcon = styled.span`
@@ -88,4 +113,10 @@ export const AgreeButton = styled.a`
     line-height: 1.5;
     margin-right: 20px;
     color: ${p => p.theme.colors.primary};
+
+    @media all and (max-width: 800px) {
+        align-self: flex-end;
+        margin-top: 10px;
+        font-size: 14px;
+    }
 `;
