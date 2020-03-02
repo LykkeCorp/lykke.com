@@ -30,9 +30,9 @@ export const StyledCheckbox = styled.div`
   border: ${props => (props.checked ? "0" : "1px solid #cfd2d7")};
 
   @media all and (max-width: 800px) {
-    width: 16px;
-    height: 16px;
-  }
+    font-size: 16px;
+    line-height: 16px;
+}
 `;
 
 export const Text = styled.span`
