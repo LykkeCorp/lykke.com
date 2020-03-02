@@ -28,6 +28,11 @@ export const StyledCheckbox = styled.div`
   border-radius: 3px;
   transition: all 150ms;
   border: ${props => (props.checked ? "0" : "1px solid #cfd2d7")};
+
+  @media all and (max-width: 800px) {
+    font-size: 16px;
+    line-height: 16px;
+}
 `;
 
 export const Text = styled.span`
@@ -35,7 +40,7 @@ export const Text = styled.span`
   @media all and (max-width: 800px) {
     font-size: 12px;
     line-height: 12px;
-}
+  }
 `;
 
 export const Icon = styled.svg`
