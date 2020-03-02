@@ -22,8 +22,8 @@ export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
 
 export const StyledCheckbox = styled.div`
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   background: ${props => (props.checked ? "#0388ef" : "transparent")};
   border-radius: 3px;
   transition: all 150ms;
@@ -31,10 +31,10 @@ export const StyledCheckbox = styled.div`
 `;
 
 export const Text = styled.span`
-  margin-left: 8px;
+  margin-left: 20px;
   @media all and (max-width: 800px) {
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 12px;
+    line-height: 12px;
 }
 `;
 
