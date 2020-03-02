@@ -352,6 +352,7 @@ export default class extends Component {
                 <Link href="/privacy-policy">
                   <a>Privacy Policy</a>
                 </Link>
+                <br className="d-md-none" />
                 <a
                   style={{ cursor: 'pointer' }}
                   onClick={() => this.onPrivacySettingsClick()}>
