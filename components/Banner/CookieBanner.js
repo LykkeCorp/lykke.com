@@ -78,7 +78,7 @@ export default class extends Component {
                 We use cookies to offer you a better browsing experience and analyze site traffic.
                 Necessary cookies are essential to browse the website and use it's features. Additional cookies are only used if you consent to it.
                 They serve statistical purposes and you can always change your privacy settings.
-                For more information, see our <Link href="/privacy-policy">Privacy Policy</Link>.
+                For more information, see our <Link href="/privacy-policy">Privacy Policy</Link>
             </div>
         );
     }
