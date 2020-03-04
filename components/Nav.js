@@ -503,6 +503,11 @@ export default class Nav extends Component {
                     <DropdownMenu isOpen={this.state.isDropdownOpen}>
                       <DropdownMenuInner>
                         <DropdownItem onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
+                          <Link href="/affiliate-program">
+                            <a>Affiliate program</a>
+                          </Link>
+                        </DropdownItem>
+                        <DropdownItem onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
                           <Link href="https://www.lykke.com/city/blog">
                             <a target="_blank">Blog</a>
                           </Link>
