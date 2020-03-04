@@ -145,6 +145,12 @@ export default class extends Component {
     return new Date().getFullYear();
   }
 
+  onPrivacySettingsClick() {
+    if (window) {
+      window.postMessage("showCookieBanner");
+    }
+  }
+
   render() {
     let hideGooglePlay = false;
     if (typeof window !== 'undefined' && typeof window.navigator !== 'undefined') {
@@ -346,6 +352,12 @@ export default class extends Component {
                 <Link href="/privacy-policy">
                   <a>Privacy Policy</a>
                 </Link>
+                <br className="d-md-none" />
+                <a
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => this.onPrivacySettingsClick()}>
+                    Privacy Settings
+                </a>
               </Col>
             </Row>
           </Bottom>
