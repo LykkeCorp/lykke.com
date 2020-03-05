@@ -92,7 +92,7 @@ export default () => (
             <br></br>
             The Blockchain-based <strong>Lykke Exchange</strong> enables its to
             buy, sell and store crypto currencies and all other digital assets
-            securely and offers zero trading fees on nearly 100 assets class
+            securely and offers zero trading fees on nearly 100 assets classes
             including bitcoin, ethereum, Euros, US Dollar, Swiss francs, and
             many others.
             <br></br>

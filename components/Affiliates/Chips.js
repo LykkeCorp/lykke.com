@@ -105,7 +105,7 @@ export default () => (
             </FeatureItemIcon>
             <FeatureItemTitle>REGISTER</FeatureItemTitle>
             <FeatureItemDescription>
-              and get access to further info on the affiliate program
+              and get access to further info<br></br> on the affiliate program.
             </FeatureItemDescription>
           </FeatureItem>
         </Col>
@@ -120,7 +120,7 @@ export default () => (
             </FeatureItemIcon>
             <FeatureItemTitle>PROMOTE</FeatureItemTitle>
             <FeatureItemDescription>
-              Lykke in articles, events, ads and more!
+              Lykke in articles, events,<br></br> ads and more!
             </FeatureItemDescription>
           </FeatureItem>
         </Col>
@@ -135,7 +135,7 @@ export default () => (
             </FeatureItemIcon>
             <FeatureItemTitle>GET PAID</FeatureItemTitle>
             <FeatureItemDescription>
-              When new customers join Lykke!
+              When new customers<br></br> join Lykke!
             </FeatureItemDescription>
           </FeatureItem>
         </Col>

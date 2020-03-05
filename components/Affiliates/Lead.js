@@ -84,7 +84,7 @@ export default () => (
           </h1>
           <p className="lead">
             <span>
-              Help us democratize finance and<br></br> profit our Blockchain
+              Help us democratize finance and<br></br> profit from our Blockchain
               based,<br></br> 0% trading fee platform.
             </span>
           </p>
