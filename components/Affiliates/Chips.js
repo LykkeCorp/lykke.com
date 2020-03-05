@@ -92,7 +92,7 @@ const LeadContainer = styled.div`
 export default () => (
   <Chips>
     <Grid className="container">
-      <Title>How does the affiliate work?</Title>
+      <Title>How does the Lykke affiliate program work?</Title>
       <Row className="items">
         <Col xs={9} sm={4}>
           <FeatureItem>
@@ -105,7 +105,7 @@ export default () => (
             </FeatureItemIcon>
             <FeatureItemTitle>REGISTER</FeatureItemTitle>
             <FeatureItemDescription>
-              and get access to further info<br></br> on the affiliate program.
+              to get access to further info<br></br> on the affiliate program.
             </FeatureItemDescription>
           </FeatureItem>
         </Col>
@@ -135,7 +135,7 @@ export default () => (
             </FeatureItemIcon>
             <FeatureItemTitle>GET PAID</FeatureItemTitle>
             <FeatureItemDescription>
-              When new customers<br></br> join Lykke!
+              when new customers<br></br> join Lykke!
             </FeatureItemDescription>
           </FeatureItem>
         </Col>
