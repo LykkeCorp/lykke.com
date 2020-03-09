@@ -245,6 +245,11 @@ export default class extends Component {
                       <ListHeader>About</ListHeader>
                       <List>
                         <li>
+                          <Link href="/affiliate-program">
+                            <a>Affiliate program</a>
+                          </Link>
+                        </li>
+                        <li>
                           <Link href="/about/leadership">
                             <a>Lykke team</a>
                           </Link>
