@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Grid, Row, Col } from "react-styled-flexboxgrid";
-import { placeholder, rem } from "polished";
+import { rem } from "polished";
 import getConfig from "next/config";
 const { publicRuntimeConfig } = getConfig();
 const { WALLET_URL } = publicRuntimeConfig;
@@ -53,26 +53,6 @@ export const Lead = styled.section`
   }
 `;
 
-export const LeadButton = styled.a`
-  padding: ${rem("10px")} ${rem("25px")};
-  background-color: ${p => p.theme.colors.white};
-  border-radius: ${p => p.theme.corners.round};
-  border: 2px solid ${p => p.theme.colors.green};
-  font-family: ${p => p.theme.fonts.headings};
-  font-size: ${rem("20px")};
-  font-weight: 700;
-  appearance: none;
-  font-style: italic;
-  color: ${p => p.theme.colors.green};
-  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
-
-  &:focus {
-    outline: none;
-  }
-
-  ${placeholder({ color: "#8c94a0" })};
-`;
-
 export default () => (
   <Lead>
     <Grid className="container">
@@ -89,9 +69,6 @@ export default () => (
               0% trading fee platform
             </span>
           </p>
-          <div className="form_button_container">
-            <LeadButton href={WALLET_URL}>Join Now</LeadButton>
-          </div>
         </Col>
       </Row>
     </Grid>
