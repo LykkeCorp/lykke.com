@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Grid, Row, Col } from "react-styled-flexboxgrid";
-import { rem } from "polished";
-import { LeadButton } from "./Lead";
+import { rem, placeholder } from "polished";
 
 const Chips = styled.div`
   margin-top: 70px;
@@ -89,6 +88,26 @@ const LeadContainer = styled.div`
   text-align: center;
 `;
 
+const LeadButton = styled.a`
+  padding: ${rem("10px")} ${rem("25px")};
+  background-color: ${p => p.theme.colors.white};
+  border-radius: ${p => p.theme.corners.round};
+  border: 2px solid ${p => p.theme.colors.green};
+  font-family: ${p => p.theme.fonts.headings};
+  font-size: ${rem("20px")};
+  font-weight: 700;
+  appearance: none;
+  font-style: italic;
+  color: ${p => p.theme.colors.green};
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.2);
+
+  &:focus {
+    outline: none;
+  }
+
+  ${placeholder({ color: "#8c94a0" })};
+`;
+
 export default () => (
   <Chips>
     <Grid className="container">
@@ -141,7 +160,9 @@ export default () => (
         </Col>
       </Row>
       <LeadContainer>
-        <LeadButton href="mailto:marketing@lykke.com">Join Now</LeadButton>
+        <LeadButton href="mailto:marketing@lykke.com">
+          Email for more information
+        </LeadButton>
       </LeadContainer>
     </Grid>
   </Chips>
