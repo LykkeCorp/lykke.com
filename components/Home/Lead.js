@@ -55,16 +55,30 @@ export const Lead = styled.section`
 
 export const Image = styled.div`
   position: relative;
-  margin: -130px 0 -8px -80px;
   z-index: -1;
   pointer-events: none;
   user-select: none;
 
+  @media all and (min-width: 767px) {
+    margin: -130px 0px -8px -80px;
+  }
+
   @media all and (max-width: 767px) {
-    margin: -15px 0 5px -185px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
 
     img {
-      max-width: 100%;
+      max-height: 400px;
+    }
+  }
+
+  @media all and (max-width: 414px) {
+    img {
+      max-height: 300px;
     }
   }
 `;
@@ -115,6 +129,7 @@ export const FormSubscribe = styled.div`
     right: 0;
     bottom: 0;
     left: 0;
+    top: 660px;
     width: 360px;
     max-width: 100%;
     margin: 0 auto;
@@ -131,6 +146,10 @@ export const FormSubscribe = styled.div`
     ${InputGroup} {
       margin-bottom: 12px;
     }
+  }
+
+  @media all and (max-width: 414px) {
+    top: 500px;
   }
 
   @media all and (min-width: 768px) {
@@ -159,7 +178,7 @@ export default () => (
           </h1>
           <p className="lead">
             <span>
-              Securely buy, exchange and sell any digital assets & cryprocurrencies with Lykke such as Bitcoin, Ethereum, Litecoin and more.
+              Securely buy, exchange and sell any digital assets & cryptocurrencies with Lykke such as Bitcoin, Ethereum, Litecoin and more.
             </span>
             <b className="d-none d-md-block">No hidden costs. Swiss quality.</b>
           </p>
@@ -167,28 +186,13 @@ export default () => (
             <Button className="form_button" href={WALLET_URL}>
               Get Started
             </Button>
-            {/*<Row>
-              <Col xs={12} sm={8} lg={9}>
-                <InputGroup>
-                  <Input
-                    type="email"
-                    placeholder="Enter your Email to get started"
-                  />
-                </InputGroup>
-              </Col>
-              <Col xs={12} sm={4} lg={3}>
-                <Button className="form_button" block href={WALLET_URL}>
-                  Get Started
-                </Button>
-              </Col>
-            </Row>*/}
           </FormSubscribe>
         </Col>
         <Col xs={12} sm={5} md={6}>
           <Image>
             <img
               src="/static/images/hero-mobile.jpg"
-              width="502px"
+              width="100%"
               className="d-md-none"
             />
             <img
