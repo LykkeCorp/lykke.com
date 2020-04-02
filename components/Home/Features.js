@@ -178,6 +178,16 @@ const SliderImage = styled.img`
   }
 `;
 
+const Section2 = styled(Section)`
+  @media all and (max-width: 767px) {
+    margin-top: 370px;
+  }
+
+  @media all and (max-width: 414px) {
+    margin-top: 270px;
+  }
+`;
+
 export default class extends Component {
   state = {
     selectedIndex: 0
@@ -185,7 +195,7 @@ export default class extends Component {
 
   render() {
     return (
-      <Section>
+      <Section2>
         <Grid className="container">
           <SectionHeader>
             <h3>Everything you need. Right where you need it.</h3>
@@ -338,7 +348,7 @@ export default class extends Component {
             <Button href={AUTH_REDIRECT_URL || WALLET_URL}>Go to dashboard</Button>
           </SectionLink>
         </Grid>
-      </Section>
+      </Section2>
     );
   }
 }
