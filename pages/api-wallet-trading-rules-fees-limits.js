@@ -3,13 +3,14 @@ import Head from "../components/Head";
 import { ApiFees } from "../components/ApiFees/ApiFees";
 import axios from "../axios";
 
-const ApiFeesPage = ({ minOrderAmounts }) => {
+const ApiFeesPage = ({ minOrderAmounts, date }) => {
   return (
     <>
       <Head
         title="Lykke – Buy and sell cryptocurrency and digital assets"
         description="Global marketplace for any kind of assets built on the top of blockchain technology"
       />
+      {date}
       <ApiFees minOrderAmounts={minOrderAmounts} />
     </>
   );
@@ -24,7 +25,7 @@ ApiFeesPage.getInitialProps = async function() {
       const textB = b.AssetDisplayId;
       return textA < textB ? -1 : textA > textB ? 1 : 0;
     });
-  return { minOrderAmounts };
+  return { minOrderAmounts, date: new Date().getTime() };
 };
 
 export default ApiFeesPage;
