@@ -17,9 +17,13 @@ const FeesAndLimitsPage = ({ assetFees }) => {
 
 FeesAndLimitsPage.getInitialProps = async function() {
   const response = await axios.get("/withdrawals/crypto/fees");
-  const assetFees = response.data.sort(
-    (a, b) => a.AssetDisplayId > b.AssetDisplayId
-  );
+  const assetFees = (response.data || [])
+    .filter(a => a.AssetDisplayId)
+    .sort((a, b) => {
+      const textA = a.AssetDisplayId;
+      const textB = b.AssetDisplayId;
+      return textA < textB ? -1 : textA > textB ? 1 : 0;
+    });
   return { assetFees };
 };
 
