@@ -1,12 +1,59 @@
 import React from 'react';
 import styled from 'styled-components';
+import {placeholder, rem} from 'polished';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import Button from '../Button';
 import getConfig from 'next/config'
 const {publicRuntimeConfig} = getConfig()
 const { WALLET_URL } = publicRuntimeConfig
 
-import {Lead, InputGroup, Input, FormSubscribe} from '../Home/Lead';
+import {InputGroup, Input, FormSubscribe} from '../Home/Lead';
+
+const Lead = styled.section`
+  position: relative;
+  padding-top: ${rem('80px')};
+  padding-bottom: ${rem('40px')};
+
+  a.link {
+    text-decoration: underline;
+  }
+
+  h1 {
+    margin-bottom: ${rem('18px')};
+  }
+
+  .lead {
+    margin-bottom: ${rem('40px')};
+  }
+  
+  .form_button {
+    width: 250px;
+    max-width: 100%;
+  }
+
+  @media all and (max-width: 767px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .lead {
+      margin-bottom: ${rem('10px')};
+    }
+    
+    .form_button {
+      width: 100%;
+    }
+  }
+
+  @media all and (max-width: 420px) {
+    padding-top: 10px;
+  }
+`;
 
 export const Image = styled.div`
   position: relative;

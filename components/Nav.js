@@ -439,18 +439,13 @@ export default class Nav extends Component {
                 <Row className="align-items-center">
                   <MenuItem as={Col} onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
                     <MenuItemInner>
-                      <Link prefetch activeClassName="active" href="/trade">
-                        <a className="with_border">
-                          <img
-                            src="/static/lykke_exchange_logo.svg"
-                            alt="Lykke"
-                            width="36px"
-                          />{' '}
-                          Lykke Trade
+                      <Link prefetch activeClassName="active" href="https://go.lykke.com/open-initiative">
+                        <a target="_blank">
+                        Open Initiative
                         </a>
                       </Link>
                     </MenuItemInner>
-                  </MenuItem>
+                </MenuItem>
                   <MenuItem
                     as={Col}
                     dropdown
