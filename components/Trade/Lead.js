@@ -9,7 +9,7 @@ const { WALLET_URL } = publicRuntimeConfig
 
 import {InputGroup, Input, FormSubscribe} from '../Home/Lead';
 
-const Lead = styled.section`
+export const Lead = styled.section`
   position: relative;
   padding-top: ${rem('80px')};
   padding-bottom: ${rem('40px')};
