@@ -42,6 +42,7 @@ export const Lead = styled.section`
   }
   
   .form_button {
+    z-index: 999999;
     width: 250px;
     max-width: 100%;
     text-decoration: none;
