@@ -179,13 +179,7 @@ const SliderImage = styled.img`
 `;
 
 const Section2 = styled(Section)`
-  @media all and (max-width: 767px) {
-    margin-top: 370px;
-  }
-
-  @media all and (max-width: 414px) {
-    margin-top: 270px;
-  }
+  padding-top: ${rem('160px')};
 `;
 
 export default class extends Component {
@@ -220,7 +214,7 @@ export default class extends Component {
                   >
                     <AccordionImage className="d-md-none">
                       <img
-                        src="/static/images/feature-01-mobile.png"
+                        src="/static/images/hero-mobile.jpg"
                         alt=""
                         width="303px"
                       />
@@ -321,7 +315,7 @@ export default class extends Component {
               <Col xs={12} sm={6} md={6} className="d-none d-md-block">
                 <SliderImages>
                   <SliderImage
-                    src="/static/images/phone-01.png"
+                    src="/static/images/hero.jpg"
                     alt=""
                     height="571px"
                     style={{marginLeft: '-20px'}}

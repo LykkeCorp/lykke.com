@@ -3,14 +3,31 @@ import styled from 'styled-components';
 import {Grid, Row, Col} from 'react-styled-flexboxgrid';
 import {placeholder, rem} from 'polished';
 import Button from '../Button';
+import {SectionHeader} from './styled';
 import getConfig from 'next/config'
 const {publicRuntimeConfig} = getConfig()
-const { WALLET_URL } = publicRuntimeConfig
+const { TERMINAL_URL } = publicRuntimeConfig
 
-export const Lead = styled.section`
+const ExchangeButton = styled(Button)`
+  span {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      padding-right: 13px;
+    }
+  }
+`;
+
+const Lead = styled.section`
   position: relative;
-  padding-top: ${rem('80px')};
-  padding-bottom: ${rem('40px')};
+  padding-top: ${rem('294px')};
+  padding-bottom: ${rem('210px')};
+  text-align: center;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F9 100%);
+
+  mix-blend-mode: normal;
 
   a.link {
     text-decoration: underline;
@@ -20,13 +37,14 @@ export const Lead = styled.section`
     margin-bottom: ${rem('18px')};
   }
 
-  .lead {
+  .description {
     margin-bottom: ${rem('40px')};
   }
   
   .form_button {
     width: 250px;
     max-width: 100%;
+    text-decoration: none;
   }
 
   @media all and (max-width: 767px) {
@@ -83,6 +101,7 @@ export const Image = styled.div`
   }
 `;
 
+
 export const InputGroup = styled.div`
   position: relative;
 `;
@@ -107,64 +126,20 @@ export const Input = styled.input`
 `;
 
 export const FormSubscribe = styled.div`
-  width: 590px;
-  max-width: 100%;
-
-  ${Row} {
-    margin: 0;
-  }
-
-  ${Col} {
-    padding: 0;
-  }
-
-  /*.form_button {
-    width: 100%;
-    height: ${rem('54px')};
-    padding: ${rem('18px')} ${rem('25px')};
-  }*/
-
   @media all and (max-width: 767px) {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    top: 660px;
     width: 360px;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 15px;
-
-    .form_button {
-      box-shadow: 0 4px 15px 0 rgba(25, 112, 236, 0.5);
-    }
-
-    ${Input} {
-      text-align: center;
-    }
-
-    ${InputGroup} {
-      margin-bottom: 12px;
-    }
   }
+`;
 
-  @media all and (max-width: 414px) {
-    top: 500px;
-  }
+const BackgroundImage = styled.img`
+  position: absolute;
+  right: 0;
+  top: -23px;
 
-  @media all and (min-width: 768px) {
-    /*border-radius: ${p => p.theme.corners.round};
-    box-shadow: 0 4px 15px 0 rgba(25, 112, 236, 0.5);*/
-
-    ${Input} {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    /*.form_button {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }*/
+  @media all and (max-width: 1260px) {
+    display: none;
   }
 `;
 
@@ -172,35 +147,26 @@ export default () => (
   <Lead>
     <Grid className="container">
       <Row>
-        <Col xs={12} sm={7} md={6}>
-          <h1>
-            Swiss Quality Exchange
-          </h1>
-          <p className="lead">
-            <span>
-              Securely buy, exchange and sell any digital assets & cryptocurrencies with Lykke such as Bitcoin, Ethereum, Litecoin and more.
-            </span>
-            <b className="d-none d-md-block">No hidden costs. Swiss quality.</b>
-          </p>
+        <Col xs={12}>
           <FormSubscribe>
-            <Button className="form_button" href={WALLET_URL}>
-              Get Started
-            </Button>
+            <SectionHeader>
+              <h1>
+                Swiss‐based Blockchain company and Financial Product provider
+              </h1>
+              <p className="description">
+                <span>
+                Lykke is a Fintech company bridging the gap between traditional finance and Blockchain. Lykke operates a commission free exchange for digital assets.
+                </span>
+              </p>
+              <ExchangeButton className="form_button" href={TERMINAL_URL}>
+                <img
+                  src="/static/lykke_exchange_logo__white.svg"
+                  alt="Lykke"
+                />{' '}Lykke trade
+              </ExchangeButton>
+            </SectionHeader>
           </FormSubscribe>
-        </Col>
-        <Col xs={12} sm={5} md={6}>
-          <Image>
-            <img
-              src="/static/images/hero-mobile.jpg"
-              width="100%"
-              className="d-md-none"
-            />
-            <img
-              src="/static/images/hero.jpg"
-              width="778px"
-              className="d-none d-md-block"
-            />
-          </Image>
+          <BackgroundImage src="/static/images/lead-bg.svg" />
         </Col>
       </Row>
     </Grid>

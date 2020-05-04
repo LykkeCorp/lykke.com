@@ -10,13 +10,25 @@ const Wrapper = styled.div`
   flex-shrink: 0;
 `;
 
+const InvertedButton = styled(Button)`
+  background-color: #FFFFFF;
+  border: 2px solid #0288EF;
+  color: #0288EF;
+  border-radius: 33px;
+
+  &:hover {
+    color: #0288EF;
+    background-color: #FFFFFF;  
+  }
+`;
+
 class HeaderAccount extends React.Component {
     renderLoginButton = () => {
         const { loggedIn } = this.props;
         if( loggedIn === null ) return null;
         return loggedIn ? <Button href={AUTH_REDIRECT_URL || WALLET_URL}>Go to dashboard</Button> :
             <>
-            <Button href={WALLET_URL}>Get Started</Button>
+            <InvertedButton href={WALLET_URL}>Get Started</InvertedButton>
             </>
     };
     render() {
