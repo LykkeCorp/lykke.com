@@ -439,7 +439,7 @@ export default class Nav extends Component {
                 <Row className="align-items-center">
                   <MenuItem as={Col} onClick={this.props.isMenuOpen ? this.props.menuHandler : null}>
                     <MenuItemInner>
-                      <Link prefetch activeClassName="active" href="https://openinitiative.lykke.com/">
+                      <Link prefetch activeClassName="active" href="https://go.lykke.com/open-initiative">
                         <a target="_blank">
                         Open Initiative
                         </a>
