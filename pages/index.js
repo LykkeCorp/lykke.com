@@ -13,7 +13,7 @@ import Testimonials from '../components/Home/Testimonials';
 const Home = ({posts}) => (
   <>
     <Head
-      title="Buy & Sell Cryptocurrency & Bitcoin Online - Lykke"
+      title="Lykke - Blockchain and Financial product provider"
       description="Lykke is a Fintech company bridging the gap between traditional finance and Blockchain. Lykke operates a commission free exchange for digital assets."
     />
     <Lead />
