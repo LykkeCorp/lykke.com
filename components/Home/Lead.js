@@ -21,6 +21,7 @@ const ExchangeButton = styled(Button)`
 `;
 
 export const Lead = styled.section`
+  overflow: hidden;
   position: relative;
   padding-top: 20vh;
   padding-bottom: ${rem('210px')};
@@ -138,7 +139,15 @@ const BackgroundImage = styled.img`
   position: absolute;
   right: 0;
   top: -23px;
-  height: calc(100% + 20px);
+  height: calc(100% + 26px);
+
+  @media all and (max-width: 1600px) {
+    height: calc(100% + 60px);
+  }
+
+  @media all and (max-width: 1400px) {
+    height: calc(100% + 80px);
+  }
 
   @media all and (max-width: 1260px) {
     display: none;
