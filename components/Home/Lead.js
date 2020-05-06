@@ -139,6 +139,10 @@ const BackgroundImage = styled.img`
   right: 0;
   top: -23px;
   height: calc(100% + 20px);
+
+  @media all and (max-width: 1260px) {
+    display: none;
+  }
 `;
 
 export default () => (
