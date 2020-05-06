@@ -14,7 +14,7 @@ const Home = ({posts}) => (
   <>
     <Head
       title="Buy & Sell Cryptocurrency & Bitcoin Online - Lykke"
-      description="Lykke is a secure platform that makes it easy to buy, sell, and store cryptocurrency like Bitcoin, Ethereum, and more"
+      description="Lykke is a Fintech company bridging the gap between traditional finance and Blockchain. Lykke operates a commission free exchange for digital assets."
     />
     <Lead />
     <Features />

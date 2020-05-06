@@ -22,7 +22,7 @@ const ExchangeButton = styled(Button)`
 
 export const Lead = styled.section`
   position: relative;
-  padding-top: ${rem('294px')};
+  padding-top: ${rem('214px')};
   padding-bottom: ${rem('210px')};
   text-align: center;
   background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F9 100%);
@@ -167,7 +167,7 @@ export default () => (
               </ExchangeButton>
             </SectionHeader>
           </FormSubscribe>
-          <BackgroundImage src="/static/images/lead-bg.svg" />
+          <BackgroundImage height={799} src="/static/images/lead-bg.svg" />
         </Col>
       </Row>
     </Grid>
