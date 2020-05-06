@@ -15,11 +15,6 @@ const InvertedButton = styled(Button)`
   border: 2px solid #0288EF;
   color: #0288EF;
   border-radius: 33px;
-
-  &:hover {
-    color: #0288EF;
-    background-color: #FFFFFF;  
-  }
 `;
 
 class HeaderAccount extends React.Component {
