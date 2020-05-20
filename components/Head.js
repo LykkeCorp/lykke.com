@@ -40,6 +40,7 @@ const Head = props => (
     <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
     <script src="/static/linkedin.js"></script>
     <script async src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script>
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=f4d730df-ea9e-412d-b073-3f4f14238d4f"> </script>
   </NextHead>
 );
 
