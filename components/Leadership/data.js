@@ -34,36 +34,6 @@ export const team = {
       'across Europe, leading agile transformation in international environments.',
     },
   ],
-  'Lykke Future': [
-    {
-      name: 'Sergey Ivliev',
-      position: 'Products & Operations',
-      imageURL: '/static/images/leadership/big/ivliev.jpg',
-      imagePreviewURL: '/static/images/leadership/ivliev_preview.jpg',
-      info: 'Sergey’s dream is to make financial market better, faster and more inclusive. For 20 years being an industry professional, lecturer, ' +
-      'author, events curator, member of editorial boards of academic journals and expert councils he contributes to promote best practices of financial ' +
-      'markets and risk management. Executed and supervised 100+ large scale system implementation projects with total revenue exceeding 40 Mio. ' +
-      'Regional Director at PRMIA Russia and associate professor at Perm State University.',
-    },
-    {
-      name: 'Mihail Nikulin',
-      position: 'Technology',
-      imageURL: '/static/images/leadership/big/nikulin.jpg',
-      imagePreviewURL: '/static/images/leadership/nikulin_preview.jpg',
-      info: 'Mihail is an architect and designer with 10 year experience in creating market solutions for financial institutions, including Anti-Money ' +
-      'Laundering, Fraud Detection and Financial Markets Compliance solutions. Combines deep knowledge of financial architecture with Blockchain technology.',
-    },
-  ],
-  'B2B': [
-    {
-      name: 'Niklaus Mettler',
-      imageURL: '/static/images/leadership/big/niklaus.jpg',
-      imagePreviewURL: '/static/images/leadership/niklaus_preview.jpg',
-      info: 'Niklaus makes financial markets more accessible, democratic, and open. He brings more than 30 years of professional experience in project management' +
-      ' across different industries, including overseeing fundamental banking changes, leading and coaching high-performing teams, and training and mentoring leaders.\n' +
-      'He is a citizen of Switzerland and the European Union, and he speaks German, English, French, and Italian.',
-    },
-  ],
   'Board members and advisers': [
     {
       name: 'Heinrich Zetlmayer',
