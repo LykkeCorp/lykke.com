@@ -14,7 +14,7 @@ const Home = ({posts}) => (
   <>
     <Head
       title="Lykke - Blockchain and Financial product provider"
-      description="Lykke is a Fintech company bridging the gap between traditional finance and Blockchain. Lykke operates a commission free exchange for digital assets."
+      description="Lykke is a Fintech company bridging the gap between traditional finance and Blockchain. Lykke operates a commission free exchange for digital assets and cryptocurrencies."
     />
     <Lead />
     <Features />

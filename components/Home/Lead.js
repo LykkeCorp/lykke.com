@@ -162,18 +162,18 @@ export default () => (
           <FormSubscribe>
             <SectionHeader>
               <h1>
-                Swiss‐based Blockchain company and Financial Product provider
+                Swiss‐based Blockchain exchange and Financial Product provider
               </h1>
               <p className="description">
                 <span>
-                Lykke is a Fintech company bridging the gap between traditional finance and Blockchain. Lykke operates a commission free exchange for digital assets.
+                Lykke is a Fintech company bridging the gap between traditional finance and Blockchain. Lykke operates a commission free exchange for digital assets and cryptocurrencies.
                 </span>
               </p>
               <ExchangeButton className="form_button" href={TERMINAL_URL}>
                 <img
                   src="/static/lykke_exchange_logo__white.svg"
                   alt="Lykke"
-                />{' '}Lykke trade
+                />{' '}Lykke Crypto trade
               </ExchangeButton>
             </SectionHeader>
           </FormSubscribe>
