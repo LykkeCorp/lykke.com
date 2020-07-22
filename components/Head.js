@@ -41,6 +41,7 @@ const Head = props => (
     <script src="/static/linkedin.js"></script>
     <script async src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script>
     <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=f4d730df-ea9e-412d-b073-3f4f14238d4f"> </script>
+    <meta name="cf-2fa-verify" content="a817fe34d612e2f"></meta>
   </NextHead>
 );
 
