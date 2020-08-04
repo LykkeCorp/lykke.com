@@ -73,7 +73,7 @@ export default class LykkeApp extends App {
 
   componentDidMount() {
     if (process.env.NODE_ENV === 'production') {
-      TagManager.initialize(tagManagerArgs);
+      // TagManager.initialize(tagManagerArgs);
     }
   }
 
