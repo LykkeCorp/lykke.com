@@ -160,7 +160,7 @@ export default () => (
         </Col>
       </Row>
       <LeadContainer>
-        <LeadButton href="mailto:marketing@lykke.com">
+        <LeadButton href="mailto:affiliates@lykke.com">
           Email for more information
         </LeadButton>
       </LeadContainer>
