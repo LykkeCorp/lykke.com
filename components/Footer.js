@@ -284,11 +284,11 @@ export default class extends Component {
                             <a>API Fees and limits</a>
                           </Link>
                         </li>
-                        {/*<li>
-                          <Link href="#">
-                            <a>API Deposits</a>
+                        <li>
+                          <Link href="https://lykkecity.github.io/Trading-API">
+                          <a>API documentation</a>
                           </Link>
-                        </li>*/}
+                        </li>
                       </List>
                     </ListWrapper>
                   </Col>
