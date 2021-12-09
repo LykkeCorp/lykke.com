@@ -14,7 +14,7 @@
     "express": "^4.16.4",
     "isomorphic-unfetch": "^3.0.0",
     "moment": "^2.23.0",
-    "next": "^7.0.2",
+    "next": "^11.1.3",
     "oidc-client": "https://github.com/IdentityModel/oidc-client-js.git#dev",
     "polished": "^2.3.0",
     "react": "^16.6.0",
