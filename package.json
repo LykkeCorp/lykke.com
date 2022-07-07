@@ -13,7 +13,7 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "isomorphic-unfetch": "^3.0.0",
-    "moment": "^2.23.0",
+    "moment": "^2.29.4",
     "next": "^7.0.2",
     "oidc-client": "https://github.com/IdentityModel/oidc-client-js.git#dev",
     "polished": "^2.3.0",
